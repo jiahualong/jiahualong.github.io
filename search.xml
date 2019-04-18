@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[mac diskutil 工具]]></title>
+    <url>%2F2019%2F04%2F18%2Fmac%2Fmac-diskutil%2F</url>
+    <content type="text"><![CDATA[查看硬盘列表diskutil list /dev/disk2 : deviceNode TYPE : File System NAME : diskName diskutil若干需要sudo权限 卸载disk2diskutil unmountDisk disk2 eraseDisk之前需要选unmountDisk 格式化 eraseDisk 子命令diskutil eraseDisk FILE_SYSTEM DISK_NAME [APM[Format]|MBR[Format]|GPT[Format]] MountPoint|DiskIdentifier|DeviceNode 将/dev/disk2 格式化为JHFS+ 的几种写法示例: diskutil eraseDisk JHFS+ TestDisk /dev/disk2 diskutil eraseDisk JHFS+ TestDisk disk2 diskutil eraseDisk JHFS+ TestDisk disk2 #1 diskutil eraseDisk JHFS+ TestDisk /dev/disk2s1 将 /dev/disk2 格式化为 ExFAT 并分别使用MBR GPT分区表的几种写法示例: diskutil eraseDisk ExFAT TestDisk /dev/disk2 diskutil eraseDisk ExFAT TestDisk MBRFormat /dev/disk2 diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2 File System - - JHFS+ Mac OS Extended Journaled HFS + Mac OS Extended ExFAT Windows FAT32 Windows 分区表格式 - - APM Apple Partition Map GPT UEFI-style GUID Partition Table MBR MS-DOS Master Boot Record 格式化将disk2分成一个分区: diskutil partitionDisk disk2 1 \ JHFS+ one R 将disk2分成2个分区,第2分区为JHFS+格式250G大小, 第1分区为JHFS+格式并使用硬盘剩余大小 diskutil partitionDisk disk3 2 GPT \ JHFS+ one R \ JHFS+ two 250G 将disk2分成3个分区, 第三分区10G ExFAT格式, 第二分区 250G JHFS+格式， 第一分区使用剩余空间 JHFS+格式 diskutil partitionDisk disk3 MBR \ JHFS+ one R \ JHFS+ two 250G \ ExFAT three 10G 硬盘空间单位可选:B, K, M, G, T, P, % , R(剩余) 删除 disk2的APFS 容器diskutil apfs deleteContainer /dev/disk2 ref: https://tobywf.com/2017/01/diskutil/]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>diskutil</tag>
+      </tags>
+  </entry>
+</search>
