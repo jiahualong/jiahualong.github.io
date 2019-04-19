@@ -6,7 +6,6 @@
     <content type="text"><![CDATA[本文将在Mac上制作PlayStation4系统安装U盘, 需要U盘空间大于1.1G。在制作过程中将格式化U盘，请自行备份U盘文件 Setup1: 获取PlayStation4新安装文件从PlayStationHK下载更新文件 分为标准更新、新安装两种，本次我们将使用U盘安装全新的PlayStation系统，因此采用新安装文件。 wget http://dsa01.ps4.update.playstation.net/update/ps4/image/2019_0319/rec_7bd82d7957611fe9bca3fa63b78c82c5/PS4UPDATE.PUP Setup2: 格式化U盘 将U盘格式化为ExtFAT文件格式，因为PlayStation4 支持这种格式 接入U盘之前查看目前硬盘列表 diskutil list 将U盘接入Mac后再次查看硬盘列表 diskutil list 对比多出的即为U盘 本例中为 `/dev/disk2` 卸载disk2 diskutil unmountDisk disk2 将/dev/disk2 格式化为ExtFAT 文件系统，并使用MBR格式的硬盘分区表, 格式化后的U盘名字为PS4Install diskutil eraseDisk ExFAT PS4Install MBR /dev/disk2 Setup3: 拷贝PlayStation4 系统文件在U盘根目录创建PS4文件夹，在PS4文件夹中创建UPDATE文件夹 -or- 使用命令创建: mkdir -p /Volumes/PS4Install/PS4/UPDATE 将下载好的 PS4UPDATE.PUP 拷贝至刚创建完的UPDATE目录中即可. 至此启动盘制作结束。]]></content>
       <categories>
         <category>mac</category>
-        <category>PlayStation</category>
       </categories>
       <tags>
         <tag>mac</tag>
