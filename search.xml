@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mac mini 换SSD硬盘]]></title>
+    <url>%2F2019%2F04%2F21%2Fmac%2FMac-Mini%E6%8D%A2SSD%E7%A1%AC%E7%9B%98%2F</url>
+    <content type="text"><![CDATA[为Mac提速，打算再战两年，于是给Mac mini换了新的SSD ,之前那块500GB硬盘放到了第二个SATA槽中用来放文件仓库，第一块SSD主要用来放系统，常用应用，已获得更高速度。 数据备份换SSD之前先插上一个USB硬盘，使用Time Machine做个备份 这样的话，在换好SSD后开机按Option键，可以选择使用Time Machine备份恢复系统 SSD硬盘的选择我用的是PLEXTOR PX-128M5Pro 这个牌子和其它牌子比起来有独家的True Speed技术，读写速度不会随着盘的使用量增加而减慢 这个牌子和普通和Pro的区别，128的写入速度快了1/3，质保从3年延长至5年, Pro是7mm超薄的，还送一个3.5mm支架 2013年12月30日 PLEXTOR更新了固件至1.6 买后记得更新下 仓位名称不用关心是2012还是2013前半年，直接去｛系统系统｝查看SATA/SATA Express中现在用的仓位就好了 硬盘如果只是由机械硬盘换SSD而不上第二块的话，只拆开一点就行了， 如果是换了SSD后还要将原来的硬盘放到第二个槽挂两块硬盘的话，要买第二个槽的SATA线，同时最好把机器全拆开上 硬盘线大约50-100元，一般还送螺丝刀，螺丝，塑料垫 SSD速度测试使用Disk Speed Test测试，SSD达到了他盒子上标的速度 (Disk Speed Test 在App Store可以免费下载) 个人感觉: 过程不难，但要细心，我用了2个小时才上好2个硬盘，Time Machine恢复系统后花了1个多小时。 换了SSD以后启动速度变快好多，现在点应用图标没有了以前的卡顿的感觉。 Time Machine 是个好软件，用好的话很方便。 参考 优酷视频: OWC 介绍 2012 Mac mini 添加第二块硬盘 拒绝误导：10分钟快速解决Mac Mini更换SSD问题 如何给MAC MINI 2012加装SSD Plextor M5S 256GB SSD ＋ Mac mini SSD換裝筆記 mac mini 2012版更换ssd，使用Time Machine恢复重装系 淘宝青州小熊-苹果apple 功能同ifixit mac mini 第二双硬盘线套件 dual disk]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>mac mini</tag>
+        <tag>SSD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MacOS 创建 PlayStation4 安装U盘]]></title>
     <url>%2F2019%2F04%2F19%2Fmac%2Fmac-ps4-install-usb-stock%2F</url>
     <content type="text"><![CDATA[本文将在Mac上制作PlayStation4系统安装U盘, 需要U盘空间大于1.1G。在制作过程中将格式化U盘，请自行备份U盘文件 Setup1 获取PlayStation4新安装文件从PlayStationHK下载更新文件 分为标准更新、新安装两种，本次我们将使用U盘安装全新的PlayStation系统，因此采用新安装文件。 wget http://dsa01.ps4.update.playstation.net/update/ps4/image/2019_0319/rec_7bd82d7957611fe9bca3fa63b78c82c5/PS4UPDATE.PUP Setup2 格式化U盘 将U盘格式化为ExtFAT文件格式，因为PlayStation4 支持这种格式 接入U盘之前查看目前硬盘列表 diskutil list 将U盘接入Mac后再次查看硬盘列表 diskutil list 对比多出的即为U盘 本例中为 `/dev/disk2` 卸载disk2 diskutil unmountDisk disk2 将/dev/disk2 格式化为ExtFAT 文件系统，并使用MBR格式的硬盘分区表, 格式化后的U盘名字为PS4Install diskutil eraseDisk ExFAT PS4Install MBR /dev/disk2 Setup3 拷贝PlayStation4 系统文件在U盘根目录创建PS4文件夹，在PS4文件夹中创建UPDATE文件夹 -or- 使用命令创建: mkdir -p /Volumes/PS4Install/PS4/UPDATE 将下载好的 PS4UPDATE.PUP 拷贝至刚创建完的UPDATE目录中即可. 至此启动盘制作结束。]]></content>
