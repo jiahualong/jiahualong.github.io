@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[LogStash Note]]></title>
+    <url>%2F2019%2F04%2F21%2Felk%2FLogStash-Note%2F</url>
+    <content type="text"><![CDATA[将logs目录下的所有log文件发送至Kafka 环境信息 logstash version 6.0.1 kafka 192.168.1.2:9002 kafka topic myapplog log目录 /MyApp/logs/ logstash config12345678910111213input &#123; file &#123; path =&gt; &quot;/MyApp/logs/*.log&quot; start_position =&gt; &quot;beginning&quot; &#125;&#125;output &#123; kafka &#123; bootstrap_servers =&gt; &quot;192.168.1.2:9092&quot; topic_id =&gt; &quot;myapplog&quot; compression_type =&gt; &quot;gzip&quot; # string (optional)， one of [&quot;none&quot;， &quot;gzip&quot;， &quot;snappy&quot;]， default: &quot;none&quot; &#125;&#125; 运行logstash1logstash -f apiweblogstash.conf 测试监听myapplog主题并查看消息 1kafkacat -C -b 192.168.1.2:9092 -t myapplog]]></content>
+      <categories>
+        <category>elk</category>
+      </categories>
+      <tags>
+        <tag>logstash</tag>
+        <tag>elk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mac mini 换SSD硬盘]]></title>
-    <url>%2F2019%2F04%2F21%2Fmac%2FMac-Mini%E6%8D%A2SSD%E7%A1%AC%E7%9B%98%2F</url>
+    <url>%2F2019%2F04%2F21%2Fmac%2Fmac-mini%E6%8D%A2SSD%E7%A1%AC%E7%9B%98%2F</url>
     <content type="text"><![CDATA[为Mac提速，打算再战两年，于是给Mac mini换了新的SSD ,之前那块500GB硬盘放到了第二个SATA槽中用来放文件仓库，第一块SSD主要用来放系统，常用应用，已获得更高速度。 数据备份换SSD之前先插上一个USB硬盘，使用Time Machine做个备份 这样的话，在换好SSD后开机按Option键，可以选择使用Time Machine备份恢复系统 SSD硬盘的选择我用的是PLEXTOR PX-128M5Pro 这个牌子和其它牌子比起来有独家的True Speed技术，读写速度不会随着盘的使用量增加而减慢 这个牌子和普通和Pro的区别，128的写入速度快了1/3，质保从3年延长至5年, Pro是7mm超薄的，还送一个3.5mm支架 2013年12月30日 PLEXTOR更新了固件至1.6 买后记得更新下 仓位名称不用关心是2012还是2013前半年，直接去｛系统系统｝查看SATA/SATA Express中现在用的仓位就好了 硬盘如果只是由机械硬盘换SSD而不上第二块的话，只拆开一点就行了， 如果是换了SSD后还要将原来的硬盘放到第二个槽挂两块硬盘的话，要买第二个槽的SATA线，同时最好把机器全拆开上 硬盘线大约50-100元，一般还送螺丝刀，螺丝，塑料垫 SSD速度测试使用Disk Speed Test测试，SSD达到了他盒子上标的速度 (Disk Speed Test 在App Store可以免费下载) 个人感觉: 过程不难，但要细心，我用了2个小时才上好2个硬盘，Time Machine恢复系统后花了1个多小时。 换了SSD以后启动速度变快好多，现在点应用图标没有了以前的卡顿的感觉。 Time Machine 是个好软件，用好的话很方便。 参考 优酷视频: OWC 介绍 2012 Mac mini 添加第二块硬盘 拒绝误导：10分钟快速解决Mac Mini更换SSD问题 如何给MAC MINI 2012加装SSD Plextor M5S 256GB SSD ＋ Mac mini SSD換裝筆記 mac mini 2012版更换ssd，使用Time Machine恢复重装系 淘宝青州小熊-苹果apple 功能同ifixit mac mini 第二双硬盘线套件 dual disk]]></content>
       <categories>
         <category>mac</category>
@@ -36,8 +48,8 @@
       </categories>
       <tags>
         <tag>mac</tag>
-        <tag>diskutil</tag>
         <tag>macOS</tag>
+        <tag>diskutil</tag>
         <tag>command Tools</tag>
       </tags>
   </entry>
