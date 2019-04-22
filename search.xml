@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[spring-boot-starter-data-neo4j 在OpenJDK8出现No class information found in OGM meta-data for class]]></title>
+    <url>%2F2019%2F04%2F22%2Fneo4j%2Fneo4j-no-class-found-in-ogm%2F</url>
+    <content type="text"><![CDATA[现象在OpenJDK 1.8中使用java -jar sdn5-movies-0.0.1-SNAPSHOT.jar 时出现 No class information found in OGM meta-data for classmovies.spring.data.neo4j.domain.Person` 错误. 添加mvn配置12345&lt;dependency&gt; &lt;groupId&gt;io.github.lukehutch&lt;/groupId&gt; &lt;artifactId&gt;fast-classpath-scanner&lt;/artifactId&gt; &lt;version&gt;3.1.13&lt;/version&gt;&lt;/dependency&gt; 参考issuse 604]]></content>
+      <categories>
+        <category>neo4j</category>
+      </categories>
+      <tags>
+        <tag>neo4j</tag>
+        <tag>springboot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[LogStash Note]]></title>
     <url>%2F2019%2F04%2F21%2Felk%2FLogStash-Note%2F</url>
     <content type="text"><![CDATA[将logs目录下的所有log文件发送至Kafka 环境信息 logstash version 6.0.1 kafka 192.168.1.2:9002 kafka topic myapplog log目录 /MyApp/logs/ logstash config12345678910111213input &#123; file &#123; path =&gt; &quot;/MyApp/logs/*.log&quot; start_position =&gt; &quot;beginning&quot; &#125;&#125;output &#123; kafka &#123; bootstrap_servers =&gt; &quot;192.168.1.2:9092&quot; topic_id =&gt; &quot;myapplog&quot; compression_type =&gt; &quot;gzip&quot; # string (optional)， one of [&quot;none&quot;， &quot;gzip&quot;， &quot;snappy&quot;]， default: &quot;none&quot; &#125;&#125; 运行logstash1logstash -f apiweblogstash.conf 测试监听myapplog主题并查看消息 1kafkacat -C -b 192.168.1.2:9092 -t myapplog]]></content>
