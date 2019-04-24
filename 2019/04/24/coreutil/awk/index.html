@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="查看硬盘列表diskutil list   /dev/disk2 : deviceNode  TYPE : File System NAME : diskName  diskutil若干需要sudo权限   卸载disk2diskutil unmountDisk disk2  eraseDisk之前需要选unmountDisk  格式化 eraseDisk 子命令diskutil eraseDis">
-<meta name="keywords" content="mac,macOS,diskutil,command Tools">
+  <meta name="description" content="awk FS 分割符表达在java中使用\u0001打印的分割符号1awk -F &quot;\x01&quot; vim中 0x1c 会显示为亮 ^\ 这个符号是ASCII FS 0x1c 28 FILE SEPARATOR (IS4)1awk -F &quot;\0x1c&quot; 如果分隔符号是 |0x1c awk中使用1awk -F &quot;\\|\0x1c&quot; 使用,或;分割1awk -F &quot;,|;&quot;">
+<meta name="keywords" content="awk,coreutil">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MacOS diskutil command tool">
-<meta property="og:url" content="https://stan.cc/2019/04/18/mac/mac-diskutil/index.html">
+<meta property="og:title" content="Awk Cookie">
+<meta property="og:url" content="https://stan.cc/2019/04/24/coreutil/awk/index.html">
 <meta property="og:site_name" content="STAN.CC">
-<meta property="og:description" content="查看硬盘列表diskutil list   /dev/disk2 : deviceNode  TYPE : File System NAME : diskName  diskutil若干需要sudo权限   卸载disk2diskutil unmountDisk disk2  eraseDisk之前需要选unmountDisk  格式化 eraseDisk 子命令diskutil eraseDis">
+<meta property="og:description" content="awk FS 分割符表达在java中使用\u0001打印的分割符号1awk -F &quot;\x01&quot; vim中 0x1c 会显示为亮 ^\ 这个符号是ASCII FS 0x1c 28 FILE SEPARATOR (IS4)1awk -F &quot;\0x1c&quot; 如果分隔符号是 |0x1c awk中使用1awk -F &quot;\\|\0x1c&quot; 使用,或;分割1awk -F &quot;,|;&quot;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-19T02:20:25.825Z">
+<meta property="og:updated_time" content="2019-04-24T16:06:49.128Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MacOS diskutil command tool">
-<meta name="twitter:description" content="查看硬盘列表diskutil list   /dev/disk2 : deviceNode  TYPE : File System NAME : diskName  diskutil若干需要sudo权限   卸载disk2diskutil unmountDisk disk2  eraseDisk之前需要选unmountDisk  格式化 eraseDisk 子命令diskutil eraseDis">
+<meta name="twitter:title" content="Awk Cookie">
+<meta name="twitter:description" content="awk FS 分割符表达在java中使用\u0001打印的分割符号1awk -F &quot;\x01&quot; vim中 0x1c 会显示为亮 ^\ 这个符号是ASCII FS 0x1c 28 FILE SEPARATOR (IS4)1awk -F &quot;\0x1c&quot; 如果分隔符号是 |0x1c awk中使用1awk -F &quot;\\|\0x1c&quot; 使用,或;分割1awk -F &quot;,|;&quot;">
 
 
 
@@ -118,7 +118,7 @@
 
   
   
-  <link rel="canonical" href="https://stan.cc/2019/04/18/mac/mac-diskutil/">
+  <link rel="canonical" href="https://stan.cc/2019/04/24/coreutil/awk/">
 
 
 
@@ -128,7 +128,7 @@
   };
 </script>
 
-  <title>MacOS diskutil command tool | STAN.CC</title>
+  <title>Awk Cookie | STAN.CC</title>
   
 
 
@@ -384,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/18/mac/mac-diskutil/">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/24/coreutil/awk/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hualong">
@@ -401,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MacOS diskutil command tool
+          <h1 class="post-title" itemprop="name headline">Awk Cookie
 
               
             
@@ -427,7 +427,7 @@
                 
               
 
-              <time title="Created: 2019-04-18 21:37:32" itemprop="dateCreated datePublished" datetime="2019-04-18T21:37:32+08:00">2019-04-18</time>
+              <time title="Created: 2019-04-24 23:57:00" itemprop="dateCreated datePublished" datetime="2019-04-24T23:57:00+08:00">2019-04-24</time>
             
 
             
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-19 10:20:25" itemprop="dateModified" datetime="2019-04-19T10:20:25+08:00">2019-04-19</time>
+                <time title="Modified: 2019-04-25 00:06:49" itemprop="dateModified" datetime="2019-04-25T00:06:49+08:00">2019-04-25</time>
               
             
           </span>
@@ -461,7 +461,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mac/" itemprop="url" rel="index"><span itemprop="name">mac</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coreutil/" itemprop="url" rel="index"><span itemprop="name">coreutil</span></a></span>
 
                 
                 
@@ -496,92 +496,10 @@
       
 
       
-        <h2 id="查看硬盘列表"><a href="#查看硬盘列表" class="headerlink" title="查看硬盘列表"></a>查看硬盘列表</h2><pre><code>diskutil list 
-</code></pre><ul>
-<li><code>/dev/disk2</code> : deviceNode </li>
-<li>TYPE : File System</li>
-<li><p>NAME : diskName</p>
-</li>
-<li><p>diskutil若干需要sudo权限</p>
-</li>
-</ul>
-<h2 id="卸载disk2"><a href="#卸载disk2" class="headerlink" title="卸载disk2"></a>卸载disk2</h2><pre><code>diskutil unmountDisk disk2
-</code></pre><ul>
-<li>eraseDisk之前需要选unmountDisk</li>
-</ul>
-<h2 id="格式化-eraseDisk-子命令"><a href="#格式化-eraseDisk-子命令" class="headerlink" title="格式化 eraseDisk 子命令"></a>格式化 eraseDisk 子命令</h2><pre><code>diskutil eraseDisk FILE_SYSTEM DISK_NAME [APM[Format]|MBR[Format]|GPT[Format]] MountPoint|DiskIdentifier|DeviceNode
-</code></pre><p>将<code>/dev/disk2</code> 格式化为<code>JHFS+</code> 的几种写法示例:  </p>
-<pre><code>diskutil eraseDisk JHFS+ TestDisk /dev/disk2
-diskutil eraseDisk JHFS+ TestDisk disk2
-diskutil eraseDisk JHFS+ TestDisk disk2 #1
-diskutil eraseDisk JHFS+ TestDisk /dev/disk2s1
-</code></pre><p>将 <code>/dev/disk2</code> 格式化为 <code>ExFAT</code> 并分别使用MBR GPT分区表的几种写法示例: </p>
-<pre><code>diskutil eraseDisk ExFAT TestDisk /dev/disk2
-diskutil eraseDisk ExFAT TestDisk MBRFormat /dev/disk2
-diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
-</code></pre><h2 id="File-System"><a href="#File-System" class="headerlink" title="File System"></a>File System</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">-</th>
-<th style="text-align:left">-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">JHFS+</td>
-<td style="text-align:left">Mac OS Extended Journaled</td>
-</tr>
-<tr>
-<td style="text-align:left">HFS +</td>
-<td style="text-align:left">Mac OS Extended</td>
-</tr>
-<tr>
-<td style="text-align:left">ExFAT</td>
-<td style="text-align:left">Windows</td>
-</tr>
-<tr>
-<td style="text-align:left">FAT32</td>
-<td style="text-align:left">Windows</td>
-</tr>
-</tbody>
-</table>
-<h2 id="分区表格式"><a href="#分区表格式" class="headerlink" title="分区表格式"></a>分区表格式</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">-</th>
-<th style="text-align:left">-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">APM</td>
-<td style="text-align:left">Apple Partition Map</td>
-</tr>
-<tr>
-<td style="text-align:left">GPT</td>
-<td style="text-align:left">UEFI-style GUID Partition Table</td>
-</tr>
-<tr>
-<td style="text-align:left">MBR</td>
-<td style="text-align:left">MS-DOS Master Boot Record</td>
-</tr>
-</tbody>
-</table>
-<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>将disk2分成一个分区:</p>
-<pre><code>diskutil partitionDisk disk2 1 \
-    JHFS+ one R
-</code></pre><p>将disk2分成2个分区,第2分区为JHFS+格式250G大小, 第1分区为JHFS+格式并使用硬盘剩余大小</p>
-<pre><code>diskutil partitionDisk disk3 2 GPT \
-    JHFS+ one R \
-    JHFS+ two 250G
-</code></pre><p>将disk2分成3个分区, 第三分区10G ExFAT格式, 第二分区 250G JHFS+格式， 第一分区使用剩余空间 JHFS+格式</p>
-<pre><code>diskutil partitionDisk disk3 MBR \
-    JHFS+ one R \
-    JHFS+ two 250G \
-    ExFAT three 10G
-</code></pre><p>硬盘空间单位可选:B, K, M, G, T, P, % , R(剩余)</p>
-<h2 id="删除-disk2的APFS-容器"><a href="#删除-disk2的APFS-容器" class="headerlink" title="删除 disk2的APFS 容器"></a>删除 disk2的APFS 容器</h2><pre><code>diskutil apfs deleteContainer /dev/disk2
-</code></pre><p>ref: <a href="https://tobywf.com/2017/01/diskutil/" target="_blank" rel="noopener">https://tobywf.com/2017/01/diskutil/</a></p>
+        <h1 id="awk-FS-分割符表达"><a href="#awk-FS-分割符表达" class="headerlink" title="awk FS 分割符表达"></a>awk FS 分割符表达</h1><h2 id="在java中使用-u0001打印的分割符号"><a href="#在java中使用-u0001打印的分割符号" class="headerlink" title="在java中使用\u0001打印的分割符号"></a>在java中使用<code>\u0001</code>打印的分割符号</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F "\x01"</span><br></pre></td></tr></table></figure>
+<h2 id="vim中-0x1c-会显示为亮-这个符号是ASCII-FS-0x1c-28-FILE-SEPARATOR-IS4"><a href="#vim中-0x1c-会显示为亮-这个符号是ASCII-FS-0x1c-28-FILE-SEPARATOR-IS4" class="headerlink" title="vim中 0x1c 会显示为亮 ^\ 这个符号是ASCII FS 0x1c 28 FILE SEPARATOR (IS4)"></a>vim中 <code>0x1c</code> 会显示为亮 <code>^\</code> 这个符号是ASCII <code>FS 0x1c 28 FILE SEPARATOR (IS4)</code></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F "\0x1c"</span><br></pre></td></tr></table></figure>
+<h2 id="如果分隔符号是-0x1c-awk中使用"><a href="#如果分隔符号是-0x1c-awk中使用" class="headerlink" title="如果分隔符号是 |0x1c awk中使用"></a>如果分隔符号是 <code>|0x1c</code> awk中使用</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F "\\|\0x1c"</span><br></pre></td></tr></table></figure>
+<h2 id="使用-或-分割"><a href="#使用-或-分割" class="headerlink" title="使用,或;分割"></a>使用,或;分割</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F ",|;"</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -605,13 +523,9 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
       
         <div class="post-tags">
           
-            <a href="/tags/mac/" rel="tag"># mac</a>
+            <a href="/tags/awk/" rel="tag"># awk</a>
           
-            <a href="/tags/macOS/" rel="tag"># macOS</a>
-          
-            <a href="/tags/diskutil/" rel="tag"># diskutil</a>
-          
-            <a href="/tags/command-Tools/" rel="tag"># command Tools</a>
+            <a href="/tags/coreutil/" rel="tag"># coreutil</a>
           
         </div>
       
@@ -624,15 +538,15 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/04/24/ubuntu/ubuntu-mirror/" rel="next" title="Ubuntu Mirror">
+                <i class="fa fa-chevron-left"></i> Ubuntu Mirror
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/19/mac/mac-ps4-install-usb-stock/" rel="prev" title="MacOS 创建 PlayStation4 安装U盘">
-                MacOS 创建 PlayStation4 安装U盘 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -847,7 +761,7 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看硬盘列表"><span class="nav-number">1.</span> <span class="nav-text">查看硬盘列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卸载disk2"><span class="nav-number">2.</span> <span class="nav-text">卸载disk2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化-eraseDisk-子命令"><span class="nav-number">3.</span> <span class="nav-text">格式化 eraseDisk 子命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#File-System"><span class="nav-number">4.</span> <span class="nav-text">File System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区表格式"><span class="nav-number">5.</span> <span class="nav-text">分区表格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化"><span class="nav-number">6.</span> <span class="nav-text">格式化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除-disk2的APFS-容器"><span class="nav-number">7.</span> <span class="nav-text">删除 disk2的APFS 容器</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#awk-FS-分割符表达"><span class="nav-number">1.</span> <span class="nav-text">awk FS 分割符表达</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在java中使用-u0001打印的分割符号"><span class="nav-number">1.1.</span> <span class="nav-text">在java中使用\u0001打印的分割符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim中-0x1c-会显示为亮-这个符号是ASCII-FS-0x1c-28-FILE-SEPARATOR-IS4"><span class="nav-number">1.2.</span> <span class="nav-text">vim中 0x1c 会显示为亮 ^\ 这个符号是ASCII FS 0x1c 28 FILE SEPARATOR (IS4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果分隔符号是-0x1c-awk中使用"><span class="nav-number">1.3.</span> <span class="nav-text">如果分隔符号是 |0x1c awk中使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-或-分割"><span class="nav-number">1.4.</span> <span class="nav-text">使用,或;分割</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Awk Cookie]]></title>
+    <url>%2F2019%2F04%2F24%2Fcoreutil%2Fawk%2F</url>
+    <content type="text"><![CDATA[awk FS 分割符表达在java中使用\u0001打印的分割符号1awk -F "\x01" vim中 0x1c 会显示为亮 ^\ 这个符号是ASCII FS 0x1c 28 FILE SEPARATOR (IS4)1awk -F "\0x1c" 如果分隔符号是 |0x1c awk中使用1awk -F "\\|\0x1c" 使用,或;分割1awk -F ",|;"]]></content>
+      <categories>
+        <category>coreutil</category>
+      </categories>
+      <tags>
+        <tag>awk</tag>
+        <tag>coreutil</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu Mirror]]></title>
+    <url>%2F2019%2F04%2F24%2Fubuntu%2Fubuntu-mirror%2F</url>
+    <content type="text"><![CDATA[Ubuntu mirror address name url 清华大学开源软件镜像站 https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ 中科大镜像源 https://mirrors.ustc.edu.cn/ubuntu/ 北京交通大学 https://mirror.bjtu.edu.cn/ubuntu/ 官方 http://archive.ubuntu.com/ubuntu 参考参考1]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu Server apt 安装 sshd]]></title>
     <url>%2F2019%2F04%2F23%2Fubuntu%2Fubuntu-sshd%2F</url>
     <content type="text"><![CDATA[apt install openssh server1sudo apt install openssh-server start ssh server1service ssh start]]></content>
