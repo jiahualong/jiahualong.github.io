@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Gremlin Tutorial]]></title>
+    <url>%2F2019%2F04%2F25%2Fgraphdbms%2Fgremlin%2F</url>
+    <content type="text"><![CDATA[Gremlin是Apache TinkerPop开发的图遍历语言和虚拟机。适用于基于OLTP的图数据库以及基于OLAP的图处理器。1 Neo4j 与 OrientDB 均支持Gremlin,完整列表参见 Microsfot的spring-data-gremlin Gremlin官方 DB-Engines Ranking of Graph DBMS]]></content>
+      <categories>
+        <category>GraphDBMS</category>
+      </categories>
+      <tags>
+        <tag>gremlin</tag>
+        <tag>GraphDBMS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Awk Cookie]]></title>
     <url>%2F2019%2F04%2F24%2Fcoreutil%2Fawk%2F</url>
     <content type="text"><![CDATA[awk FS 分割符表达在java中使用\u0001打印的分割符号1awk -F "\x01" vim中 0x1c 会显示为亮 ^\ 这个符号是ASCII FS 0x1c 28 FILE SEPARATOR (IS4)1awk -F "\0x1c" 如果分隔符号是 |0x1c awk中使用1awk -F "\\|\0x1c" 使用,或;分割1awk -F ",|;"]]></content>
@@ -45,18 +57,6 @@
       <tags>
         <tag>neo4j</tag>
         <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Gremlin Tutorial]]></title>
-    <url>%2F2019%2F04%2F22%2Fgraphdbms%2Fgremlin%2F</url>
-    <content type="text"><![CDATA[Gremlin是Apache TinkerPop开发的图遍历语言和虚拟机。适用于基于OLTP的图数据库以及基于OLAP的图处理器。1 Neo4j 与 OrientDB 均支持Gremlin,完整列表参见 Microsfot的spring-data-gremlin Gremlin官方 DB-Engines Ranking of Graph DBMS]]></content>
-      <categories>
-        <category>GraphDBMS</category>
-      </categories>
-      <tags>
-        <tag>gremlin</tag>
-        <tag>GraphDBMS</tag>
       </tags>
   </entry>
   <entry>
