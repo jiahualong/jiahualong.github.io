@@ -48,15 +48,28 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Gremlin Tutorial]]></title>
+    <url>%2F2019%2F04%2F22%2Fgraphdbms%2Fgremlin%2F</url>
+    <content type="text"><![CDATA[Gremlin是Apache TinkerPop开发的图遍历语言和虚拟机。适用于基于OLTP的图数据库以及基于OLAP的图处理器。1 Neo4j 与 OrientDB 均支持Gremlin,完整列表参见 Microsfot的spring-data-gremlin Gremlin官方 DB-Engines Ranking of Graph DBMS]]></content>
+      <categories>
+        <category>GraphDBMS</category>
+      </categories>
+      <tags>
+        <tag>gremlin</tag>
+        <tag>GraphDBMS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[spring-boot-starter-data-neo4j 在OpenJDK8出现No class information found in OGM meta-data for class]]></title>
-    <url>%2F2019%2F04%2F22%2Fneo4j%2Fneo4j-no-class-found-in-ogm%2F</url>
+    <url>%2F2019%2F04%2F22%2Fgraphdbms%2Fneo4j-no-class-found-in-ogm%2F</url>
     <content type="text"><![CDATA[现象在OpenJDK 1.8中使用java -jar sdn5-movies-0.0.1-SNAPSHOT.jar 时出现 No class information found in OGM meta-data for classmovies.spring.data.neo4j.domain.Person` 错误. 添加mvn配置12345&lt;dependency&gt; &lt;groupId&gt;io.github.lukehutch&lt;/groupId&gt; &lt;artifactId&gt;fast-classpath-scanner&lt;/artifactId&gt; &lt;version&gt;3.1.13&lt;/version&gt;&lt;/dependency&gt; 参考issuse 604]]></content>
       <categories>
-        <category>neo4j</category>
+        <category>GraphDBMS</category>
       </categories>
       <tags>
         <tag>neo4j</tag>
-        <tag>springboot</tag>
+        <tag>GraphDBMS</tag>
+        <tag>SpringBoot</tag>
       </tags>
   </entry>
   <entry>
