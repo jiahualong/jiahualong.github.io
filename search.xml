@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Install Docker in Ubuntu 18.04]]></title>
+    <url>%2F2019%2F04%2F27%2Fdocker%2Fdocker-ubuntu18%2F</url>
+    <content type="text"><![CDATA[uninstall old versionsudo apt-get remove docker docker-engine docker.io containerd runc update respsudo apt-get update sudo apt-get install \ apt-transport-https \ ca-certificates \ curl \ gnupg-agent \ software-properties-common curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ $(lsb_release -cs) \ stable" #-or- sudo add-apt-repository \ "deb [arch=amd64] https://download.docker.com/linux/ubuntu \ bionic \ stable" sudo apt-get update sudo apt-get install docker-ce docker-ce-cli containerd.io refGet Docker CE for Ubuntu]]></content>
+      <categories>
+        <category>ubuntu</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ssh-keygen Cookie]]></title>
+    <url>%2F2019%2F04%2F27%2Fcoreutil%2Fssh-keygen%2F</url>
+    <content type="text"><![CDATA[gen 4096 bit RSA Key1ssh-keygen -b 4096 gen 256 bit ECDSA Key1ssh-keygen -t ed25519 args-f 指定名字 -C 添加备注 copy id1ssh-copy-id -i ~/.ssh/my.pub -p 21 username@remote-server args note -i 指定证书文件，默认为~/.ssh/id_rsa.pub -p 指定remote server ssh port username@ 指定用户 默认为当前操作用户 手工| dir | mod || ~/.ssh | 700 || id | 600 || id.pub | 600 || authorized_keys | 600 |]]></content>
+      <categories>
+        <category>coreutil</category>
+      </categories>
+      <tags>
+        <tag>ssh</tag>
+        <tag>coreutil</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu nmcli]]></title>
     <url>%2F2019%2F04%2F26%2Fubuntu%2Fubuntu-nmcli%2F</url>
     <content type="text"><![CDATA[nmcli WIFI Configre 显示wifi接口12345nmcli d DEVICE TYPE STATE CONNECTION...wlan0 wifi disconnected -- set wifi on1nmcli r wifi on 显示wili列表12345nmcli d wifi list* SSID MODE CHAN RATE SIGNAL BARS SECURITY ... my_wifi Infra 5 54 Mbit/s 89 ▂▄▆█ WPA2 连接wifi1nmcli d wifi connect my_wifi password &lt;password&gt; 参考 1 2]]></content>
@@ -25,18 +49,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Java Regex Cookie]]></title>
-    <url>%2F2019%2F04%2F26%2Fjava%2Fjava-regex%2F</url>
-    <content type="text"><![CDATA[移除非a-zA-Z0-9空格-号以外的字符123jshell&gt; &quot;Hello - World !&quot;.replaceAll(&quot;[^a-zA-Z0-9 -]&quot;, &quot;&quot;); ...&gt;$1 ==&gt; &quot;Hello - World &quot;]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>regex</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Apache Commons-Text]]></title>
     <url>%2F2019%2F04%2F26%2Fjava%2Fapache-commons-text%2F</url>
     <content type="text"><![CDATA[Apache Commons-Text包用于进行 HTML XML CSV JSON 字符处理的 StringEscapeUtils现已放入Commons-Text包 12345&lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-text&lt;/artifactId&gt; &lt;version&gt;1.6&lt;/version&gt;&lt;/dependency&gt;]]></content>
@@ -49,6 +61,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Java Regex Cookie]]></title>
+    <url>%2F2019%2F04%2F26%2Fjava%2Fjava-regex%2F</url>
+    <content type="text"><![CDATA[移除非a-zA-Z0-9空格-号以外的字符123jshell&gt; &quot;Hello - World !&quot;.replaceAll(&quot;[^a-zA-Z0-9 -]&quot;, &quot;&quot;); ...&gt;$1 ==&gt; &quot;Hello - World &quot;]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>regex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Gremlin Tutorial]]></title>
     <url>%2F2019%2F04%2F25%2Fgraphdbms%2Fgremlin%2F</url>
     <content type="text"><![CDATA[Gremlin是Apache TinkerPop开发的图遍历语言和虚拟机。适用于基于OLTP的图数据库以及基于OLAP的图处理器。1 Neo4j 与 OrientDB 均支持Gremlin,完整列表参见 Microsfot的spring-data-gremlin Gremlin官方 DB-Engines Ranking of Graph DBMS]]></content>
@@ -56,8 +80,8 @@
         <category>GraphDBMS</category>
       </categories>
       <tags>
-        <tag>gremlin</tag>
         <tag>GraphDBMS</tag>
+        <tag>gremlin</tag>
       </tags>
   </entry>
   <entry>
@@ -75,7 +99,7 @@
   <entry>
     <title><![CDATA[Ubuntu Mirror]]></title>
     <url>%2F2019%2F04%2F24%2Fubuntu%2Fubuntu-mirror%2F</url>
-    <content type="text"><![CDATA[Ubuntu mirror address name url 163 http://mirrors.163.com/ubuntu/ 清华大学开源软件镜像站 https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ 中科大镜像源 https://mirrors.ustc.edu.cn/ubuntu/ 北京交通大学 https://mirror.bjtu.edu.cn/ubuntu/ 官方 http://archive.ubuntu.com/ubuntu]]></content>
+    <content type="text"><![CDATA[Ubuntu mirror address name url 163 http://mirrors.163.com/ubuntu/ 清华大学开源软件镜像站 https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ 中科大镜像源 https://mirrors.ustc.edu.cn/ubuntu/ 北京交通大学 https://mirror.bjtu.edu.cn/ubuntu/ 官方 http://archive.ubuntu.com/ubuntu 18.04 tsinghua12345678910cat /etc/apt/sources.list.d/official-package-repositories.list deb http://packages.linuxmint.com sonya main upstream import backportdeb http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial main restricted universe multiversedeb http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-updates main restricted universe multiversedeb http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-backports main restricted universe multiversedeb http://security.ubuntu.com/ubuntu/ xenial-security main restricted universe multiversedeb http://archive.canonical.com/ubuntu/ xenial partner 18.04 docker123cat additional-repositories.listdeb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable]]></content>
       <categories>
         <category>ubuntu</category>
       </categories>
@@ -116,8 +140,8 @@
       </categories>
       <tags>
         <tag>neo4j</tag>
-        <tag>GraphDBMS</tag>
         <tag>SpringBoot</tag>
+        <tag>GraphDBMS</tag>
       </tags>
   </entry>
   <entry>

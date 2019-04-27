@@ -380,6 +380,384 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/27/docker/docker-ubuntu18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/27/docker/docker-ubuntu18/" class="post-title-link" itemprop="url">Install Docker in Ubuntu 18.04</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-27 22:51:00 / Modified: 14:18:56" itemprop="dateCreated datePublished" datetime="2019-04-27T22:51:00+08:00">2019-04-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="uninstall-old-version"><a href="#uninstall-old-version" class="headerlink" title="uninstall old version"></a>uninstall old version</h2><p>sudo apt-get remove docker docker-engine docker.io containerd runc</p>
+<h2 id="update-resp"><a href="#update-resp" class="headerlink" title="update resp"></a>update resp</h2><pre><code class="shell">sudo apt-get update
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+<span class="meta">   $</span>(lsb_release -cs) \
+   stable"
+
+<span class="meta">#</span>-or-
+
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   bionic \
+   stable"
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+</code></pre>
+<h2 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h2><p><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/" target="_blank" rel="noopener">Get Docker CE for Ubuntu</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/27/coreutil/ssh-keygen/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/27/coreutil/ssh-keygen/" class="post-title-link" itemprop="url">ssh-keygen Cookie</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-27 20:17:00 / Modified: 13:50:18" itemprop="dateCreated datePublished" datetime="2019-04-27T20:17:00+08:00">2019-04-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coreutil/" itemprop="url" rel="index"><span itemprop="name">coreutil</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="gen-4096-bit-RSA-Key"><a href="#gen-4096-bit-RSA-Key" class="headerlink" title="gen 4096 bit RSA Key"></a>gen 4096 bit RSA Key</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -b 4096</span><br></pre></td></tr></table></figure>
+<h2 id="gen-256-bit-ECDSA-Key"><a href="#gen-256-bit-ECDSA-Key" class="headerlink" title="gen 256 bit ECDSA Key"></a>gen 256 bit ECDSA Key</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519</span><br></pre></td></tr></table></figure>
+<h2 id="args"><a href="#args" class="headerlink" title="args"></a>args</h2><pre><code>-f 指定名字
+-C 添加备注
+</code></pre><h2 id="copy-id"><a href="#copy-id" class="headerlink" title="copy id"></a>copy id</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/my.pub -p 21 username@remote-server</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">args</th>
+<th style="text-align:left">note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-i</td>
+<td style="text-align:left">指定证书文件，默认为<code>~/.ssh/id_rsa.pub</code></td>
+</tr>
+<tr>
+<td style="text-align:left">-p</td>
+<td style="text-align:left">指定remote server ssh port</td>
+</tr>
+<tr>
+<td style="text-align:left">username@</td>
+<td style="text-align:left">指定用户 默认为当前操作用户</td>
+</tr>
+</tbody>
+</table>
+<h2 id="手工"><a href="#手工" class="headerlink" title="手工"></a>手工</h2><p>| dir    | mod |<br>| ~/.ssh | 700 |<br>| id     | 600 |<br>| id.pub | 600 |<br>| authorized_keys | 600 | </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/26/ubuntu/ubuntu-nmcli/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -711,167 +1089,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/26/java/java-regex/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/26/java/java-regex/" class="post-title-link" itemprop="url">Java Regex Cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-26 22:41:00 / Modified: 22:51:22" itemprop="dateCreated datePublished" datetime="2019-04-26T22:41:00+08:00">2019-04-26</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="移除非a-zA-Z0-9空格-号以外的字符"><a href="#移除非a-zA-Z0-9空格-号以外的字符" class="headerlink" title="移除非a-zA-Z0-9空格-号以外的字符"></a>移除非a-zA-Z0-9空格-号以外的字符</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jshell&gt; &quot;Hello - World !&quot;.replaceAll(&quot;[^a-zA-Z0-9 -]&quot;, &quot;&quot;);</span><br><span class="line">   ...&gt;</span><br><span class="line">$1 ==&gt; &quot;Hello - World &quot;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/26/java/apache-commons-text/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -978,6 +1195,167 @@
           
             <h2 id="Apache-Commons-Text包"><a href="#Apache-Commons-Text包" class="headerlink" title="Apache Commons-Text包"></a>Apache Commons-Text包</h2><p>用于进行 HTML XML CSV JSON 字符处理的 <code>StringEscapeUtils</code>现已放入Commons-Text包</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.commons<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-text<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/26/java/java-regex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/26/java/java-regex/" class="post-title-link" itemprop="url">Java Regex Cookie</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-26 22:41:00 / Modified: 22:51:22" itemprop="dateCreated datePublished" datetime="2019-04-26T22:41:00+08:00">2019-04-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="移除非a-zA-Z0-9空格-号以外的字符"><a href="#移除非a-zA-Z0-9空格-号以外的字符" class="headerlink" title="移除非a-zA-Z0-9空格-号以外的字符"></a>移除非a-zA-Z0-9空格-号以外的字符</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jshell&gt; &quot;Hello - World !&quot;.replaceAll(&quot;[^a-zA-Z0-9 -]&quot;, &quot;&quot;);</span><br><span class="line">   ...&gt;</span><br><span class="line">$1 ==&gt; &quot;Hello - World &quot;</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1437,7 +1815,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-26 22:03:50" itemprop="dateModified" datetime="2019-04-26T22:03:50+08:00">2019-04-26</time>
+                <time title="Modified: 2019-04-27 14:16:33" itemprop="dateModified" datetime="2019-04-27T14:16:33+08:00">2019-04-27</time>
               
             
           </span>
@@ -1491,7 +1869,7 @@
       
         
           
-            <h1 id="Ubuntu-mirror-address"><a href="#Ubuntu-mirror-address" class="headerlink" title="Ubuntu mirror address"></a>Ubuntu mirror address</h1><table>
+            <h2 id="Ubuntu-mirror-address"><a href="#Ubuntu-mirror-address" class="headerlink" title="Ubuntu mirror address"></a>Ubuntu mirror address</h2><table>
 <thead>
 <tr>
 <th>name</th>
@@ -1521,6 +1899,8 @@
 </tr>
 </tbody>
 </table>
+<h2 id="18-04-tsinghua"><a href="#18-04-tsinghua" class="headerlink" title="18.04 tsinghua"></a>18.04 tsinghua</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/apt/sources.list.d/official-package-repositories.list </span><br><span class="line"></span><br><span class="line">deb http://packages.linuxmint.com sonya main upstream import backport</span><br><span class="line"></span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial main restricted universe multiverse</span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-backports main restricted universe multiverse</span><br><span class="line"></span><br><span class="line">deb http://security.ubuntu.com/ubuntu/ xenial-security main restricted universe multiverse</span><br><span class="line">deb http://archive.canonical.com/ubuntu/ xenial partner</span><br></pre></td></tr></table></figure>
+<h2 id="18-04-docker"><a href="#18-04-docker" class="headerlink" title="18.04 docker"></a>18.04 docker</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat additional-repositories.list</span><br><span class="line"></span><br><span class="line">deb [arch=amd64] https://download.docker.com/linux/ubuntu    bionic    stable</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1724,360 +2104,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/22/docker/docker-neo4j/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/22/docker/docker-neo4j/" class="post-title-link" itemprop="url">Install Neo4j With Docker</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-22 22:51:00" itemprop="dateCreated datePublished" datetime="2019-04-22T22:51:00+08:00">2019-04-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-23 14:47:37" itemprop="dateModified" datetime="2019-04-23T14:47:37+08:00">2019-04-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/neo4j/" itemprop="url" rel="index"><span itemprop="name">neo4j</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="使用Docker安装Neo4j"><a href="#使用Docker安装Neo4j" class="headerlink" title="使用Docker安装Neo4j"></a>使用Docker安装Neo4j</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    --detach \</span><br><span class="line">    --publish=7474:7474 --publish=7687:7687 \</span><br><span class="line">    --volume=$HOME/neo4j/data:/data \</span><br><span class="line">    --volume=$HOME/neo4j/logs:/logs \</span><br><span class="line">    --env=NEO4J_dbms_memory_pagecache_size=4G \</span><br><span class="line">    neo4j:3.5</span><br></pre></td></tr></table></figure>
-<h3 id="web界面"><a href="#web界面" class="headerlink" title="web界面"></a>web界面</h3><p><a href="http://localhost:7474/browser/" target="_blank" rel="noopener">http://localhost:7474/browser/</a></p>
-<p><code>neo4j</code>/<code>neo4`</code></p>
-<h2 id="Neo4j-Movies-Example-with-Spring-Data-Neo4j"><a href="#Neo4j-Movies-Example-with-Spring-Data-Neo4j" class="headerlink" title="Neo4j Movies Example with Spring Data Neo4j"></a>Neo4j Movies Example with Spring Data Neo4j</h2><p><a href="https://github.com/neo4j-examples/movies-java-spring-data-neo4j" target="_blank" rel="noopener">https://github.com/neo4j-examples/movies-java-spring-data-neo4j</a></p>
-<h2 id="Neo4j-Client"><a href="#Neo4j-Client" class="headerlink" title="Neo4j Client"></a>Neo4j Client</h2><p><a href="https://neo4j-client.net/" target="_blank" rel="noopener">下载Neo4j-Client</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install cleishm/neo4j/neo4j-client</span><br></pre></td></tr></table></figure>
-<p>neo4j-client -u neo4j localhost</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/22/graphdbms/neo4j-no-class-found-in-ogm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/22/graphdbms/neo4j-no-class-found-in-ogm/" class="post-title-link" itemprop="url">spring-boot-starter-data-neo4j 在OpenJDK8出现No class information found in OGM meta-data for class</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-22 22:44:00" itemprop="dateCreated datePublished" datetime="2019-04-22T22:44:00+08:00">2019-04-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-25 22:06:11" itemprop="dateModified" datetime="2019-04-25T22:06:11+08:00">2019-04-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/GraphDBMS/" itemprop="url" rel="index"><span itemprop="name">GraphDBMS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h1><p>在OpenJDK 1.8中使用java -jar sdn5-movies-0.0.1-SNAPSHOT.jar 时出现 <code>No class information found in OGM meta-data for class</code>movies.spring.data.neo4j.domain.Person` 错误.</p>
-<p>添加mvn配置<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.github.lukehutch<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>fast-classpath-scanner<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.1.13<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://github.com/neo4j/neo4j-ogm/issues/604" target="_blank" rel="noopener">issuse 604</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2126,7 +2152,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
