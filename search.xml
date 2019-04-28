@@ -97,6 +97,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[History Cookie]]></title>
+    <url>%2F2019%2F04%2F24%2Fcoreutil%2Fhistory%2F</url>
+    <content type="text"><![CDATA[清理history1history -c]]></content>
+      <categories>
+        <category>coreutil</category>
+      </categories>
+      <tags>
+        <tag>coreutil</tag>
+        <tag>history</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Ubuntu Mirror]]></title>
     <url>%2F2019%2F04%2F24%2Fubuntu%2Fubuntu-mirror%2F</url>
     <content type="text"><![CDATA[Ubuntu mirror address name url 163 http://mirrors.163.com/ubuntu/ 清华大学开源软件镜像站 https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ 中科大镜像源 https://mirrors.ustc.edu.cn/ubuntu/ 北京交通大学 https://mirror.bjtu.edu.cn/ubuntu/ 官方 http://archive.ubuntu.com/ubuntu 18.04 tsinghua12345678910cat /etc/apt/sources.list.d/official-package-repositories.list deb http://packages.linuxmint.com sonya main upstream import backportdeb http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial main restricted universe multiversedeb http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-updates main restricted universe multiversedeb http://mirrors.tuna.tsinghua.edu.cn/ubuntu xenial-backports main restricted universe multiversedeb http://security.ubuntu.com/ubuntu/ xenial-security main restricted universe multiversedeb http://archive.canonical.com/ubuntu/ xenial partner 18.04 docker123cat additional-repositories.listdeb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable]]></content>
