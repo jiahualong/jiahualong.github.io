@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2019%2F05%2F01%2Fclojure%2Fclojure-start%2F</url>
+    <content type="text"><![CDATA[title: Clojure Startdate: 2019-05-01 22:06:00tags: - clojure categories: - clojure install Clojure REPL (Read Evan Print Loop)install leiningenbrew install lein 创建项目lein new helloworld cd helloworld 进入 repllein repl 测试(+ 1 1) 退出(quit) 字面值=&gt; 42 42 =&gt; 12.1 12.1 =&gt; 1/3 1/3 =&gt;4.0/2 =&gt; (/ 1 3) 1/3 =&gt; (/ 1 3.0) 0.333333333 文本&quot;jam&quot; 关键字:jam 字符\j booleantrue false nullnil]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu apt Cookie]]></title>
     <url>%2F2019%2F04%2F30%2Fubuntu%2Fubuntu-apt%2F</url>
     <content type="text"><![CDATA[apt cache tmp file location/var/cache/apt/archives/ clean tmp fileapt clean apt autoclean apt autoremove apt 走 socks*12apt install tsocksvi /etc/tsocks.conf 123456local = 192.168.1.0/255.255.255.0 local = 127.0.0.0/255.0.0.0server = 0.0.0.0 #socks IPserver_type = 5 #socks versionserver_port = 24 ＃socks port 1tsocks apt install xxxx ref]]></content>
