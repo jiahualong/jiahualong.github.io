@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Chrome Cookies]]></title>
     <url>%2F2019%2F05%2F03%2Fchrome%2Fclome-cookies%2F</url>
-    <content type="text"><![CDATA[chrome导入jqueryif (!window.jQuery) { document.body.appendChild((function(){ var s = document.createElement(“script”); s.src = ‘//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js’; return s; })());} chrome flagschrome://flags/]]></content>
+    <content type="text"><![CDATA[chrome导入jquery1234567if (!window.jQuery) &#123; document.body.appendChild((function()&#123; var s = document.createElement("script"); s.src = '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'; return s; &#125;)());&#125; chrome flagschrome://flags/]]></content>
       <categories>
         <category>chrome</category>
       </categories>
