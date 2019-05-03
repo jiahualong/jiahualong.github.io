@@ -380,6 +380,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/24/coreutil/awk/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/24/coreutil/awk/" class="post-title-link" itemprop="url">Awk Cookie</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-24 23:57:00" itemprop="dateCreated datePublished" datetime="2019-04-24T23:57:00+08:00">2019-04-24</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-25 00:06:49" itemprop="dateModified" datetime="2019-04-25T00:06:49+08:00">2019-04-25</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coreutil/" itemprop="url" rel="index"><span itemprop="name">coreutil</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="awk-FS-分割符表达"><a href="#awk-FS-分割符表达" class="headerlink" title="awk FS 分割符表达"></a>awk FS 分割符表达</h1><h2 id="在java中使用-u0001打印的分割符号"><a href="#在java中使用-u0001打印的分割符号" class="headerlink" title="在java中使用\u0001打印的分割符号"></a>在java中使用<code>\u0001</code>打印的分割符号</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F "\x01"</span><br></pre></td></tr></table></figure>
+<h2 id="vim中-0x1c-会显示为亮-这个符号是ASCII-FS-0x1c-28-FILE-SEPARATOR-IS4"><a href="#vim中-0x1c-会显示为亮-这个符号是ASCII-FS-0x1c-28-FILE-SEPARATOR-IS4" class="headerlink" title="vim中 0x1c 会显示为亮 ^\ 这个符号是ASCII FS 0x1c 28 FILE SEPARATOR (IS4)"></a>vim中 <code>0x1c</code> 会显示为亮 <code>^\</code> 这个符号是ASCII <code>FS 0x1c 28 FILE SEPARATOR (IS4)</code></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F "\0x1c"</span><br></pre></td></tr></table></figure>
+<h2 id="如果分隔符号是-0x1c-awk中使用"><a href="#如果分隔符号是-0x1c-awk中使用" class="headerlink" title="如果分隔符号是 |0x1c awk中使用"></a>如果分隔符号是 <code>|0x1c</code> awk中使用</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F "\\|\0x1c"</span><br></pre></td></tr></table></figure>
+<h2 id="使用-或-分割"><a href="#使用-或-分割" class="headerlink" title="使用,或;分割"></a>使用,或;分割</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -F ",|;"</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/24/coreutil/history/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2132,7 +2308,7 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">19</span>
+                    <span class="site-state-item-count">20</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2167,7 +2343,9 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2240,7 +2418,9 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

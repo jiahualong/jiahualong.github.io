@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Chrome Cookies]]></title>
+    <url>%2F2019%2F05%2F03%2Fchrome%2Fclome-cookies%2F</url>
+    <content type="text"><![CDATA[chrome导入jqueryif (!window.jQuery) { document.body.appendChild((function(){ var s = document.createElement(“script”); s.src = ‘//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js’; return s; })());} chrome flagschrome://flags/]]></content>
+      <categories>
+        <category>chrome</category>
+      </categories>
+      <tags>
+        <tag>chrome</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Clojure Start]]></title>
     <url>%2F2019%2F05%2F01%2Fclojure%2Fclojure-start%2F</url>
-    <content type="text"><![CDATA[install Clojure REPL (Read Evan Print Loop) leiningenbrew install lein 创建项目lein new helloworld cd helloworld 进入 repllein repl 测试(+ 1 1) 退出(quit) 字面值=&gt; 42 42 =&gt; 12.1 12.1 =&gt; 1/3 1/3 =&gt;4.0/2 =&gt; (/ 1 3) 1/3 =&gt; (/ 1 3.0) 0.333333333 文本&quot;jam&quot; 关键字:jam 字符\j booleantrue false nullnil]]></content>
+    <content type="text"><![CDATA[install Clojure REPL (Read Evan Print Loop) leiningenbrew install lein 创建项目lein new helloworld cd helloworld 进入 repllein repl 测试(+ 1 1) 退出(quit) 字面值=&gt; 42 42 =&gt; 12.1 12.1 =&gt; 1/3 1/3 =&gt;4.0/2 =&gt; (/ 1 3) 1/3 =&gt; (/ 1 3.0) 0.333333333 文本&quot;jam&quot; 关键字:jam 字符\j booleantrue false nullnil clojure 结构基本 ;; 开始是注释 输入数字 打印数字 输入小数 打印小数 输入分数 不可约整数 1/3 打印 1/3 输入分数 可约的整数 4/2 打印 2 输入分数 小数 出错 4.0/2 函数操作符放在前面 (/ 1 3) ;; 1/3(/ 1 3) ;; 0.333333333333333 输入字符串“hello world” ;; hello world 输入字符，字符前加\\j ;; 字符j true false nil 嵌套(+ 1 (+ 1 1) ;; 3 容器Collection list vector map set Clojure vector使用vector收集向量数据 [1 2 :hello “name”] first 返回第一个元素 rest 返回最后一个元素 nth 返回第n个元素 last 返回最后一个元素， vector比list更有效率 count 返回大小 conj 向列表中加添元素 (vector 在末尾添, list 在头部添) cons 被添完后只会成为 list (nth [ 1 2 3 ] 0);; 1 (nth [ 1 2 3 ] 3);; OutOfIndex (count [1 2 3 4 ]);; 4 conj 添加元素conj vector 添加到末尾(conj [1 2 3] 4);; [1 2 3 4](conj [1 2 3] 4 5);; [1 2 3 4 5] conj list 添加到开始(conj ‘(1 2 3) 4);; (4 1 2 3) (conj ‘(1 2 3) 4 5);; (5 4 1 2 3) Clojure List创建 list‘(1 2 “jam” :hello) ;;惯用法‘(1, 2, “jam”, :hello)‘(1 2 3 4 5 6)(list 1 2 3 4 5 6) ;;使用list函数) 操作list first 返回第一个元素, first 为空时返回 nill rest 返回除第一个之后的所有元素, rest 为空时返回 () cons 参数为两个， 一个是元素，第二个是列表 (cons 5 ‘()) ;; (5) 因列表末尾是nil，所以可以用nil指一个列表(cons 5 nil) ;; (5) 多个cons(cons 2 (cons 3 (cons 4 (cons 5 nil))));;(2 3 4 5) ‘(1 2 3 4 5)]]></content>
       <categories>
         <category>clojure</category>
       </categories>
