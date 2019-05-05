@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[MacOS 创建 FreeBSD 安装U盘]]></title>
+    <url>%2F2019%2F05%2F05%2Ffreebsd%2Fmac-freebsd-install-usb-stock%2F</url>
+    <content type="text"><![CDATA[本文将在Mac上制作FreeBSD系统安装U盘 Setup1 获取FreeBSD镜像FreeBSD-11.0-RELEASE-amd64-memstick.img Setup2 找到U盘盘符接入U盘之前查看目前硬盘列表 diskutil list 将U盘接入Mac后再次查看硬盘列表 diskutil list 对比多出的即为U盘 本例中为 `/dev/disk2` 卸载disk2 diskutil unmountDisk disk2 Setup3 烧录镜像sudo dd if=./FreeBSD-11.0-RELEASE-amd64-memstick.img of=/dev/rdisk2 bs=1m]]></content>
+      <categories>
+        <category>freebsd</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>macOS</tag>
+        <tag>安装U盘</tag>
+        <tag>FreeBSD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Chrome Cookies]]></title>
     <url>%2F2019%2F05%2F03%2Fchrome%2Fclome-cookies%2F</url>
     <content type="text"><![CDATA[chrome导入jquery1234567if (!window.jQuery) &#123; document.body.appendChild((function()&#123; var s = document.createElement("script"); s.src = '//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'; return s; &#125;)());&#125; chrome flagschrome://flags/]]></content>
