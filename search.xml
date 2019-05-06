@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[unzip xz file]]></title>
+    <url>%2F2019%2F05%2F06%2Fcoreutil%2Fxz%2F</url>
+    <content type="text"><![CDATA[macOS12345brew install xzxz -d youfile.xzunxz &lt; file.tar.xz &gt; file.tarxz -dc &lt; file.tar.xz &gt; file.tar Ubuntu123456sudo apt install xz-utilstar xf archive.tar.xztar xf archive.tar.gztar xf archive.tartar cfJ &lt;archive.tar.xz&gt; &lt;files&gt; 1tar -xJf file.pkg.tar.xz The -J is the flag that specifically deals with .xz files.]]></content>
+      <categories>
+        <category>coreutil</category>
+      </categories>
+      <tags>
+        <tag>coreutil</tag>
+        <tag>xz</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[freebsd apk instal java]]></title>
     <url>%2F2019%2F05%2F06%2Ffreebsd%2Ffreebsd-java%2F</url>
     <content type="text"><![CDATA[环境 FreeBSD 11.1 OpenJDK installsudo pkg install openjdk mount filessudo mount -t fdescfs fdesc /dev/fd sudo mount -t procfs proc /proc auto mount filesudo vi /etc/fstab Insert the following mount information into the file: 12fdesc /dev/fd fdescfs rw 0 0proc /proc procfs rw 0 0 Save and exit. 参考]]></content>
