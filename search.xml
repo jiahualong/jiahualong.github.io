@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[tmux invalid option windows-status-fg]]></title>
+    <url>%2F2019%2F05%2F06%2Fcoreutil%2Ftmux%2F</url>
+    <content type="text"><![CDATA[tmux 2.9开始将不再支持-bg风格配置,将会由 123set -g mode-bg yellowset -g mode-fg redset -g mode-attr blink,underline 改为 1set -g mode-style fg=yellow,bg=red,blink,underline ref]]></content>
+      <categories>
+        <category>coreutil</category>
+      </categories>
+      <tags>
+        <tag>coreutil</tag>
+        <tag>tmux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[unzip xz file]]></title>
     <url>%2F2019%2F05%2F06%2Fcoreutil%2Fxz%2F</url>
     <content type="text"><![CDATA[macOS12345brew install xzxz -d youfile.xzunxz &lt; file.tar.xz &gt; file.tarxz -dc &lt; file.tar.xz &gt; file.tar Ubuntu123456sudo apt install xz-utilstar xf archive.tar.xztar xf archive.tar.gztar xf archive.tartar cfJ &lt;archive.tar.xz&gt; &lt;files&gt; 1tar -xJf file.pkg.tar.xz The -J is the flag that specifically deals with .xz files.]]></content>
