@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[freebsd apk instal java]]></title>
+    <url>%2F2019%2F05%2F06%2Ffreebsd%2Ffreebsd-java%2F</url>
+    <content type="text"><![CDATA[环境 FreeBSD 11.1 OpenJDK installsudo pkg install openjdk mount filessudo mount -t fdescfs fdesc /dev/fd sudo mount -t procfs proc /proc auto mount filesudo vi /etc/fstab Insert the following mount information into the file: 12fdesc /dev/fd fdescfs rw 0 0proc /proc procfs rw 0 0 Save and exit. 参考]]></content>
+      <categories>
+        <category>freebsd</category>
+      </categories>
+      <tags>
+        <tag>FreeBSD</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MacOS 创建 FreeBSD 安装U盘]]></title>
     <url>%2F2019%2F05%2F05%2Ffreebsd%2Fmac-freebsd-install-usb-stock%2F</url>
     <content type="text"><![CDATA[本文将在Mac上制作FreeBSD系统安装U盘 Setup1 获取FreeBSD镜像FreeBSD-11.0-RELEASE-amd64-memstick.img Setup2 找到U盘盘符接入U盘之前查看目前硬盘列表 diskutil list 将U盘接入Mac后再次查看硬盘列表 diskutil list 对比多出的即为U盘 本例中为 `/dev/disk2` 卸载disk2 diskutil unmountDisk disk2 Setup3 烧录镜像sudo dd if=./FreeBSD-11.0-RELEASE-amd64-memstick.img of=/dev/rdisk2 bs=1m]]></content>
