@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[7za cookie book]]></title>
+    <url>%2F2019%2F05%2F16%2Fcoreutil%2F7za%2F</url>
+    <content type="text"><![CDATA[将mydir压缩成 hello.7z7za a hello.7z mydir 将mydir压缩成 hello.7z 并加密7za a -p hello.7z mydir Test压缩包7za t hello.7z 设置压缩等级7za a hello.7z mydir -mx=0 0为不压缩，最高为9,默认为5]]></content>
+      <categories>
+        <category>coreutil</category>
+      </categories>
+      <tags>
+        <tag>coreutil</tag>
+        <tag>7za</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[tmux invalid option windows-status-fg]]></title>
     <url>%2F2019%2F05%2F06%2Fcoreutil%2Ftmux%2F</url>
     <content type="text"><![CDATA[tmux 2.9开始将不再支持-bg风格配置,将会由 123set -g mode-bg yellowset -g mode-fg redset -g mode-attr blink,underline 改为 1set -g mode-style fg=yellow,bg=red,blink,underline ref]]></content>
@@ -46,8 +58,8 @@
       <tags>
         <tag>mac</tag>
         <tag>macOS</tag>
-        <tag>安装U盘</tag>
         <tag>FreeBSD</tag>
+        <tag>安装U盘</tag>
       </tags>
   </entry>
   <entry>
@@ -104,8 +116,8 @@
         <category>coreutil</category>
       </categories>
       <tags>
-        <tag>ssh</tag>
         <tag>coreutil</tag>
+        <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
@@ -116,8 +128,8 @@
         <category>ubuntu</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>coreutil</tag>
+        <tag>ubuntu</tag>
         <tag>nmcli</tag>
       </tags>
   </entry>
@@ -133,18 +145,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Apache Commons-Text]]></title>
-    <url>%2F2019%2F04%2F26%2Fjava%2Fapache-commons-text%2F</url>
-    <content type="text"><![CDATA[Apache Commons-Text包用于进行 HTML XML CSV JSON 字符处理的 StringEscapeUtils现已放入Commons-Text包 12345&lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-text&lt;/artifactId&gt; &lt;version&gt;1.6&lt;/version&gt;&lt;/dependency&gt;]]></content>
-      <categories>
-        <category>java</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-        <tag>apache</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Java Regex Cookie]]></title>
     <url>%2F2019%2F04%2F26%2Fjava%2Fjava-regex%2F</url>
     <content type="text"><![CDATA[移除非a-zA-Z0-9空格-号以外的字符123jshell&gt; &quot;Hello - World !&quot;.replaceAll(&quot;[^a-zA-Z0-9 -]&quot;, &quot;&quot;); ...&gt;$1 ==&gt; &quot;Hello - World &quot;]]></content>
@@ -154,6 +154,18 @@
       <tags>
         <tag>java</tag>
         <tag>regex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Apache Commons-Text]]></title>
+    <url>%2F2019%2F04%2F26%2Fjava%2Fapache-commons-text%2F</url>
+    <content type="text"><![CDATA[Apache Commons-Text包用于进行 HTML XML CSV JSON 字符处理的 StringEscapeUtils现已放入Commons-Text包 12345&lt;dependency&gt; &lt;groupId&gt;org.apache.commons&lt;/groupId&gt; &lt;artifactId&gt;commons-text&lt;/artifactId&gt; &lt;version&gt;1.6&lt;/version&gt;&lt;/dependency&gt;]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>apache</tag>
       </tags>
   </entry>
   <entry>
@@ -211,8 +223,8 @@
         <category>ubuntu</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>ssh</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -223,8 +235,8 @@
         <category>neo4j</category>
       </categories>
       <tags>
-        <tag>neo4j</tag>
         <tag>docker</tag>
+        <tag>neo4j</tag>
       </tags>
   </entry>
   <entry>
@@ -275,8 +287,8 @@
       <tags>
         <tag>mac</tag>
         <tag>macOS</tag>
-        <tag>PlayStation</tag>
         <tag>安装U盘</tag>
+        <tag>PlayStation</tag>
       </tags>
   </entry>
   <entry>
