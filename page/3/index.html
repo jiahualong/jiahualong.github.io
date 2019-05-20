@@ -380,6 +380,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/22/docker/docker-neo4j/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/22/docker/docker-neo4j/" class="post-title-link" itemprop="url">Install Neo4j With Docker</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-22 22:51:00" itemprop="dateCreated datePublished" datetime="2019-04-22T22:51:00+08:00">2019-04-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-04-23 14:47:37" itemprop="dateModified" datetime="2019-04-23T14:47:37+08:00">2019-04-23</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/neo4j/" itemprop="url" rel="index"><span itemprop="name">neo4j</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="使用Docker安装Neo4j"><a href="#使用Docker安装Neo4j" class="headerlink" title="使用Docker安装Neo4j"></a>使用Docker安装Neo4j</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    --detach \</span><br><span class="line">    --publish=7474:7474 --publish=7687:7687 \</span><br><span class="line">    --volume=$HOME/neo4j/data:/data \</span><br><span class="line">    --volume=$HOME/neo4j/logs:/logs \</span><br><span class="line">    --env=NEO4J_dbms_memory_pagecache_size=4G \</span><br><span class="line">    neo4j:3.5</span><br></pre></td></tr></table></figure>
+<h3 id="web界面"><a href="#web界面" class="headerlink" title="web界面"></a>web界面</h3><p><a href="http://localhost:7474/browser/" target="_blank" rel="noopener">http://localhost:7474/browser/</a></p>
+<p><code>neo4j</code>/<code>neo4`</code></p>
+<h2 id="Neo4j-Movies-Example-with-Spring-Data-Neo4j"><a href="#Neo4j-Movies-Example-with-Spring-Data-Neo4j" class="headerlink" title="Neo4j Movies Example with Spring Data Neo4j"></a>Neo4j Movies Example with Spring Data Neo4j</h2><p><a href="https://github.com/neo4j-examples/movies-java-spring-data-neo4j" target="_blank" rel="noopener">https://github.com/neo4j-examples/movies-java-spring-data-neo4j</a></p>
+<h2 id="Neo4j-Client"><a href="#Neo4j-Client" class="headerlink" title="Neo4j Client"></a>Neo4j Client</h2><p><a href="https://neo4j-client.net/" target="_blank" rel="noopener">下载Neo4j-Client</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install cleishm/neo4j/neo4j-client</span><br></pre></td></tr></table></figure>
+<p>neo4j-client -u neo4j localhost</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/22/graphdbms/neo4j-no-class-found-in-ogm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -606,6 +785,211 @@
             
               
 
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/elk/" itemprop="url" rel="index"><span itemprop="name">elk</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>将logs目录下的所有log文件发送至Kafka</p>
+</blockquote>
+<h1 id="环境信息"><a href="#环境信息" class="headerlink" title="环境信息"></a>环境信息</h1><table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">logstash version</td>
+<td style="text-align:left">6.0.1</td>
+</tr>
+<tr>
+<td style="text-align:left">kafka</td>
+<td style="text-align:left">192.168.1.2:9002</td>
+</tr>
+<tr>
+<td style="text-align:left">kafka topic</td>
+<td style="text-align:left">myapplog</td>
+</tr>
+<tr>
+<td style="text-align:left">log目录</td>
+<td style="text-align:left">/MyApp/logs/</td>
+</tr>
+</tbody>
+</table>
+<h1 id="logstash-config"><a href="#logstash-config" class="headerlink" title="logstash config"></a>logstash config</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">    file &#123;</span><br><span class="line">        path =&gt; &quot;/MyApp/logs/*.log&quot;</span><br><span class="line">        start_position =&gt; &quot;beginning&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">output &#123;</span><br><span class="line">    kafka &#123;</span><br><span class="line">        bootstrap_servers =&gt; &quot;192.168.1.2:9092&quot;</span><br><span class="line">        topic_id =&gt; &quot;myapplog&quot;</span><br><span class="line">        compression_type =&gt; &quot;gzip&quot; # string (optional)， one of [&quot;none&quot;， &quot;gzip&quot;， &quot;snappy&quot;]， default: &quot;none&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="运行logstash"><a href="#运行logstash" class="headerlink" title="运行logstash"></a>运行logstash</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logstash -f apiweblogstash.conf</span><br></pre></td></tr></table></figure>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>监听myapplog主题并查看消息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafkacat -C -b 192.168.1.2:9092 -t myapplog</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/21/elk/install-elasticsearch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/21/elk/install-elasticsearch/" class="post-title-link" itemprop="url">LogStash Note</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-21 12:39:21" itemprop="dateCreated datePublished" datetime="2019-04-21T12:39:21+08:00">2019-04-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-18 18:00:05" itemprop="dateModified" datetime="2019-05-18T18:00:05+08:00">2019-05-18</time>
               
             
           </span>
@@ -1414,7 +1798,7 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1453,7 +1837,9 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1536,7 +1922,11 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

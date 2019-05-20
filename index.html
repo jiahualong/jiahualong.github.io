@@ -380,6 +380,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/05/20/spring/feign-name-already-been-defined/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/20/spring/feign-name-already-been-defined/" class="post-title-link" itemprop="url">Feign Name already been defined</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-20 18:00:00 / Modified: 18:05:31" itemprop="dateCreated datePublished" datetime="2019-05-20T18:00:00+08:00">2019-05-20</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>FeignClient使用相同名字时会提示重名并无法启动,可以通过添加contextId进行区分两个client</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@FeignClient(contextId = &quot;a&quot;, name = &quot;User&quot;, configuration = FeignClientsConfiguration.class)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">@FeignClient(contextId = &quot;b&quot;, name = &quot;User&quot;, configuration = FeignClientsConfiguration.class)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The bean FeignClientSpecification&apos;, defined in null, could not be registered. </span><br><span class="line">A bean with that name has already been defined in null and overriding is disabled.</span><br><span class="line"></span><br><span class="line">Caused by: org.springframework.beans.factory.support.BeanDefinitionOverrideException: </span><br><span class="line">Invalid bean definition with name xxxx.FeignClientSpecification&apos; defined in null: </span><br><span class="line">Cannot register bean definition [Generic bean: class [org.springframework.cloud.openfeign.FeignClientSpecificatio...</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/05/16/coreutil/7za/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1986,194 +2149,6 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/27/coreutil/ssh-keygen/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/27/coreutil/ssh-keygen/" class="post-title-link" itemprop="url">ssh-keygen Cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-27 20:17:00 / Modified: 13:50:18" itemprop="dateCreated datePublished" datetime="2019-04-27T20:17:00+08:00">2019-04-27</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coreutil/" itemprop="url" rel="index"><span itemprop="name">coreutil</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="gen-4096-bit-RSA-Key"><a href="#gen-4096-bit-RSA-Key" class="headerlink" title="gen 4096 bit RSA Key"></a>gen 4096 bit RSA Key</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -b 4096</span><br></pre></td></tr></table></figure>
-<h2 id="gen-256-bit-ECDSA-Key"><a href="#gen-256-bit-ECDSA-Key" class="headerlink" title="gen 256 bit ECDSA Key"></a>gen 256 bit ECDSA Key</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t ed25519</span><br></pre></td></tr></table></figure>
-<h2 id="args"><a href="#args" class="headerlink" title="args"></a>args</h2><pre><code>-f 指定名字
--C 添加备注
-</code></pre><h2 id="copy-id"><a href="#copy-id" class="headerlink" title="copy id"></a>copy id</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/my.pub -p 21 username@remote-server</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">args</th>
-<th style="text-align:left">note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">-i</td>
-<td style="text-align:left">指定证书文件，默认为<code>~/.ssh/id_rsa.pub</code></td>
-</tr>
-<tr>
-<td style="text-align:left">-p</td>
-<td style="text-align:left">指定remote server ssh port</td>
-</tr>
-<tr>
-<td style="text-align:left">username@</td>
-<td style="text-align:left">指定用户 默认为当前操作用户</td>
-</tr>
-</tbody>
-</table>
-<h2 id="手工"><a href="#手工" class="headerlink" title="手工"></a>手工</h2><p>| dir    | mod |<br>| ~/.ssh | 700 |<br>| id     | 600 |<br>| id.pub | 600 |<br>| authorized_keys | 600 | </p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2222,7 +2197,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2261,7 +2236,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
                     
                       
                     
-                    <span class="site-state-item-count">11</span>
+                      
+                    
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2344,7 +2321,11 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
