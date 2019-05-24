@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="STAN.CC">
 <meta property="og:description" content="将logs目录下的所有log文件发送至Kafka  环境信息         logstash version 6.0.1   kafka 192.168.1.2:9002   kafka topic myapplog   log目录 /MyApp/logs/    logstash config12345678910111213input &amp;#123;    file &amp;#123;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-18T10:00:05.677Z">
+<meta property="og:updated_time" content="2019-05-23T09:06:33.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LogStash Note">
 <meta name="twitter:description" content="将logs目录下的所有log文件发送至Kafka  环境信息         logstash version 6.0.1   kafka 192.168.1.2:9002   kafka topic myapplog   log目录 /MyApp/logs/    logstash config12345678910111213input &amp;#123;    file &amp;#123;">
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-05-18 18:00:05" itemprop="dateModified" datetime="2019-05-18T18:00:05+08:00">2019-05-18</time>
+                <time title="Modified: 2019-05-23 17:06:33" itemprop="dateModified" datetime="2019-05-23T17:06:33+08:00">2019-05-23</time>
               
             
           </span>
@@ -529,7 +529,16 @@
 <h1 id="运行logstash"><a href="#运行logstash" class="headerlink" title="运行logstash"></a>运行logstash</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logstash -f apiweblogstash.conf</span><br></pre></td></tr></table></figure>
 <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>监听myapplog主题并查看消息</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafkacat -C -b 192.168.1.2:9092 -t myapplog</span><br></pre></td></tr></table></figure>
+<h1 id="查看es状态"><a href="#查看es状态" class="headerlink" title="查看es状态"></a>查看es状态</h1><pre><code>curl -XGET 10.1.1.176:9200/
+</code></pre><h1 id="查看索引状态"><a href="#查看索引状态" class="headerlink" title="查看索引状态"></a>查看索引状态</h1><pre><code>curl &apos;10.1.1.176:9200/_cat/indices?v&apos;
+</code></pre><h1 id="Docker-安装-ElasticSearch-Head"><a href="#Docker-安装-ElasticSearch-Head" class="headerlink" title="Docker 安装 ElasticSearch Head"></a>Docker 安装 ElasticSearch Head</h1><pre><code>docker run -d --name eshead -p 9100:9100 mobz/elasticsearch-head:5
 
+http://localhost:9100
+</code></pre><h1 id="需要elasticsearch允许跨域访问"><a href="#需要elasticsearch允许跨域访问" class="headerlink" title="需要elasticsearch允许跨域访问"></a>需要elasticsearch允许跨域访问</h1><pre><code>vim /elasticsearch/config/elasticsearch.yml 添加
+
+http.cors.enabled: true
+http.cors.allow-origin: &quot;*&quot;
+</code></pre>
       
     </div>
 
@@ -650,7 +659,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">27</span>
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -691,7 +700,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -778,7 +789,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">35</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -842,7 +857,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境信息"><span class="nav-number">1.</span> <span class="nav-text">环境信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#logstash-config"><span class="nav-number">2.</span> <span class="nav-text">logstash config</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行logstash"><span class="nav-number">3.</span> <span class="nav-text">运行logstash</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#环境信息"><span class="nav-number">1.</span> <span class="nav-text">环境信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#logstash-config"><span class="nav-number">2.</span> <span class="nav-text">logstash config</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行logstash"><span class="nav-number">3.</span> <span class="nav-text">运行logstash</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看es状态"><span class="nav-number">5.</span> <span class="nav-text">查看es状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看索引状态"><span class="nav-number">6.</span> <span class="nav-text">查看索引状态</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-安装-ElasticSearch-Head"><span class="nav-number">7.</span> <span class="nav-text">Docker 安装 ElasticSearch Head</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#需要elasticsearch允许跨域访问"><span class="nav-number">8.</span> <span class="nav-text">需要elasticsearch允许跨域访问</span></a></li></ol></div>
             
 
           </div>

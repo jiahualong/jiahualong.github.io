@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mybatis-plus 3.1.1 bug]]></title>
+    <url>%2F2019%2F05%2F24%2Fspring%2Fmybatis-plus-bug%2F</url>
+    <content type="text"><![CDATA[SpringTest中正常， SPringApplication中不正常, 用的同一个配置Mybatis plus 3.1.1 12org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.builder.BuilderException: Error evaluating expression &apos;ew.sqlSegment != null and ew.sqlSegment != &apos;&apos; and ew.nonEmptyOfWhere&apos;. Cause: org.apache.ibatis.ognl.OgnlException: sqlSegment [com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Your property named &quot;XXXXXXX&quot; cannot find the corresponding database column name!] at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-2.0.1.jar:2.0.1]]]></content>
+      <categories>
+        <category>spring</category>
+      </categories>
+      <tags>
+        <tag>spring</tag>
+        <tag>mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Compile With Docker Maven]]></title>
+    <url>%2F2019%2F05%2F23%2Fdocker%2Fdocker-maven%2F</url>
+    <content type="text"><![CDATA[docker maven images1docker pull 3-jdk-8 [link](https://hub.docker.com/_/maven) mvn package 当前目录 1234docker run -it --rm --name my-maven-project \ -v "$(pwd)":/usr/src/mymaven \ -w /usr/src/mymaven maven:3-jdk-8 \ mvn clean package mvn package 当前目录,并使用本地/data/m2目录的maven配置 12345docker run -it --rm --name maven-project-xxx \ -v /data/m2:/root/.m2 \ -v &quot;$(pwd)&quot;:/usr/src/mvnp \ -w /usr/src/mvnp maven:3-jdk-8 \ mvn clean package 使用非root运行1docker run -v ~/.m2:/var/maven/.m2 -ti --rm -u 1000 -e MAVEN_CONFIG=/var/maven/.m2 maven mvn -Duser.home=/var/maven archetype:generate]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>maven</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Feign Name already been defined]]></title>
     <url>%2F2019%2F05%2F20%2Fspring%2Ffeign-name-already-been-defined%2F</url>
     <content type="text"><![CDATA[FeignClient使用相同名字时会提示重名并无法启动,可以通过添加contextId进行区分两个client 12345@FeignClient(contextId = &quot;a&quot;, name = &quot;User&quot;, configuration = FeignClientsConfiguration.class)...@FeignClient(contextId = &quot;b&quot;, name = &quot;User&quot;, configuration = FeignClientsConfiguration.class)... error123456The bean FeignClientSpecification&apos;, defined in null, could not be registered. A bean with that name has already been defined in null and overriding is disabled.Caused by: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name xxxx.FeignClientSpecification&apos; defined in null: Cannot register bean definition [Generic bean: class [org.springframework.cloud.openfeign.FeignClientSpecificatio...]]></content>
@@ -279,7 +303,7 @@
   <entry>
     <title><![CDATA[LogStash Note]]></title>
     <url>%2F2019%2F04%2F21%2Felk%2Finstall-elasticsearch%2F</url>
-    <content type="text"><![CDATA[将logs目录下的所有log文件发送至Kafka 环境信息 logstash version 6.0.1 kafka 192.168.1.2:9002 kafka topic myapplog log目录 /MyApp/logs/ logstash config12345678910111213input &#123; file &#123; path =&gt; &quot;/MyApp/logs/*.log&quot; start_position =&gt; &quot;beginning&quot; &#125;&#125;output &#123; kafka &#123; bootstrap_servers =&gt; &quot;192.168.1.2:9092&quot; topic_id =&gt; &quot;myapplog&quot; compression_type =&gt; &quot;gzip&quot; # string (optional)， one of [&quot;none&quot;， &quot;gzip&quot;， &quot;snappy&quot;]， default: &quot;none&quot; &#125;&#125; 运行logstash1logstash -f apiweblogstash.conf 测试监听myapplog主题并查看消息 1kafkacat -C -b 192.168.1.2:9092 -t myapplog]]></content>
+    <content type="text"><![CDATA[将logs目录下的所有log文件发送至Kafka 环境信息 logstash version 6.0.1 kafka 192.168.1.2:9002 kafka topic myapplog log目录 /MyApp/logs/ logstash config12345678910111213input &#123; file &#123; path =&gt; &quot;/MyApp/logs/*.log&quot; start_position =&gt; &quot;beginning&quot; &#125;&#125;output &#123; kafka &#123; bootstrap_servers =&gt; &quot;192.168.1.2:9092&quot; topic_id =&gt; &quot;myapplog&quot; compression_type =&gt; &quot;gzip&quot; # string (optional)， one of [&quot;none&quot;， &quot;gzip&quot;， &quot;snappy&quot;]， default: &quot;none&quot; &#125;&#125; 运行logstash1logstash -f apiweblogstash.conf 测试监听myapplog主题并查看消息 1kafkacat -C -b 192.168.1.2:9092 -t myapplog 查看es状态curl -XGET 10.1.1.176:9200/ 查看索引状态curl &apos;10.1.1.176:9200/_cat/indices?v&apos; Docker 安装 ElasticSearch Headdocker run -d --name eshead -p 9100:9100 mobz/elasticsearch-head:5 http://localhost:9100 需要elasticsearch允许跨域访问vim /elasticsearch/config/elasticsearch.yml 添加 http.cors.enabled: true http.cors.allow-origin: &quot;*&quot;]]></content>
       <categories>
         <category>elk</category>
       </categories>
