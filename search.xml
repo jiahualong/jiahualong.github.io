@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Intellij IDEA 卡顿]]></title>
+    <url>%2F2019%2F05%2F27%2Fidea%2Fidea-%E5%8D%A1%E9%A1%BF%2F</url>
+    <content type="text"><![CDATA[环境 15-inch Mid 2015 MacBookPro macOS 10.14 IDEA 2019.1.2 IdeaVim 问题及解决方案在调整了macOS屏幕缩放后，IdeaVim jk有延迟感，很卡. 安装Idea Plugin JB SDK Bintray Downloader, 重启Idea后按 Shit+Cmd+A 输入Get JB SDK from Bintay 为Idea下载最新版JDK, b后面数据越大越新. 下载了jbsdk11b125_osx_x64.tar.gz后，按install ，重启后即可. 如果在下载过程中提示JDK mx内存不足请设置成2048 或者使用brew cask install Resolutionator将显示调整为非Retina 参见Selecting the JDK version the IDE will run under在OS X上使用4K显示器时，IDE速度非常慢]]></content>
+      <categories>
+        <category>idea</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mybatis-plus 3.1.1 bug]]></title>
     <url>%2F2019%2F05%2F24%2Fspring%2Fmybatis-plus-bug%2F</url>
     <content type="text"><![CDATA[SpringTest中正常， SPringApplication中不正常, 用的同一个配置Mybatis plus 3.1.1 12org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.builder.BuilderException: Error evaluating expression &apos;ew.sqlSegment != null and ew.sqlSegment != &apos;&apos; and ew.nonEmptyOfWhere&apos;. Cause: org.apache.ibatis.ognl.OgnlException: sqlSegment [com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Your property named &quot;XXXXXXX&quot; cannot find the corresponding database column name!] at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-2.0.1.jar:2.0.1]]]></content>
@@ -217,6 +228,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Install ElasticSearch]]></title>
+    <url>%2F2019%2F04%2F25%2Felk%2Finstall-elasticsearch%2F</url>
+    <content type="text"><![CDATA[Download ElasticSearch下载 Run12tar xvf elasticsearch-6.8.0.tar.gzelasticsearch-6.8.0/bin/elasticsearch 基本操作Status访问[http://localhost:9200](http://localhost:9200) 查看健康程度http://localhost:9200/_cat/health?v 查询Nodehttp://localhost:9200/_cat/nodes?v 查询indexcurl http://localhost:9200/_cat/indices?v 创建User的Indexcurl -XPUT &apos;localhost:9200/user&apos; 删除索引curl -XDELETE &apos;localhost:9200/user&apos; 在website索引中创建 blog 类型 的 document id为1123456curl -X PUT &apos;localhost:9200/website/blog/1?pretty&apos; -H &apos;Content-Type: application/json&apos; -d &apos;&#123; &quot;title&quot;: &quot;第一条blog&quot;, &quot;text&quot;: &quot;Just trying this out...&quot;, &quot;date&quot;: &quot;2019/01/01&quot;&#125;&apos; 获取document为1的文档curl &apos;localhost:9200/website/blog/1?pretty&apos; 返回文档的一部分curl &apos;localhost:9200/website/blog/1?pretty&amp;_source=title,text&apos; 只返回source部分curl &apos;localhost:9200/website/blog/1/_source&apos; 检查文档是否存在curl -i -XHEAD http://localhost:9200/website/blog/1 httpcode 200是找到 404是未找到 为ES7做准备type设置为 _doc 安ik中文分词1.download or compile optional 1 - download pre-build package from here: https://github.com/medcl/elasticsearch-analysis-ik/releases create plugin folder cd your-es-root/plugins/ &amp;&amp; mkdir ik unzip plugin to folder your-es-root/plugins/ik optional 2 - use elasticsearch-plugin to install ( supported from version v5.5.1 ): ./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.3.0/elasticsearch-analysis-ik-6.3.0.zipNOTE: replace 6.3.0 to your own elasticsearch version 2.restart elasticsearch 测试分词(ES6) 查看索引 curl http://localhost:9200/_cat/indices?v 创建索引user curl -XPUT http://localhost:9200/user 创建mapping 设置_doc的mapping 每个字段的类型分词使用的分词器 12345678910curl -XPOST http://localhost:9200/user/_doc/_mapping -H &apos;Content-Type:application/json&apos; -d&apos;&#123; &quot;properties&quot;: &#123; &quot;content&quot;: &#123; &quot;type&quot;: &quot;text&quot;, &quot;analyzer&quot;: &quot;ik_max_word&quot;, &quot;search_analyzer&quot;: &quot;ik_smart&quot; &#125; &#125;&#125;&apos; 添加文档 1234567891011121314curl -XPOST http://localhost:9200/user/_doc/1 -H &apos;Content-Type:application/json&apos; -d&apos;&#123;&quot;content&quot;:&quot;美国留给伊拉克的是个烂摊子吗&quot;&#125;&apos;curl -XPOST http://localhost:9200/user/_doc/2 -H &apos;Content-Type:application/json&apos; -d&apos;&#123;&quot;content&quot;:&quot;公安部：各地校车将享最高路权&quot;&#125;&apos;curl -XPOST http://localhost:9200/user/_doc/3 -H &apos;Content-Type:application/json&apos; -d&apos;&#123;&quot;content&quot;:&quot;中国足球失去的9个月回不来了&quot;&#125;&apos;curl -XPOST http://localhost:9200/user/_doc/4 -H &apos;Content-Type:application/json&apos; -d&apos;&#123;&quot;content&quot;:&quot;中纪委网站喊话：想投案吗？可以宽大处理的那种&quot;&#125;&apos;curl -XPOST http://localhost:9200/user/_doc/5 -H &apos;Content-Type:application/json&apos; -d&apos;&#123;&quot;content&quot;:&quot;稀土是什么土？为啥中国的稀土最牛？&quot;&#125;&apos; 5.查找并高亮 1234567891011 curl -XPOST http://localhost:9200/user/_doc/_search -H &apos;Content-Type:application/json&apos; -d&apos;&#123; &quot;query&quot; : &#123; &quot;match&quot; : &#123; &quot;content&quot; : &quot;中国&quot; &#125;&#125;, &quot;highlight&quot; : &#123; &quot;pre_tags&quot; : [&quot;&lt;em1&gt;&quot;, &quot;&lt;em2&gt;&quot;], &quot;post_tags&quot; : [&quot;&lt;/em11&gt;&quot;, &quot;&lt;/em2&gt;&quot;], &quot;fields&quot; : &#123; &quot;content&quot; : &#123;&#125; &#125; &#125;&#125;&apos; 6.测试分词 1234 curl -XGET &quot;http://localhost:9200/user/_analyze&quot; -H &apos;Content-Type: application/json&apos; -d&apos;&#123; &quot;text&quot;:&quot;中华人民共和国国歌MN hey john how areyou&quot;,&quot;tokenizer&quot;: &quot;ik_smart&quot;&#125;&apos; “size”: 1“from”:1 or 关系{ “query” : { “match” : { “desc” : “小红 小蓝” }}}’ and 关系 12345678910&#123; &quot;query&quot;: &#123; &quot;bool&quot;: &#123; &quot;must&quot;: [ &#123; &quot;match&quot;: &#123; &quot;desc&quot;: &quot;小红&quot; &#125; &#125;, &#123; &quot;match&quot;: &#123; &quot;desc&quot;: &quot;小蓝&quot; &#125; &#125; ] &#125; &#125;&#125;&apos; 内置分词器 standard （标准分词器） english （英文分词） chinese （中文分词） docker install kibanadocker run -d –name kibana –net somenetwork -p 5601:5601 kibana:7.1.0 docker run -d –name elasticsearch –net somenetwork -p 9200:9200 -p 9300:9300 \ -e “discovery.type=single-node” elasticsearch:7.1.0 docker run -d –name kibana -p 5601:5601 kibana:7.1.0 docker run -d –name elasticsearch -p 9200:9200 -p 9300:9300 \ -e “discovery.type=single-node” elasticsearch:7.1.0 run 6docker run -d –name elasticsearch6 -p 9206:9200 -p 9306:9300 \ -e “discovery.type=single-node” elasticsearch:6.8.0 elasticsearch.yml关闭跨域12http.cors.enabled: truehttp.cors.allow-origin: &quot;*&quot; 1234567cluster.name: 集群的名字 node.name: 节点的名字path.data: /datapath.logs: /logsnetwork.host: 0.0.0.0http.port: 9200discovery.zen.ping.unicast.hosts: [&quot;192.168.0.2&quot;, &quot;192.168.0.3&quot;] 中文分词https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.1.0/elasticsearch-analysis-ik-7.1.0.zip Kibana server is not ready yet进入kibana容器，将/usr/share/kibana/config 中更新下elasticsearch配置 引用 Elasticsearch 默认分词器和中分分词器之间的比较及使用方法 Elasticsearch 移除 type 之后的新姿势 全文搜索引擎 Elasticsearch 入门教程 Elasticsearch 可用的中文分词器使用 Elasticsearch 系统默认分词器 全文搜索引擎 Elasticsearch 集群搭建入门教程 IK中文分词 全文搜索引擎 Elasticsearch 入门教程 全文搜索引擎 Elasticsearch 集群搭建入门教程 *为Elasticsearch添加中文分词，对比分词器效果]]></content>
+      <categories>
+        <category>elk</category>
+      </categories>
+      <tags>
+        <tag>elk</tag>
+        <tag>elasticsearch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Awk Cookie]]></title>
     <url>%2F2019%2F04%2F24%2Fcoreutil%2Fawk%2F</url>
     <content type="text"><![CDATA[awk FS 分割符表达在java中使用\u0001打印的分割符号1awk -F "\x01" vim中 0x1c 会显示为亮 ^\ 这个符号是ASCII FS 0x1c 28 FILE SEPARATOR (IS4)1awk -F "\0x1c" 如果分隔符号是 |0x1c awk中使用1awk -F "\\|\0x1c" 使用,或;分割1awk -F ",|;"]]></content>
@@ -292,18 +315,6 @@
     <title><![CDATA[LogStash Note]]></title>
     <url>%2F2019%2F04%2F21%2Felk%2FLogStash-Note%2F</url>
     <content type="text"><![CDATA[将logs目录下的所有log文件发送至Kafka 环境信息 logstash version 6.0.1 kafka 192.168.1.2:9002 kafka topic myapplog log目录 /MyApp/logs/ logstash config12345678910111213input &#123; file &#123; path =&gt; &quot;/MyApp/logs/*.log&quot; start_position =&gt; &quot;beginning&quot; &#125;&#125;output &#123; kafka &#123; bootstrap_servers =&gt; &quot;192.168.1.2:9092&quot; topic_id =&gt; &quot;myapplog&quot; compression_type =&gt; &quot;gzip&quot; # string (optional)， one of [&quot;none&quot;， &quot;gzip&quot;， &quot;snappy&quot;]， default: &quot;none&quot; &#125;&#125; 运行logstash1logstash -f apiweblogstash.conf 测试监听myapplog主题并查看消息 1kafkacat -C -b 192.168.1.2:9092 -t myapplog]]></content>
-      <categories>
-        <category>elk</category>
-      </categories>
-      <tags>
-        <tag>logstash</tag>
-        <tag>elk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[LogStash Note]]></title>
-    <url>%2F2019%2F04%2F21%2Felk%2Finstall-elasticsearch%2F</url>
-    <content type="text"><![CDATA[将logs目录下的所有log文件发送至Kafka 环境信息 logstash version 6.0.1 kafka 192.168.1.2:9002 kafka topic myapplog log目录 /MyApp/logs/ logstash config12345678910111213input &#123; file &#123; path =&gt; &quot;/MyApp/logs/*.log&quot; start_position =&gt; &quot;beginning&quot; &#125;&#125;output &#123; kafka &#123; bootstrap_servers =&gt; &quot;192.168.1.2:9092&quot; topic_id =&gt; &quot;myapplog&quot; compression_type =&gt; &quot;gzip&quot; # string (optional)， one of [&quot;none&quot;， &quot;gzip&quot;， &quot;snappy&quot;]， default: &quot;none&quot; &#125;&#125; 运行logstash1logstash -f apiweblogstash.conf 测试监听myapplog主题并查看消息 1kafkacat -C -b 192.168.1.2:9092 -t myapplog 查看es状态curl -XGET 10.1.1.176:9200/ 查看索引状态curl &apos;10.1.1.176:9200/_cat/indices?v&apos; Docker 安装 ElasticSearch Headdocker run -d --name eshead -p 9100:9100 mobz/elasticsearch-head:5 http://localhost:9100 需要elasticsearch允许跨域访问vim /elasticsearch/config/elasticsearch.yml 添加 http.cors.enabled: true http.cors.allow-origin: &quot;*&quot;]]></content>
       <categories>
         <category>elk</category>
       </categories>
