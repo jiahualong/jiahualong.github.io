@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Debian 8 / 9 Set TimeZone]]></title>
+    <url>%2F2019%2F06%2F04%2Fdebian%2Fdebian-timezone%2F</url>
+    <content type="text"><![CDATA[Debian 8 Set TimeZone +812echo &quot;Asia/Shanghai&quot; &gt; /etc/timezonedpkg-reconfigure -f noninteractive tzdata Debian 9 Set TimeZone +8ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtimedpkg-reconfigure -f noninteractive tzdata 在Dockerfile中配置时区(Debian8)12RUN echo &quot;Asia/Shanghai&quot; &gt; /etc/timezoneRUN dpkg-reconfigure -f noninteractive tzdata 在MySQL JDBC 8中设置时区1serverTimezone=GMT%2B8 REFCHANGING THE TIMEZONE IN DEBIAN 9 (STRETCH)Docker 中如何设置 container 的时区JDBC连接数据库 mysql serverTimezone useSSL 时差]]></content>
+      <categories>
+        <category>debian</category>
+      </categories>
+      <tags>
+        <tag>debian</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Intellij IDEA 卡顿]]></title>
     <url>%2F2019%2F05%2F27%2Fidea%2Fidea-%E5%8D%A1%E9%A1%BF%2F</url>
     <content type="text"><![CDATA[环境 15-inch Mid 2015 MacBookPro macOS 10.14 IDEA 2019.1.2 IdeaVim 问题及解决方案在调整了macOS屏幕缩放后，IdeaVim jk有延迟感，很卡. 安装Idea Plugin JB SDK Bintray Downloader, 重启Idea后按 Shit+Cmd+A 输入Get JB SDK from Bintay 为Idea下载最新版JDK, b后面数据越大越新. 下载了jbsdk11b125_osx_x64.tar.gz后，按install ，重启后即可. 如果在下载过程中提示JDK mx内存不足请设置成2048 或者使用brew cask install Resolutionator将显示调整为非Retina TipsShit+CMD+A Find Action 仅在主界面时可按. Get JB SDK 为下载idea JDK Switch Boot JDK 可切换启动JDK 参见Selecting the JDK version the IDE will run under在OS X上使用4K显示器时，IDE速度非常慢]]></content>

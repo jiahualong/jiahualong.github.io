@@ -380,6 +380,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/06/04/debian/debian-timezone/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/04/debian/debian-timezone/" class="post-title-link" itemprop="url">Debian 8 / 9 Set TimeZone</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-04 15:54:00 / Modified: 15:42:29" itemprop="dateCreated datePublished" datetime="2019-06-04T15:54:00+08:00">2019-06-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/debian/" itemprop="url" rel="index"><span itemprop="name">debian</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Debian-8-Set-TimeZone-8"><a href="#Debian-8-Set-TimeZone-8" class="headerlink" title="Debian 8 Set TimeZone +8"></a>Debian 8 Set TimeZone +8</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone</span><br><span class="line">dpkg-reconfigure -f noninteractive tzdata</span><br></pre></td></tr></table></figure>
+<h1 id="Debian-9-Set-TimeZone-8"><a href="#Debian-9-Set-TimeZone-8" class="headerlink" title="Debian 9 Set TimeZone +8"></a>Debian 9 Set TimeZone +8</h1><p>ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>dpkg-reconfigure -f noninteractive tzdata</p>
+<h1 id="在Dockerfile中配置时区-Debian8"><a href="#在Dockerfile中配置时区-Debian8" class="headerlink" title="在Dockerfile中配置时区(Debian8)"></a>在Dockerfile中配置时区(Debian8)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RUN echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone</span><br><span class="line">RUN dpkg-reconfigure -f noninteractive tzdata</span><br></pre></td></tr></table></figure>
+<h1 id="在MySQL-JDBC-8中设置时区"><a href="#在MySQL-JDBC-8中设置时区" class="headerlink" title="在MySQL JDBC 8中设置时区"></a>在MySQL JDBC 8中设置时区</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">serverTimezone=GMT%2B8</span><br></pre></td></tr></table></figure>
+<h1 id="REF"><a href="#REF" class="headerlink" title="REF"></a>REF</h1><p><a href="https://www.illucit.com/en/linux/timezone-in-debian-9-stretch/#targetText=How%20to%20change%20the%20timezone%20in%20Debian%20Stretch&amp;targetText=The%20first%20command%20will%20create,%2Fetc%2Ftimezone%20file%20automatically." target="_blank" rel="noopener">CHANGING THE TIMEZONE IN DEBIAN 9 (STRETCH)</a><br><a href="https://brickyang.github.io/2017/03/16/Docker%20中如何设置%20container%20的时区/" target="_blank" rel="noopener">Docker 中如何设置 container 的时区</a><br><a href="https://blog.csdn.net/love20yh/article/details/80799610" target="_blank" rel="noopener">JDBC连接数据库 mysql serverTimezone useSSL 时差</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/05/27/idea/idea-卡顿/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1887,173 +2052,11 @@ sudo mount -t procfs proc /proc
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/05/03/chrome/clome-cookies/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/03/chrome/clome-cookies/" class="post-title-link" itemprop="url">Chrome Cookies</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-03 15:09:00 / Modified: 15:12:41" itemprop="dateCreated datePublished" datetime="2019-05-03T15:09:00+08:00">2019-05-03</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/chrome/" itemprop="url" rel="index"><span itemprop="name">chrome</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="chrome导入jquery"><a href="#chrome导入jquery" class="headerlink" title="chrome导入jquery"></a>chrome导入jquery</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!<span class="built_in">window</span>.jQuery) &#123;</span><br><span class="line">  <span class="built_in">document</span>.body.appendChild((<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    s.src = <span class="string">'//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'</span>;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">  &#125;)());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="chrome-flags"><a href="#chrome-flags" class="headerlink" title="chrome flags"></a>chrome flags</h2><pre><code>chrome://flags/
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2097,7 +2100,7 @@ sudo mount -t procfs proc /proc
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">30</span>
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2140,7 +2143,9 @@ sudo mount -t procfs proc /proc
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2233,7 +2238,9 @@ sudo mount -t procfs proc /proc
                     
                       
                     
-                    <span class="site-state-item-count">38</span>
+                      
+                    
+                    <span class="site-state-item-count">39</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
