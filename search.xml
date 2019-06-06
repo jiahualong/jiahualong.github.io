@@ -194,7 +194,7 @@
   <entry>
     <title><![CDATA[Intellij IDEA Cookies]]></title>
     <url>%2F2019%2F04%2F26%2Fidea%2Fidea-cookie%2F</url>
-    <content type="text"><![CDATA[Intellij IDEA Gen serialVersionUIDcmd+, -&gt; Preferences -&gt; Editor -&gt; Inspections -&gt; Serialization issues -&gt; [checked]Serializable class without ‘serialVersionUID’ implements Serializable 后 Option + Enter 选 Add serialVersionUID field Intellij IDEA Gen serialVersionUID Plugin安装GenerateSerialVersionUID插件后,代码生成时会出现GenerateSerialVersionUID选项 javadoc中允许1行注释Code Style -&gt; Java -&gt; JavaDoc -&gt; Other -&gt; [选中] Do not wrap one line comments]]></content>
+    <content type="text"><![CDATA[Intellij IDEA Gen serialVersionUIDcmd+, -&gt; Preferences -&gt; Editor -&gt; Inspections -&gt; Serialization issues -&gt; [checked]Serializable class without ‘serialVersionUID’ implements Serializable 后 Option + Enter 选 Add serialVersionUID field Intellij IDEA Gen serialVersionUID Plugin安装GenerateSerialVersionUID插件后,代码生成时会出现GenerateSerialVersionUID选项 javadoc中允许1行注释Code Style -&gt; Java -&gt; JavaDoc -&gt; Other -&gt; [选中] Do not wrap one line comments CleanUp Idea In Mac1234rm -rf ~/Library/Application\ Support/IntelliJIdea*rm -rf ~/Library/Caches/IntelliJIdea*rm -rf ~/Library/Preferences/IntelliJIdea*rm -rf ~/Library/Logs/IntelliJIdea*]]></content>
       <categories>
         <category>idea</category>
       </categories>
