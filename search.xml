@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Jooq 生成SQL]]></title>
+    <url>%2F2019%2F06%2F11%2Fjava%2Fjooq%2F</url>
+    <content type="text"><![CDATA[引入依赖12345&lt;dependency&gt; &lt;groupId&gt;org.jooq&lt;/groupId&gt; &lt;artifactId&gt;jooq&lt;/artifactId&gt; &lt;version&gt;3.11.11&lt;/version&gt;&lt;/dependency&gt; 生成CREATE语句123456789System.out.println( DSL.using(SQLDialect.MYSQL_8_0).createTable("user") .column("id", SQLDataType.BIGINT.precision(20)) .column("name", SQLDataType.VARCHAR.precision(20)) .constraints( constraint("PK_MY_TABLE").primaryKey("id") ) .getSQL() ); 注要使用Oracle等大多数方言需要购买商用版]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>jooq</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Debian 8 / 9 Set TimeZone]]></title>
     <url>%2F2019%2F06%2F04%2Fdebian%2Fdebian-timezone%2F</url>
     <content type="text"><![CDATA[Debian 8 Set TimeZone +812echo &quot;Asia/Shanghai&quot; &gt; /etc/timezonedpkg-reconfigure -f noninteractive tzdata Debian 9 Set TimeZone +8ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtimedpkg-reconfigure -f noninteractive tzdata 在Dockerfile中配置时区(Debian8)12RUN echo &quot;Asia/Shanghai&quot; &gt; /etc/timezoneRUN dpkg-reconfigure -f noninteractive tzdata 在MySQL JDBC 8中设置时区1serverTimezone=GMT%2B8 REFCHANGING THE TIMEZONE IN DEBIAN 9 (STRETCH)Docker 中如何设置 container 的时区JDBC连接数据库 mysql serverTimezone useSSL 时差]]></content>
@@ -194,7 +206,7 @@
   <entry>
     <title><![CDATA[Intellij IDEA Cookies]]></title>
     <url>%2F2019%2F04%2F26%2Fidea%2Fidea-cookie%2F</url>
-    <content type="text"><![CDATA[Intellij IDEA Gen serialVersionUIDcmd+, -&gt; Preferences -&gt; Editor -&gt; Inspections -&gt; Serialization issues -&gt; [checked]Serializable class without ‘serialVersionUID’ implements Serializable 后 Option + Enter 选 Add serialVersionUID field Intellij IDEA Gen serialVersionUID Plugin安装GenerateSerialVersionUID插件后,代码生成时会出现GenerateSerialVersionUID选项 javadoc中允许1行注释Code Style -&gt; Java -&gt; JavaDoc -&gt; Other -&gt; [选中] Do not wrap one line comments CleanUp Idea In Mac1234rm -rf ~/Library/Application\ Support/IntelliJIdea*rm -rf ~/Library/Caches/IntelliJIdea*rm -rf ~/Library/Preferences/IntelliJIdea*rm -rf ~/Library/Logs/IntelliJIdea*]]></content>
+    <content type="text"><![CDATA[Intellij IDEA Gen serialVersionUIDcmd+, -&gt; Preferences -&gt; Editor -&gt; Inspections -&gt; Serialization issues -&gt; [checked]Serializable class without ‘serialVersionUID’ implements Serializable 后 Option + Enter 选 Add serialVersionUID field Intellij IDEA Gen serialVersionUID Plugin安装GenerateSerialVersionUID插件后,代码生成时会出现GenerateSerialVersionUID选项 javadoc中允许1行注释Code Style -&gt; Java -&gt; JavaDoc -&gt; Other -&gt; [选中] Do not wrap one line comments CleanUp Idea In Mac1234rm -rf ~/Library/Application\ Support/IntelliJIdea*rm -rf ~/Library/Caches/IntelliJIdea*rm -rf ~/Library/Preferences/IntelliJIdea*rm -rf ~/Library/Logs/IntelliJIdea* ref How to Uninstall IntelliJ on a Mac]]></content>
       <categories>
         <category>idea</category>
       </categories>

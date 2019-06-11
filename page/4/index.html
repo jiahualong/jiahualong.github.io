@@ -380,6 +380,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/19/mac/mac-ps4-install-usb-stock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/19/mac/mac-ps4-install-usb-stock/" class="post-title-link" itemprop="url">MacOS 创建 PlayStation4 安装U盘</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-19 21:13:56 / Modified: 11:28:14" itemprop="dateCreated datePublished" datetime="2019-04-19T21:13:56+08:00">2019-04-19</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mac/" itemprop="url" rel="index"><span itemprop="name">mac</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>本文将在Mac上制作PlayStation4系统安装U盘, 需要U盘空间大于1.1G。在制作过程中将<strong>格式化U盘</strong>，请自行备份U盘文件</p>
+</blockquote>
+<h1 id="Setup1-获取PlayStation4新安装文件"><a href="#Setup1-获取PlayStation4新安装文件" class="headerlink" title="Setup1 获取PlayStation4新安装文件"></a>Setup1 获取PlayStation4新安装文件</h1><p><a href="https://asia.playstation.com/chs-hk/ps4/system-update/" target="_blank" rel="noopener">从PlayStationHK下载更新文件</a></p>
+<p>分为<code>标准更新</code>、<code>新安装</code>两种，本次我们将使用U盘安装全新的PlayStation系统，因此采用<code>新安装</code>文件。</p>
+<pre><code>wget http://dsa01.ps4.update.playstation.net/update/ps4/image/2019_0319/rec_7bd82d7957611fe9bca3fa63b78c82c5/PS4UPDATE.PUP
+</code></pre><h1 id="Setup2-格式化U盘"><a href="#Setup2-格式化U盘" class="headerlink" title="Setup2 格式化U盘"></a>Setup2 格式化U盘</h1><blockquote>
+<p>将U盘格式化为<code>ExtFAT</code>文件格式，因为PlayStation4 支持这种格式</p>
+</blockquote>
+<p>接入U盘之前查看目前硬盘列表</p>
+<pre><code>diskutil list 
+</code></pre><p>将U盘接入Mac后再次查看硬盘列表</p>
+<pre><code>diskutil list 
+</code></pre><p>对比多出的即为U盘</p>
+<pre><code>本例中为 `/dev/disk2`
+</code></pre><p>卸载disk2</p>
+<pre><code>diskutil unmountDisk disk2
+</code></pre><p>将<code>/dev/disk2</code> 格式化为<code>ExtFAT</code> 文件系统，并使用<code>MBR</code>格式的硬盘分区表, 格式化后的U盘名字为<code>PS4Install</code></p>
+<pre><code>diskutil eraseDisk ExFAT PS4Install MBR /dev/disk2
+</code></pre><h1 id="Setup3-拷贝PlayStation4-系统文件"><a href="#Setup3-拷贝PlayStation4-系统文件" class="headerlink" title="Setup3 拷贝PlayStation4 系统文件"></a>Setup3 拷贝PlayStation4 系统文件</h1><p>在U盘根目录创建<code>PS4</code>文件夹，在<code>PS4</code>文件夹中创建<code>UPDATE</code>文件夹</p>
+<p><img src="https://asia.playstation.com/content/dam/pscom/regional-assets/regional-elements/region-icons/system-update/folder-chs.png" alt="PS4文件夹目录"></p>
+<p>-or- 使用命令创建:</p>
+<pre><code>mkdir -p /Volumes/PS4Install/PS4/UPDATE
+</code></pre><p>将下载好的 <code>PS4UPDATE.PUP</code> 拷贝至刚创建完的<code>UPDATE</code>目录中即可.</p>
+<p>至此启动盘制作结束。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/18/mac/mac-diskutil/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -671,7 +856,7 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -811,7 +996,9 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                     
                       
                     
-                    <span class="site-state-item-count">39</span>
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
