@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Dell P2415Q 使用 MacBookPro 2015 使用4k@60Hz刷新率]]></title>
+    <url>%2F2019%2F07%2F08%2Fmac%2FDell-P2415Q-4k-60hz%2F</url>
+    <content type="text"><![CDATA[环境电脑 MacBook Pro (Retina, 15-inch, Mid 2015) 2.5 GHz Intel Core i7 16 GB 1600 MHz DDR3 AMD Radeon R9 M370X 2 GB Intel Iris Pro 1536 MB MacBookPro2015的雷电口可以支持4k@60Hz, 这里要注意的是 HDMI口不支持4k@60hz,需要使用雷电/miniDP转DP的线。miniDP与雷电口兼容。 显示器 Dell P2415Q Dell P2415Q显示器最高支持3840x2160@60Hz(4k@60hz)。 这里需要注意的是需要关闭MST: Dell显示器 - 设置 - 菜单 - 显示 - MST - 关 。 MST选项的含义:12345678确认的DisplayPort(DP)配置的显示屏。如果您的系统支持DP版本1.2,显示器可以显示的分辨率3840x2160@60Hz。 显示multi-stream传输(MST)应设置为&quot;Off&quot;,这是默认状态。MST关闭:(dp1.2模式的单个显示器设置)默认模式:4k*2K60Hz禁用MST功能。MST主要:MST(dp1.2模式的菊花链式安装)功能已启用的主显示器菊花链式安装中。 预期的解决方案是4k*2K30Hz的MST(DP)已启用。MST二级:(dp1.1的菊花链式和单个显示屏设置)MST功能被禁用的第二个显示器菊花链式安装中预期的解决方案是4k*2K30Hz的MST(DP)已禁用。如果计算机支持DP版本1.1,显示器将无法实现3840x2160@60Hz。 它将支持较低60Hz的分辨率(如2560 x 1440或设为1920x1080。通过显示器的屏上显示菜单(OSD)(屏上显示(OSD),请更改选项从MST&quot;关闭&quot;MST&quot;二级&quot;(要更改显示器的设置从DP1.2至1.1)。 Through the Monitor’s On-Screen Display menu (OSD), change the option from MST “OFF” to MST “Secondary” (You are changing the monitor’s setting from DP 1.2 to 1.1).可能需要重新启动计算机显示器设置激活。 来自如何解决在DP/Mini DP无视频/解析错误问题与Dell P2715q/ p 2415 q平板显示器 线材 联基minidp转dp 1.4版 官方标注支持: 1080p:60Hz-480Hz; 2K:60Hz-240Hz; 4K:60Hz-144Hz; 8K:60Hz 系统 macOS Mojave 10.14.5 软件 EasyRes 1.1.1 方便设置分辨率 参考 如何解决在DP/Mini DP无视频/解析错误问题与Dell P2715q/ p 2415 q平板显示器 dell P2415Q 实现 4K 60Hz]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>macOS</tag>
+        <tag>p2415q - 4k</tag>
+        <tag>60Hz</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iStats]]></title>
+    <url>%2F2019%2F06%2F26%2Fmac%2Fmac-istats%2F</url>
+    <content type="text"><![CDATA[intall iStats1gem install iStats run1istats [ref]http://chris911.github.io/iStats/()]]></content>
+      <categories>
+        <category>mac</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>macOS</tag>
+        <tag>command Tools</tag>
+        <tag>istats</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[gem cookie book]]></title>
+    <url>%2F2019%2F06%2F26%2Fcoreutil%2Fgem%2F</url>
+    <content type="text"><![CDATA[查看gem环境配置1gem environment 安装目前为以下字段 INSTALLATION DIRECTORY GEM PATHS ref]]></content>
+      <categories>
+        <category>coreutil</category>
+      </categories>
+      <tags>
+        <tag>coreutil</tag>
+        <tag>gem</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[ssh tunnel]]></title>
+    <url>%2F2019%2F06%2F19%2Fcoreutil%2Fssh-tunnel%2F</url>
+    <content type="text"><![CDATA[内网机ssh -CfNg -R 1026:127.0.0.1:22 10.1.1.176 公网机ssh -CfNg -L 1025:0.0.0.0:1026 10.1.1.176 ssh s@10.1.1.176 -p1025 command description:-C：压缩数据传输。-f ：后台认证用户/密码，通常和-N连用，不用登录到远程主机。-N ：不执行脚本或命令，通常与-f连用。-g ：在-L/-R/-D参数中，允许远程主机连接到建立的转发的端口，如果不加这个参数，只允许本地主机建立连接。-L 本地端口:目标IP:目标端口-T 不分配 TTY 只做代理用-q 安静模式，不输出 错误/警告 信息 refSSH 映射]]></content>
+      <categories>
+        <category>coreutil</category>
+      </categories>
+      <tags>
+        <tag>coreutil</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Jooq 生成SQL]]></title>
     <url>%2F2019%2F06%2F11%2Fjava%2Fjooq%2F</url>
     <content type="text"><![CDATA[引入依赖12345&lt;dependency&gt; &lt;groupId&gt;org.jooq&lt;/groupId&gt; &lt;artifactId&gt;jooq&lt;/artifactId&gt; &lt;version&gt;3.11.11&lt;/version&gt;&lt;/dependency&gt; 生成CREATE语句123456789System.out.println( DSL.using(SQLDialect.MYSQL_8_0).createTable("user") .column("id", SQLDataType.BIGINT.precision(20)) .column("name", SQLDataType.VARCHAR.precision(20)) .constraints( constraint("PK_MY_TABLE").primaryKey("id") ) .getSQL() ); 注要使用Oracle等大多数方言需要购买商用版]]></content>
@@ -376,7 +428,7 @@
   <entry>
     <title><![CDATA[MacOS diskutil command tool]]></title>
     <url>%2F2019%2F04%2F18%2Fmac%2Fmac-diskutil%2F</url>
-    <content type="text"><![CDATA[查看硬盘列表diskutil list /dev/disk2 : deviceNode TYPE : File System NAME : diskName diskutil若干需要sudo权限 卸载disk2diskutil unmountDisk disk2 eraseDisk之前需要选unmountDisk 格式化 eraseDisk 子命令diskutil eraseDisk FILE_SYSTEM DISK_NAME [APM[Format]|MBR[Format]|GPT[Format]] MountPoint|DiskIdentifier|DeviceNode 将/dev/disk2 格式化为JHFS+ 的几种写法示例: diskutil eraseDisk JHFS+ TestDisk /dev/disk2 diskutil eraseDisk JHFS+ TestDisk disk2 diskutil eraseDisk JHFS+ TestDisk disk2 #1 diskutil eraseDisk JHFS+ TestDisk /dev/disk2s1 将 /dev/disk2 格式化为 ExFAT 并分别使用MBR GPT分区表的几种写法示例: diskutil eraseDisk ExFAT TestDisk /dev/disk2 diskutil eraseDisk ExFAT TestDisk MBRFormat /dev/disk2 diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2 File System - - JHFS+ Mac OS Extended Journaled HFS + Mac OS Extended ExFAT Windows FAT32 Windows 分区表格式 - - APM Apple Partition Map GPT UEFI-style GUID Partition Table MBR MS-DOS Master Boot Record 格式化将disk2分成一个分区: diskutil partitionDisk disk2 1 \ JHFS+ one R 将disk2分成2个分区,第2分区为JHFS+格式250G大小, 第1分区为JHFS+格式并使用硬盘剩余大小 diskutil partitionDisk disk3 2 GPT \ JHFS+ one R \ JHFS+ two 250G 将disk2分成3个分区, 第三分区10G ExFAT格式, 第二分区 250G JHFS+格式， 第一分区使用剩余空间 JHFS+格式 diskutil partitionDisk disk3 MBR \ JHFS+ one R \ JHFS+ two 250G \ ExFAT three 10G 硬盘空间单位可选:B, K, M, G, T, P, % , R(剩余) 删除 disk2的APFS 容器diskutil apfs deleteContainer /dev/disk2 ref: https://tobywf.com/2017/01/diskutil/]]></content>
+    <content type="text"><![CDATA[查看硬盘列表diskutil list /dev/disk2 : deviceNode TYPE : File System NAME : diskName diskutil若干需要sudo权限 卸载disk2diskutil unmountDisk disk2 eraseDisk之前需要选unmountDisk 格式化 eraseDisk 子命令diskutil eraseDisk FILE_SYSTEM DISK_NAME [APM[Format]|MBR[Format]|GPT[Format]] MountPoint|DiskIdentifier|DeviceNode 将/dev/disk2 格式化为JHFS+ 的几种写法示例: 1234diskutil eraseDisk JHFS+ TestDisk /dev/disk2diskutil eraseDisk JHFS+ TestDisk disk2diskutil eraseDisk JHFS+ TestDisk disk2 #1diskutil eraseDisk JHFS+ TestDisk /dev/disk2s1 将 /dev/disk2 格式化为 ExFAT 并分别使用MBR GPT分区表的几种写法示例: 123diskutil eraseDisk ExFAT TestDisk /dev/disk2diskutil eraseDisk ExFAT TestDisk MBRFormat /dev/disk2diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2 File System - - JHFS+ Mac OS Extended Journaled HFS + Mac OS Extended ExFAT Windows FAT32 Windows 分区表格式 - - APM Apple Partition Map GPT UEFI-style GUID Partition Table MBR MS-DOS Master Boot Record 格式化将disk2分成一个分区: diskutil partitionDisk disk2 1 \ JHFS+ one R 将disk2分成2个分区,第2分区为JHFS+格式250G大小, 第1分区为JHFS+格式并使用硬盘剩余大小 diskutil partitionDisk disk3 2 GPT \ JHFS+ one R \ JHFS+ two 250G 将disk2分成3个分区, 第三分区10G ExFAT格式, 第二分区 250G JHFS+格式， 第一分区使用剩余空间 JHFS+格式 diskutil partitionDisk disk3 MBR \ JHFS+ one R \ JHFS+ two 250G \ ExFAT three 10G 硬盘空间单位可选:B, K, M, G, T, P, % , R(剩余) 删除 disk2的APFS 容器diskutil apfs deleteContainer /dev/disk2 ref: https://tobywf.com/2017/01/diskutil/]]></content>
       <categories>
         <category>mac</category>
       </categories>

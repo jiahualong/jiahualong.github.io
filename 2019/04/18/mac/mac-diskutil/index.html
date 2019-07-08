@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="STAN.CC">
 <meta property="og:description" content="查看硬盘列表diskutil list   /dev/disk2 : deviceNode  TYPE : File System NAME : diskName  diskutil若干需要sudo权限   卸载disk2diskutil unmountDisk disk2  eraseDisk之前需要选unmountDisk  格式化 eraseDisk 子命令diskutil eraseDis">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-19T02:20:25.825Z">
+<meta property="og:updated_time" content="2019-06-24T02:51:38.210Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MacOS diskutil command tool">
 <meta name="twitter:description" content="查看硬盘列表diskutil list   /dev/disk2 : deviceNode  TYPE : File System NAME : diskName  diskutil若干需要sudo权限   卸载disk2diskutil unmountDisk disk2  eraseDisk之前需要选unmountDisk  格式化 eraseDisk 子命令diskutil eraseDis">
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-04-19 10:20:25" itemprop="dateModified" datetime="2019-04-19T10:20:25+08:00">2019-04-19</time>
+                <time title="Modified: 2019-06-24 10:51:38" itemprop="dateModified" datetime="2019-06-24T10:51:38+08:00">2019-06-24</time>
               
             
           </span>
@@ -511,15 +511,10 @@
 </ul>
 <h2 id="格式化-eraseDisk-子命令"><a href="#格式化-eraseDisk-子命令" class="headerlink" title="格式化 eraseDisk 子命令"></a>格式化 eraseDisk 子命令</h2><pre><code>diskutil eraseDisk FILE_SYSTEM DISK_NAME [APM[Format]|MBR[Format]|GPT[Format]] MountPoint|DiskIdentifier|DeviceNode
 </code></pre><p>将<code>/dev/disk2</code> 格式化为<code>JHFS+</code> 的几种写法示例:  </p>
-<pre><code>diskutil eraseDisk JHFS+ TestDisk /dev/disk2
-diskutil eraseDisk JHFS+ TestDisk disk2
-diskutil eraseDisk JHFS+ TestDisk disk2 #1
-diskutil eraseDisk JHFS+ TestDisk /dev/disk2s1
-</code></pre><p>将 <code>/dev/disk2</code> 格式化为 <code>ExFAT</code> 并分别使用MBR GPT分区表的几种写法示例: </p>
-<pre><code>diskutil eraseDisk ExFAT TestDisk /dev/disk2
-diskutil eraseDisk ExFAT TestDisk MBRFormat /dev/disk2
-diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
-</code></pre><h2 id="File-System"><a href="#File-System" class="headerlink" title="File System"></a>File System</h2><table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">diskutil eraseDisk JHFS+ TestDisk /dev/disk2</span><br><span class="line">diskutil eraseDisk JHFS+ TestDisk disk2</span><br><span class="line">diskutil eraseDisk JHFS+ TestDisk disk2 #1</span><br><span class="line">diskutil eraseDisk JHFS+ TestDisk /dev/disk2s1</span><br></pre></td></tr></table></figure>
+<p>将 <code>/dev/disk2</code> 格式化为 <code>ExFAT</code> 并分别使用MBR GPT分区表的几种写法示例: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">diskutil eraseDisk ExFAT TestDisk /dev/disk2</span><br><span class="line">diskutil eraseDisk ExFAT TestDisk MBRFormat /dev/disk2</span><br><span class="line">diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2</span><br></pre></td></tr></table></figure>
+<h2 id="File-System"><a href="#File-System" class="headerlink" title="File System"></a>File System</h2><table>
 <thead>
 <tr>
 <th style="text-align:left">-</th>
@@ -703,7 +698,7 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -845,7 +840,15 @@ diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2
                     
                       
                     
-                    <span class="site-state-item-count">40</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
