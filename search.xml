@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[graphql cookie book]]></title>
+    <url>%2F2019%2F07%2F15%2Fgraphql%2Fgraphql%2F</url>
+    <content type="text"><![CDATA[Graphql Cookie## SpringBoot两个graphql-spring-boot-starter 分别由两个团队开发 com.graphql-java Maven版本 website com.graphql-java-kickstart Maven 版本 website graphql-java-kickstart包含的组建123456789//需要kotliin支持kotlin.version = &apos;1.3.41&apos;//kickstart graphqlimplementation &apos;com.graphql-java-kickstart:graphql-spring-boot-starter:5.10.0&apos;implementation &apos;com.graphql-java-kickstart:graphiql-spring-boot-starter:5.10.0&apos;implementation &apos;com.graphql-java-kickstart:graphql-java-tools:5.6.1&apos;implementation &apos;com.graphql-java-kickstart:voyager-spring-boot-starter:5.10.0&apos;implementation &apos;com.graphql-java-kickstart:altair-spring-boot-starter:5.10.0&apos; codehttps://github.com/jiahualong/java-example/tree/master/spring-graphql 引用 Which graphql-spring-boot-starter should I choose? graphql-java-kickstart项目 Spring boot中使用GraphQL编写API的几种方式]]></content>
+      <categories>
+        <category>graphql</category>
+      </categories>
+      <tags>
+        <tag>graphql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F07%2F12%2Fpython%2Fpython%2F</url>
+    <content type="text"><![CDATA[Python Cookie引用 python3 doc python3 tutorial 如何学Python 廖雪峰Python]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[aria2]]></title>
     <url>%2F2019%2F07%2F09%2Fdownload-tool%2Faria2%2F</url>
     <content type="text"><![CDATA[Aria2参考 Aira2 WebUI-Aira2]]></content>
