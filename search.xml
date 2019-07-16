@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Python Cookie]]></title>
+    <url>%2F2019%2F07%2F16%2Fpython%2Fpython%2F</url>
+    <content type="text"><![CDATA[引用 python3 doc python3 tutorial 如何学Python 廖雪峰Python]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu cookie]]></title>
     <url>%2F2019%2F07%2F16%2Fubuntu%2Fubuntu-cookie%2F</url>
     <content type="text"><![CDATA[安装simple-chinese1sudo apt install language-pack-zh-hans-base/bionic-updates language-pack-zh-hans/bionic-updates ##]]></content>
@@ -32,11 +43,6 @@
       <tags>
         <tag>graphql</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>%2F2019%2F07%2F12%2Fpython%2Fpython%2F</url>
-    <content type="text"><![CDATA[Python Cookie引用 python3 doc python3 tutorial 如何学Python 廖雪峰Python]]></content>
   </entry>
   <entry>
     <title><![CDATA[aria2]]></title>
