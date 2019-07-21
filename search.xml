@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Debain Mirros]]></title>
+    <url>%2F2019%2F07%2F21%2Fdebian%2Fdebian-cookie%2F</url>
+    <content type="text"><![CDATA[deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib]]></content>
+      <categories>
+        <category>debian</category>
+      </categories>
+      <tags>
+        <tag>debian</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ngrok Cookie]]></title>
+    <url>%2F2019%2F07%2F17%2Fngrok%2Fngrok-cookie%2F</url>
+    <content type="text"><![CDATA[TODO: 从零教你搭建ngrok服务，解决外网调试本地站点https://morongs.github.io/2016/12/28/dajian-ngrok/ CentOS7搭建ngrok服务器https://www.xncoding.com/2017/12/29/web/ngrok.html ngrok 服务端安装https://www.jianshu.com/p/d1cdfab9f571]]></content>
+      <categories>
+        <category>ngrok</category>
+      </categories>
+      <tags>
+        <tag>ngrok</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Python Cookie]]></title>
     <url>%2F2019%2F07%2F16%2Fpython%2Fpython%2F</url>
     <content type="text"><![CDATA[引用 python3 doc python3 tutorial 如何学Python 廖雪峰Python]]></content>
@@ -25,7 +47,7 @@
   <entry>
     <title><![CDATA[aria2-cookie]]></title>
     <url>%2F2019%2F07%2F16%2Faria2%2Faria2-cookie%2F</url>
-    <content type="text"><![CDATA[Install Aria21sudo apt install aria2 Usage in command通过http下载文件1$ aria2c http://example.org/mylinux.iso Download from 2 sources:1$ aria2c http://a/f.iso ftp://b/f.iso Download using 2 connections per host:1$ aria2c -x2 http://a/f.iso 下载BT种子及文件本体1$ aria2c http://example.org/mylinux.torrent 下载过程ctrl+c 取消下载，再次下载时会继续下载 BitTorrent Magnet URI:1$ aria2c &apos;magnet:?xt=urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C&apos; Metalink:1$ aria2c http://example.org/mylinux.metalink 从文本中下载很多url1$ aria2c -i uris.txt aria2 后台启动信息https://github.com/binux/yaaw TODO: https://github.com/binux/yaaw WebUI-Aria2install webui-aria2 webui-aria2: Web browser interface for aria2 (2012 GSOC project) ## #TODO 安装 webui https://github.com/ziahamza/webui-aria2 # 插件 brew search Aria2GUI brew cask install maria YAAW for Chrome 引用 aria2 Yet Another Aria2 Webui in pure HTML/CSS/Javascirpt“; Aria2 + Ubuntu 16.04 + Apache2 + Web UI Aria2配置教程（Mac和Windows） Aria2 Manual]]></content>
+    <content type="text"><![CDATA[Install Aria21sudo apt install aria2 Usage in command通过http下载文件1$ aria2c http://example.org/mylinux.iso Download from 2 sources:1$ aria2c http://a/f.iso ftp://b/f.iso Download using 2 connections per host:1$ aria2c -x2 http://a/f.iso 下载BT种子及文件本体1$ aria2c http://example.org/mylinux.torrent 下载过程ctrl+c 取消下载，再次下载时会继续下载 BitTorrent Magnet URI:1$ aria2c &apos;magnet:?xt=urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C&apos; Metalink:1$ aria2c http://example.org/mylinux.metalink 从文本中下载很多url1$ aria2c -i uris.txt aria2 后台启动信息https://github.com/binux/yaaw TODO: https://github.com/binux/yaaw UsageRun aria2 with RPC enabledaria2c –enable-rpc –rpc-listen-all=true –rpc-allow-origin-all with ‘JSON-RPC PATH’ like http://hostname:port/jsonrpc Recommend: Set –rpc-secret= if you are using aria2 1.18.4(or higher) with ‘JSON-RPC PATH’ like http://token:secret@hostname:port/jsonrpc Set –rpc-user= –rpc-passwd= if you are using aria2 1.15.2(or higher) with ‘JSON-RPC PATH’ like http://username:passwd@hostname:port/jsonrpc Visit index.html. Change “JSON-RPC Path” setting if “Internal server error” occurred. All your settings on web is temporary. Settings will be lost after aria2 restarted.Tasks(including which is not finished) will be lost after aria2 restarted. Using –save-session=SOME/WHERE and reload with –continue=true –input-file=SOME/WHERE to continue.Using $HOME/.aria2/aria2.conf to save your options.For more infomations about aria2, visit Aria2 ManualYAAW also support websocket! Set JSON-RPC PATH with ws://hostname:port/jsonrpc.Pre-spicify or save JSON-PRC PATH as bookmark with http://binux.github.io/yaaw/demo/#path=http://hostname:port/jsonrpc /Applications/Aria2GUI.app/Contents/Resources/aria2c –dir=/Users/hualong/Downloads –conf-path=/Applications/Aria2GUI.app/Contents/Resources/aria2.conf –input-file=/Applications/Aria2GUI.app/Contents/Resources/aria2.session –save-session=/Applications/Aria2GUI.app/Contents/Resources/aria2.session –max-concurrent-downloads=10 –max-connection-per-server=16 –min-split-size=1024K –split=16 –max-overall-download-limit=0K –max-overall-upload-limit=0K –max-download-limit=0K –max-upload-limit=0K –continue=true –auto-file-renaming=true –allow-overwrite=true –disk-cache=0M –max-tries=0 –retry-wait=5 -D aria2c –enable-rpc –rpc-listen-all=true –rpc-allow-origin-all WebUI-Aria2install webui-aria2 webui-aria2: Web browser interface for aria2 (2012 GSOC project) ## #TODO 安装 webui https://github.com/ziahamza/webui-aria2 # 插件 brew search Aria2GUI brew cask install maria YAAW for Chrome 引用 aria2 Yet Another Aria2 Webui in pure HTML/CSS/Javascirpt“; Aria2 + Ubuntu 16.04 + Apache2 + Web UI Aria2配置教程（Mac和Windows） Aria2 Manual]]></content>
       <categories>
         <category>aria2</category>
       </categories>
@@ -42,18 +64,6 @@
       </categories>
       <tags>
         <tag>graphql</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[aria2]]></title>
-    <url>%2F2019%2F07%2F09%2Fdownload-tool%2Faria2%2F</url>
-    <content type="text"><![CDATA[Aria2参考 Aira2 WebUI-Aira2]]></content>
-      <categories>
-        <category>download-tool</category>
-      </categories>
-      <tags>
-        <tag>aria2</tag>
-        <tag>download-tool</tag>
       </tags>
   </entry>
   <entry>
