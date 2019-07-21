@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Debain Mirros]]></title>
     <url>%2F2019%2F07%2F21%2Fdebian%2Fdebian-cookie%2F</url>
-    <content type="text"><![CDATA[deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib]]></content>
+    <content type="text"><![CDATA[12345678deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib]]></content>
       <categories>
         <category>debian</category>
       </categories>
