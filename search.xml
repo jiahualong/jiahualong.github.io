@@ -35,8 +35,8 @@
   </entry>
   <entry>
     <title><![CDATA[Python Cookie]]></title>
-    <url>%2F2019%2F07%2F16%2Fpython%2Fpython%2F</url>
-    <content type="text"><![CDATA[引用 python3 doc python3 tutorial 如何学Python 廖雪峰Python]]></content>
+    <url>%2F2019%2F07%2F16%2Fpython%2Fpython-cookie%2F</url>
+    <content type="text"><![CDATA[python中调用shell12import osos.system('ls -hl')]]></content>
       <categories>
         <category>python</category>
       </categories>
