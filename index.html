@@ -380,6 +380,187 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/08/03/orientdb/orientdb-cookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/03/orientdb/orientdb-cookie/" class="post-title-link" itemprop="url">OrientDB Cookie</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-03 15:32:53 / Modified: 15:53:29" itemprop="dateCreated datePublished" datetime="2019-08-03T15:32:53+08:00">2019-08-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/graphdb/" itemprop="url" rel="index"><span itemprop="name">graphdb</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="OrientDB-Cookie"><a href="#OrientDB-Cookie" class="headerlink" title="OrientDB Cookie"></a>OrientDB Cookie</h1><h2 id="Docker安装OrientDB"><a href="#Docker安装OrientDB" class="headerlink" title="Docker安装OrientDB"></a>Docker安装OrientDB</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name orientdb \</span><br><span class="line">    -p 2424:2424 -p 2480:2480 \</span><br><span class="line">    -e ORIENTDB_ROOT_PASSWORD=root \</span><br><span class="line">    orientdb:3.0.22-tp3</span><br></pre></td></tr></table></figure>
+<ul>
+<li>2424 port 应用连接, 2480 port web管理平台</li>
+<li>orientdb链接密码为root</li>
+<li>3.x 相比2.x 在java引用jar中有不同</li>
+<li><code>orientdb:3.0.22-tp3</code> 与 <code>orientdb:3.0.22</code>不同之处在于<code>tp3</code>添加了<code>Gremlin</code>支持</li>
+<li>3.x在Redhat6.8版本启动可能会有问题</li>
+</ul>
+<h2 id="web管理平台"><a href="#web管理平台" class="headerlink" title="web管理平台"></a>web管理平台</h2><p><a href="http://localhost:2480" target="_blank" rel="noopener">http://localhost:2480</a></p>
+<h2 id="通过orientdb-console"><a href="#通过orientdb-console" class="headerlink" title="通过orientdb console"></a>通过orientdb console</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 进入orientdb容器</span><br><span class="line">dexec orientdb</span><br><span class="line"><span class="meta">#</span> 启动console</span><br><span class="line">/orientdb/bin/console.sh</span><br></pre></td></tr></table></figure>
+<h2 id="连接-orientdb"><a href="#连接-orientdb" class="headerlink" title="连接 orientdb"></a>连接 orientdb</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect remote:127.0.0.1 root root</span><br></pre></td></tr></table></figure>
+<h2 id="连接-orientdb-的test1库"><a href="#连接-orientdb-的test1库" class="headerlink" title="连接 orientdb 的test1库"></a>连接 orientdb 的test1库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect remote:127.0.0.1/test1 root root</span><br></pre></td></tr></table></figure>
+<h2 id="显示当前有多少图库"><a href="#显示当前有多少图库" class="headerlink" title="显示当前有多少图库"></a>显示当前有多少图库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list database</span><br></pre></td></tr></table></figure>
+<h2 id="创建图库"><a href="#创建图库" class="headerlink" title="创建图库"></a>创建图库</h2><p>图库名为<code>test1</code> 帐号密码为<code>root</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database remote:127.0.0.1/test1 root root</span><br></pre></td></tr></table></figure></p>
+<h2 id="删除图库"><a href="#删除图库" class="headerlink" title="删除图库"></a>删除图库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database remote:127.0.0.1/test1 root root</span><br></pre></td></tr></table></figure>
+<h2 id="导出图库"><a href="#导出图库" class="headerlink" title="导出图库"></a>导出图库</h2><p>将test1导出在/tmp/bacup-test1.gz<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">connect remote:127.0.0.1/test1 root root</span><br><span class="line">export database /tmp/backup-test1</span><br></pre></td></tr></table></figure></p>
+<h2 id="导入图库"><a href="#导入图库" class="headerlink" title="导入图库"></a>导入图库</h2><p>将bacup-test1.gz导入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">connect remote:127.0.0.1/test1 root root</span><br><span class="line">import database /tmp/backup-test1.gz --reserveClusterIDs=true</span><br></pre></td></tr></table></figure>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ul>
+<li><a href="https://orientdb.com/docs/3.0.x/" target="_blank" rel="noopener">OrientDB3手册</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/21/debian/debian-cookie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -425,12 +606,24 @@
                 
               
 
-              <time title="Created: 2019-07-21 09:41:32 / Modified: 09:46:21" itemprop="dateCreated datePublished" datetime="2019-07-21T09:41:32+08:00">2019-07-21</time>
+              <time title="Created: 2019-07-21 09:41:32" itemprop="dateCreated datePublished" datetime="2019-07-21T09:41:32+08:00">2019-07-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-03 09:40:50" itemprop="dateModified" datetime="2019-08-03T09:40:50+08:00">2019-08-03</time>
               
             
           </span>
@@ -484,7 +677,12 @@
       
         
           
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br></pre></td></tr></table></figure>
+            <p>清华debian源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br></pre></td></tr></table></figure>
+<h1 id="xface-自动登录"><a href="#xface-自动登录" class="headerlink" title="xface 自动登录"></a>xface 自动登录</h1><p>sudo vim /etc/lightdm/lightdm.conf<br>autologin-user=youname<br>autologin-user-timeout=0</p>
+<p>#　查看ip</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr show</span><br></pre></td></tr></table></figure>
+<h1 id="Media-change-please-insert-the-disc-labeled"><a href="#Media-change-please-insert-the-disc-labeled" class="headerlink" title="Media change: please insert the disc labeled"></a>Media change: please insert the disc labeled</h1><p>sudo sed -i ‘/cdrom/d’ /etc/apt/sources.list<br>grep -v ‘#’ /etc/apt/sources.list</p>
 
           
         
@@ -1920,171 +2118,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/06/19/coreutil/ssh-tunnel/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/19/coreutil/ssh-tunnel/" class="post-title-link" itemprop="url">ssh tunnel</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-06-19 11:28:00 / Modified: 11:30:43" itemprop="dateCreated datePublished" datetime="2019-06-19T11:28:00+08:00">2019-06-19</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coreutil/" itemprop="url" rel="index"><span itemprop="name">coreutil</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>内网机<br>ssh  -CfNg -R 1026:127.0.0.1:22  10.1.1.176</p>
-<p>公网机<br>ssh  -CfNg  -L  1025:0.0.0.0:1026  10.1.1.176</p>
-<p>ssh <a href="mailto:s@10.1.1.176" target="_blank" rel="noopener">s@10.1.1.176</a> -p1025</p>
-<p>command description:<br>-C：压缩数据传输。-f ：后台认证用户/密码，通常和-N连用，不用登录到远程主机。-N ：不执行脚本或命令，通常与-f连用。-g ：在-L/-R/-D参数中，允许远程主机连接到建立的转发的端口，如果不加这个参数，只允许本地主机建立连接。-L 本地端口:目标IP:目标端口-T 不分配 TTY 只做代理用-q 安静模式，不输出 错误/警告 信息</p>
-<h1 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h1><p><a href="https://www.jianshu.com/p/c72025d369b5" target="_blank" rel="noopener">SSH 映射</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2133,7 +2166,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2188,7 +2221,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2303,7 +2338,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">48</span>
+                      
+                    
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

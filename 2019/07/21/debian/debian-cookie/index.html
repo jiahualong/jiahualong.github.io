@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="12345678deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirrors.tuna.tsi">
+  <meta name="description" content="清华debian源 12345678deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirror">
 <meta name="keywords" content="debian">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Debain Mirros">
 <meta property="og:url" content="https://stan.cc/2019/07/21/debian/debian-cookie/index.html">
 <meta property="og:site_name" content="STAN.CC">
-<meta property="og:description" content="12345678deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirrors.tuna.tsi">
+<meta property="og:description" content="清华debian源 12345678deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirror">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-21T01:46:21.504Z">
+<meta property="og:updated_time" content="2019-08-03T01:40:50.510Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Debain Mirros">
-<meta name="twitter:description" content="12345678deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirrors.tuna.tsi">
+<meta name="twitter:description" content="清华debian源 12345678deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirror">
 
 
 
@@ -427,12 +427,24 @@
                 
               
 
-              <time title="Created: 2019-07-21 09:41:32 / Modified: 09:46:21" itemprop="dateCreated datePublished" datetime="2019-07-21T09:41:32+08:00">2019-07-21</time>
+              <time title="Created: 2019-07-21 09:41:32" itemprop="dateCreated datePublished" datetime="2019-07-21T09:41:32+08:00">2019-07-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-03 09:40:50" itemprop="dateModified" datetime="2019-08-03T09:40:50+08:00">2019-08-03</time>
               
             
           </span>
@@ -484,7 +496,12 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br></pre></td></tr></table></figure>
+        <p>清华debian源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br></pre></td></tr></table></figure>
+<h1 id="xface-自动登录"><a href="#xface-自动登录" class="headerlink" title="xface 自动登录"></a>xface 自动登录</h1><p>sudo vim /etc/lightdm/lightdm.conf<br>autologin-user=youname<br>autologin-user-timeout=0</p>
+<p>#　查看ip</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr show</span><br></pre></td></tr></table></figure>
+<h1 id="Media-change-please-insert-the-disc-labeled"><a href="#Media-change-please-insert-the-disc-labeled" class="headerlink" title="Media change: please insert the disc labeled"></a>Media change: please insert the disc labeled</h1><p>sudo sed -i ‘/cdrom/d’ /etc/apt/sources.list<br>grep -v ‘#’ /etc/apt/sources.list</p>
 
       
     </div>
@@ -531,6 +548,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/08/03/orientdb/orientdb-cookie/" rel="prev" title="OrientDB Cookie">
+                OrientDB Cookie <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -573,8 +594,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -591,7 +621,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -646,7 +676,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                      
+                    
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -761,7 +793,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">48</span>
+                      
+                    
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -814,6 +848,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#xface-自动登录"><span class="nav-number">1.</span> <span class="nav-text">xface 自动登录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Media-change-please-insert-the-disc-labeled"><span class="nav-number">2.</span> <span class="nav-text">Media change: please insert the disc labeled</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
