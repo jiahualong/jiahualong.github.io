@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select       #库名　　表名 　行数　创建时间 修改时间 表注释       TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, CREATE_TIME, UPDATE_TIME, TABLE_COMMENTfrom TABLESwhere">
+  <meta name="description" content="SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select    #库名　　表名 　行数 物理大小(字节)　创建时间 修改时间 表注释    TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, DATA_LENGTH + INDEX_LENGTH, CREATE_TIME, UPDATE_TIME,">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql Meta Data">
 <meta property="og:url" content="https://stan.cc/2019/08/16/mysql/mysql-meta-data/index.html">
 <meta property="og:site_name" content="STAN.CC">
-<meta property="og:description" content="SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select       #库名　　表名 　行数　创建时间 修改时间 表注释       TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, CREATE_TIME, UPDATE_TIME, TABLE_COMMENTfrom TABLESwhere">
+<meta property="og:description" content="SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select    #库名　　表名 　行数 物理大小(字节)　创建时间 修改时间 表注释    TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, DATA_LENGTH + INDEX_LENGTH, CREATE_TIME, UPDATE_TIME,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-16T13:41:37.723Z">
+<meta property="og:updated_time" content="2019-08-17T01:47:03.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mysql Meta Data">
-<meta name="twitter:description" content="SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select       #库名　　表名 　行数　创建时间 修改时间 表注释       TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, CREATE_TIME, UPDATE_TIME, TABLE_COMMENTfrom TABLESwhere">
+<meta name="twitter:description" content="SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select    #库名　　表名 　行数 物理大小(字节)　创建时间 修改时间 表注释    TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, DATA_LENGTH + INDEX_LENGTH, CREATE_TIME, UPDATE_TIME,">
 
 
 
@@ -427,12 +427,24 @@
                 
               
 
-              <time title="Created: 2019-08-16 20:50:42 / Modified: 21:41:37" itemprop="dateCreated datePublished" datetime="2019-08-16T20:50:42+08:00">2019-08-16</time>
+              <time title="Created: 2019-08-16 20:50:42" itemprop="dateCreated datePublished" datetime="2019-08-16T20:50:42+08:00">2019-08-16</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-17 09:47:03" itemprop="dateModified" datetime="2019-08-17T09:47:03+08:00">2019-08-17</time>
               
             
           </span>
@@ -485,12 +497,13 @@
 
       
         <h1 id="SCHEMATA"><a href="#SCHEMATA" class="headerlink" title="SCHEMATA"></a>SCHEMATA</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line"><span class="comment"># 库名</span></span><br><span class="line">SCHEMA_NAME </span><br><span class="line"><span class="keyword">from</span> SCHEMATA;</span><br></pre></td></tr></table></figure>
-<h1 id="TABLES"><a href="#TABLES" class="headerlink" title="TABLES"></a>TABLES</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">       <span class="comment">#库名　　表名 　行数　创建时间 修改时间 表注释</span></span><br><span class="line">       TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, CREATE_TIME, UPDATE_TIME, TABLE_COMMENT</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">TABLES</span></span><br><span class="line"><span class="keyword">where</span> TABLE_SCHEMA = <span class="string">'mds-server'</span>;</span><br></pre></td></tr></table></figure>
-<h1 id="COLUMNS"><a href="#COLUMNS" class="headerlink" title="COLUMNS"></a>COLUMNS</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">       <span class="comment">#库名　表名　字段名  排序(seq) 默认值　 是否可为null</span></span><br><span class="line">TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION , COLUMN_DEFAULT, IS_NULLABLE,</span><br><span class="line">       <span class="comment">#DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, CHARACTER_OCTET_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE , DATETIME_PRECISION,</span></span><br><span class="line">       <span class="comment"># 数据类型 是否主键(PRI), 注释</span></span><br><span class="line">       COLUMN_TYPE, COLUMN_KEY, COLUMN_COMMENT</span><br><span class="line"> <span class="keyword">from</span> <span class="string">`COLUMNS`</span> <span class="keyword">where</span> TABLE_SCHEMA = <span class="string">'mds-server'</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="TABLES"><a href="#TABLES" class="headerlink" title="TABLES"></a>TABLES</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">    <span class="comment">#库名　　表名 　行数 物理大小(字节)　创建时间 修改时间 表注释</span></span><br><span class="line">    TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, DATA_LENGTH + INDEX_LENGTH, CREATE_TIME, UPDATE_TIME, TABLE_COMMENT</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">TABLES</span></span><br><span class="line"><span class="keyword">where</span> TABLE_SCHEMA = <span class="string">'mds-server'</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="COLUMNS"><a href="#COLUMNS" class="headerlink" title="COLUMNS"></a>COLUMNS</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">select</span></span><br><span class="line">       <span class="comment">#库名　表名　字段名  排序(seq) 默认值　 是否可为null</span></span><br><span class="line">TABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION , COLUMN_DEFAULT, IS_NULLABLE,</span><br><span class="line">       <span class="comment">#DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, CHARACTER_OCTET_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE , DATETIME_PRECISION,</span></span><br><span class="line">       <span class="comment"># 数据类型 是否主键(PRI), 注释</span></span><br><span class="line">       COLUMN_TYPE, COLUMN_KEY, COLUMN_COMMENT</span><br><span class="line"> <span class="keyword">from</span> <span class="string">`COLUMNS`</span> <span class="keyword">where</span> TABLE_SCHEMA = <span class="string">'mds-server'</span>;</span><br></pre></td></tr></table></figure>
 <h1 id="STATISTICS表"><a href="#STATISTICS表" class="headerlink" title="STATISTICS表"></a>STATISTICS表</h1><p>index</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">TABLE_SCHEMA, TABLE_NAME, INDEX_SCHEMA, INDEX_NAME, COLUMN_NAME</span><br><span class="line"> <span class="keyword">from</span> <span class="keyword">STATISTICS</span> <span class="keyword">where</span> TABLE_SCHEMA = <span class="string">'mds-server'</span>;</span><br></pre></td></tr></table></figure>
 <h1 id="VIEWS"><a href="#VIEWS" class="headerlink" title="VIEWS"></a>VIEWS</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> VIEWS;</span><br></pre></td></tr></table></figure>
 <h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
+<li><a href="http://www.heartthinkdo.com/?p=838" target="_blank" rel="noopener">Mysql 统计数据库和数据表大小</a></li>
 <li><a href="https://blog.csdn.net/changeseven/article/details/52117871" target="_blank" rel="noopener">解析MySQL的information_schema数据库</a></li>
 <li><a href="https://blog.csdn.net/lkforce/article/details/79557482" target="_blank" rel="noopener">MySQL中表的字段信息查询–information_schema.COLUMNS</a></li>
 <li><a href="http://www.mysqlab.net/docs/view/refman-5.1-zh/chapter/information-schema.html#tables-table" target="_blank" rel="noopener">MySQL 实验室 第23章：INFORMATION_SCHEMA信息数据库</a></li>
@@ -542,6 +555,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/18/hive/install-hive/" rel="prev" title="Install Hive">
+                Install Hive <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -612,7 +629,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">45</span>
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -671,7 +688,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -790,7 +809,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">50</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

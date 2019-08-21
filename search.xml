@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[k3s cookie]]></title>
+    <url>%2F2019%2F08%2F21%2Fdocker%2Fk3s%2F</url>
+    <content type="text"><![CDATA[install k3s123curl -sfL https://get.k3s.io | sh - # Check for Ready node, takes maybe 30 seconds k3s kubectl get node 创建deployment1k3s kubectl create -f https://kubernetes.io/docs/user-guide/nginx-deployment.yaml cat nginx-deployment.yaml123456789101112131415161718192021apiVersion: apps/v1kind: Deploymentmetadata: name: nginx-deployment labels: app: nginxspec: replicas: 3 selector: matchLabels: app: nginx template: metadata: labels: app: nginx spec: containers: - name: nginx image: nginx:1.15.4 ports: - containerPort: 80 查看 deployment 1k3s kubectl get deployment 查看pods1k3s kubectl get pods 查看目前的node1k3s kubectl get node 添加 ndoe1k3s agent -s $&#123;YOUR_SERVER_IP&#125; -t $&#123;NODE_TOKEN&#125; /var/lib/rancher/k3s/server/node-token 安装Rancher Server12345docker run -d -v /data/docker/rancher-server/var/lib/rancher/:/var/lib/rancher/ \ --restart=unless-stopped \ --name rancher-server \ -p 80:80 -p 443:443 \ rancher/rancher:stable 参考 k3s-轻量级Kubernetes上手 史上最轻量级Kubernetes K3s初探：Rancher架构师带你尝鲜史上最轻量Kubernetes发行版]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>k3s</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hive Meta Data]]></title>
+    <url>%2F2019%2F08%2F18%2Fhive%2Fhive-metadata%2F</url>
+    <content type="text"><![CDATA[DBS获取 database name 1select DB_ID, `DESC`, NAME from bj_hive_metadata.dbs; TABLS1234select d.DB_ID, d.NAME, t.TBL_NAME, t.TBL_ID, t.SD_ID, t.CREATE_TIME, t.LAST_ACCESS_TIMEfrom tbls as t left join dbs d on t.DB_ID = d.DB_IDwhere d.NAME = 'default'; COLUMNS_V2123456789101112131415161718select d.NAME as DB_NAME, d.DB_ID, t.TBL_ID, t.TBL_NAME, t.TBL_TYPE, t.CREATE_TIME, t.LAST_ACCESS_TIME, c.COMMENT, c.COLUMN_NAME, c.TYPE_NAME, c.INTEGER_IDXfrom columns_v2 as c left join sds as s on s.CD_ID = c.CD_ID left join tbls t on s.SD_ID = t.SD_ID left join dbs d on t.DB_ID = d.DB_IDwhere d.NAME = 'default'; 其它字段暂时不去获取CDS 一个字段CD_ID，与SDS表关联COLUMNS_V2 存储字段信息，通过CD_ID与其他表关联 SORT_COLS 排序字段，通过SD_ID关联 TBLS 存储表信息，关联字段DB_ID,SD_ID, PARTITION_PARAMS 存储某分区相关信息，包括文件数，文件大小，记录条数等。通过PART_ID关联]]></content>
+      <categories>
+        <category>hive</category>
+      </categories>
+      <tags>
+        <tag>hive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Install Hive]]></title>
+    <url>%2F2019%2F08%2F18%2Fhive%2Finstall-hive%2F</url>
+    <content type="text"><![CDATA[Apache Hive-2.3.0 快速搭建与使用 搭建Happd+hive测试环境 hive环境搭建]]></content>
+      <categories>
+        <category>hive</category>
+      </categories>
+      <tags>
+        <tag>hive</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mysql Meta Data]]></title>
     <url>%2F2019%2F08%2F16%2Fmysql%2Fmysql-meta-data%2F</url>
-    <content type="text"><![CDATA[SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select #库名 表名 行数 创建时间 修改时间 表注释 TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, CREATE_TIME, UPDATE_TIME, TABLE_COMMENTfrom TABLESwhere TABLE_SCHEMA = 'mds-server'; COLUMNS1234567select #库名 表名 字段名 排序(seq) 默认值 是否可为nullTABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION , COLUMN_DEFAULT, IS_NULLABLE, #DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, CHARACTER_OCTET_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE , DATETIME_PRECISION, # 数据类型 是否主键(PRI), 注释 COLUMN_TYPE, COLUMN_KEY, COLUMN_COMMENT from `COLUMNS` where TABLE_SCHEMA = 'mds-server'; STATISTICS表index 123selectTABLE_SCHEMA, TABLE_NAME, INDEX_SCHEMA, INDEX_NAME, COLUMN_NAME from STATISTICS where TABLE_SCHEMA = 'mds-server'; VIEWS1select * from VIEWS; 引用 解析MySQL的information_schema数据库 MySQL中表的字段信息查询–information_schema.COLUMNS MySQL 实验室 第23章：INFORMATION_SCHEMA信息数据库 MySQL 获取元数据的方法 mysql中information_schema.tables字段说明]]></content>
+    <content type="text"><![CDATA[SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select #库名 表名 行数 物理大小(字节) 创建时间 修改时间 表注释 TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, DATA_LENGTH + INDEX_LENGTH, CREATE_TIME, UPDATE_TIME, TABLE_COMMENTfrom TABLESwhere TABLE_SCHEMA = 'mds-server'; COLUMNS123456789select #库名 表名 字段名 排序(seq) 默认值 是否可为nullTABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION , COLUMN_DEFAULT, IS_NULLABLE, #DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, CHARACTER_OCTET_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE , DATETIME_PRECISION, # 数据类型 是否主键(PRI), 注释 COLUMN_TYPE, COLUMN_KEY, COLUMN_COMMENT from `COLUMNS` where TABLE_SCHEMA = 'mds-server'; STATISTICS表index 123selectTABLE_SCHEMA, TABLE_NAME, INDEX_SCHEMA, INDEX_NAME, COLUMN_NAME from STATISTICS where TABLE_SCHEMA = 'mds-server'; VIEWS1select * from VIEWS; 引用 Mysql 统计数据库和数据表大小 解析MySQL的information_schema数据库 MySQL中表的字段信息查询–information_schema.COLUMNS MySQL 实验室 第23章：INFORMATION_SCHEMA信息数据库 MySQL 获取元数据的方法 mysql中information_schema.tables字段说明]]></content>
       <categories>
         <category>mysql</category>
       </categories>
@@ -30,7 +64,7 @@
   <entry>
     <title><![CDATA[Debain Mirros]]></title>
     <url>%2F2019%2F07%2F21%2Fdebian%2Fdebian-cookie%2F</url>
-    <content type="text"><![CDATA[清华debian源 12345678deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib xface 自动登录sudo vim /etc/lightdm/lightdm.confautologin-user=younameautologin-user-timeout=0 # 查看ip 1ip addr show Media change: please insert the disc labeledsudo sed -i ‘/cdrom/d’ /etc/apt/sources.listgrep -v ‘#’ /etc/apt/sources.list]]></content>
+    <content type="text"><![CDATA[清华debian源 12345678deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contribdeb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contribdeb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib xface 自动登录sudo vim /etc/lightdm/lightdm.confautologin-user=younameautologin-user-timeout=0 # 查看ip 1ip addr show Media change: please insert the disc labeledsudo sed -i ‘/cdrom/d’ /etc/apt/sources.listgrep -v ‘#’ /etc/apt/sources.list OpenJDK 安装位置/usr/lib/jvm/usr/lib/jvm/java-8-openjdk-amd64 export JAVA_HOME=”/usr/lib/jvm/java-8-openjdk-amd64”export PATH=$JAVA_HOME/bin:$PATH]]></content>
       <categories>
         <category>debian</category>
       </categories>
