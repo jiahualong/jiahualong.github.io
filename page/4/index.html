@@ -380,6 +380,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/30/ubuntu/ubuntu-apt/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/30/ubuntu/ubuntu-apt/" class="post-title-link" itemprop="url">ubuntu apt Cookie</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-30 22:51:00 / Modified: 22:55:54" itemprop="dateCreated datePublished" datetime="2019-04-30T22:51:00+08:00">2019-04-30</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="apt-cache-tmp-file-location"><a href="#apt-cache-tmp-file-location" class="headerlink" title="apt cache tmp file location"></a>apt cache tmp file location</h2><pre><code>/var/cache/apt/archives/ 
+</code></pre><h2 id="clean-tmp-file"><a href="#clean-tmp-file" class="headerlink" title="clean tmp file"></a>clean tmp file</h2><pre><code>apt clean
+
+apt autoclean
+
+apt autoremove
+</code></pre><h2 id="apt-走-socks"><a href="#apt-走-socks" class="headerlink" title="apt 走 socks*"></a>apt 走 socks*</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install tsocks</span><br><span class="line">vi /etc/tsocks.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">local = 192.168.1.0/255.255.255.0  </span><br><span class="line">local = 127.0.0.0/255.0.0.0</span><br><span class="line"></span><br><span class="line">server = 0.0.0.0   #socks IP</span><br><span class="line">server_type = 5    #socks version</span><br><span class="line">server_port = 24  ＃socks port</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tsocks apt install xxxx</span><br></pre></td></tr></table></figure>
+<p><a href="http://www.joecen.com/2008/02/17/" target="_blank" rel="noopener">ref</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/27/docker/docker-ubuntu18/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1655,7 +1825,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-08 17:30:05" itemprop="dateModified" datetime="2019-08-08T17:30:05+08:00">2019-08-08</time>
+                <time title="Modified: 2019-08-30 21:32:52" itemprop="dateModified" datetime="2019-08-30T21:32:52+08:00">2019-08-30</time>
               
             
           </span>
@@ -1797,6 +1967,8 @@ httpcode 200是找到 404是未找到
 <li><a href="https://github.com/medcl/elasticsearch-analysis-ik/issues/687#issuecomment-514994336" target="_blank" rel="noopener">ref</a></li>
 </ul>
 <h2 id="测试远程分支"><a href="#测试远程分支" class="headerlink" title="测试远程分支"></a>测试远程分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &quot;http://ej.stan.cc:9200/_analyze&quot; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">   &quot;text&quot;:&quot;测试非空分词&quot;,&quot;tokenizer&quot;: &quot;ik_max_word&quot;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="可以映射出的目录"><a href="#可以映射出的目录" class="headerlink" title="可以映射出的目录"></a>可以映射出的目录</h2><p>/usr/share/elasticsearch/data<br>/usr/share/elasticsearch/plugins</p>
+<h2 id="获取文档"><a href="#获取文档" class="headerlink" title="获取文档"></a>获取文档</h2><p>GET http://{localhost:9200}/{index_name}/_doc/{id}</p>
 <h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
 <li><a href="https://segmentfault.com/a/1190000012553894" target="_blank" rel="noopener">Elasticsearch 默认分词器和中分分词器之间的比较及使用方法</a></li>
 <li><a href="https://elasticsearch.cn/article/601" target="_blank" rel="noopener">Elasticsearch 移除 type 之后的新姿势</a></li>
@@ -2035,179 +2207,6 @@ httpcode 200是找到 404是未找到
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/24/coreutil/history/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/24/coreutil/history/" class="post-title-link" itemprop="url">History Cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-24 23:57:00" itemprop="dateCreated datePublished" datetime="2019-04-24T23:57:00+08:00">2019-04-24</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-28 22:29:55" itemprop="dateModified" datetime="2019-04-28T22:29:55+08:00">2019-04-28</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/coreutil/" itemprop="url" rel="index"><span itemprop="name">coreutil</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="清理history"><a href="#清理history" class="headerlink" title="清理history"></a>清理history</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history -c</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2256,7 +2255,7 @@ httpcode 200是找到 404是未找到
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

@@ -380,6 +380,145 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/08/21/mongo/mongo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/21/mongo/mongo/" class="post-title-link" itemprop="url">Untitled</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-21 14:50:40" itemprop="dateCreated datePublished" datetime="2019-08-21T14:50:40+08:00">2019-08-21</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="mongo-更新"><a href="#mongo-更新" class="headerlink" title="mongo 更新"></a>mongo 更新</h2><p>collection_name 集合中把所有的tech_id设置为int 1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection_name.updateMany(&#123;&#125;,&#123;$set:&#123;&quot;tech_id&quot;: NumberInt(1) &#125;&#125;)</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/08/21/docker/k3s/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -425,12 +564,24 @@
                 
               
 
-              <time title="Created: 2019-08-21 09:31:38 / Modified: 11:09:19" itemprop="dateCreated datePublished" datetime="2019-08-21T09:31:38+08:00">2019-08-21</time>
+              <time title="Created: 2019-08-21 09:31:38" itemprop="dateCreated datePublished" datetime="2019-08-21T09:31:38+08:00">2019-08-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-30 21:24:43" itemprop="dateModified" datetime="2019-08-30T21:24:43+08:00">2019-08-30</time>
               
             
           </span>
@@ -494,7 +645,14 @@
 <h2 id="添加-ndoe"><a href="#添加-ndoe" class="headerlink" title="添加　ndoe"></a>添加　ndoe</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s agent -s $&#123;YOUR_SERVER_IP&#125; -t $&#123;NODE_TOKEN&#125;</span><br></pre></td></tr></table></figure>
 <p>/var/lib/rancher/k3s/server/node-token</p>
 <h1 id="安装Rancher-Server"><a href="#安装Rancher-Server" class="headerlink" title="安装Rancher Server"></a>安装Rancher Server</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -v /data/docker/rancher-server/var/lib/rancher/:/var/lib/rancher/ \</span><br><span class="line">    --restart=unless-stopped \</span><br><span class="line">    --name rancher-server \</span><br><span class="line">    -p 80:80 -p 443:443 \</span><br><span class="line">    rancher/rancher:stable</span><br></pre></td></tr></table></figure>
+<h1 id="查看log"><a href="#查看log" class="headerlink" title="查看log"></a>查看log</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl log &lt;实例名&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="查看所有pods"><a href="#查看所有pods" class="headerlink" title="查看所有pods"></a>查看所有pods</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl -n 环境 get pods</span><br><span class="line">k3s kubectl get pods -A</span><br></pre></td></tr></table></figure>
+<h1 id="查看IP"><a href="#查看IP" class="headerlink" title="查看IP"></a>查看IP</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl -n 环境 get services</span><br><span class="line">k3s kubectl get services -A</span><br></pre></td></tr></table></figure>
+<h1 id="pods-生成-yaml"><a href="#pods-生成-yaml" class="headerlink" title="pods 生成 yaml"></a>pods 生成 yaml</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl -n 环境 get services 服务名 --export -o yaml</span><br></pre></td></tr></table></figure>
+<h1 id="重建pod"><a href="#重建pod" class="headerlink" title="重建pod"></a>重建pod</h1><p>k3s kubectl get pod orientdb-65f5946fc9-nq2kx -n default -o yaml | kubectl replace –force -f -</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://www.jianshu.com/p/baa6b11062de" target="_blank" rel="noopener">k8s 重启pod</a></li>
+<li><a href="https://jimmysong.io/kubernetes-handbook/guide/kubectl-cheatsheet.html" target="_blank" rel="noopener">kubectl 命令技巧大全</a></li>
 <li><a href="https://dyllanwli.github.io/2019/03/09/k3s-%E8%BD%BB%E9%87%8F%E7%BA%A7Kubernetes%E4%B8%8A%E6%89%8B/" target="_blank" rel="noopener">k3s-轻量级Kubernetes上手</a></li>
 <li><a href="https://www.cnrancher.com/rancher-k3s/" target="_blank" rel="noopener">史上最轻量级Kubernetes</a></li>
 <li><a href="https://blog.ilemonrain.com/docker/rancher-with-k3s.html" target="_blank" rel="noopener"></a></li>
@@ -1471,7 +1629,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-18 11:19:30" itemprop="dateModified" datetime="2019-08-18T11:19:30+08:00">2019-08-18</time>
+                <time title="Modified: 2019-08-21 13:11:39" itemprop="dateModified" datetime="2019-08-21T13:11:39+08:00">2019-08-21</time>
               
             
           </span>
@@ -1525,14 +1683,21 @@
       
         
           
-            <p>清华debian源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ stretch-backports main non-free contrib</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security/ stretch/updates main non-free contrib</span><br></pre></td></tr></table></figure>
+            <p>清华debian源<br><a href="https://mirror.tuna.tsinghua.edu.cn/help/debian/" target="_blank" rel="noopener">https://mirror.tuna.tsinghua.edu.cn/help/debian/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br><span class="line"># deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free</span><br></pre></td></tr></table></figure>
 <h1 id="xface-自动登录"><a href="#xface-自动登录" class="headerlink" title="xface 自动登录"></a>xface 自动登录</h1><p>sudo vim /etc/lightdm/lightdm.conf<br>autologin-user=youname<br>autologin-user-timeout=0</p>
 <p>#　查看ip</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip addr show</span><br></pre></td></tr></table></figure>
 <h1 id="Media-change-please-insert-the-disc-labeled"><a href="#Media-change-please-insert-the-disc-labeled" class="headerlink" title="Media change: please insert the disc labeled"></a>Media change: please insert the disc labeled</h1><p>sudo sed -i ‘/cdrom/d’ /etc/apt/sources.list<br>grep -v ‘#’ /etc/apt/sources.list</p>
 <h1 id="OpenJDK-安装位置"><a href="#OpenJDK-安装位置" class="headerlink" title="OpenJDK 安装位置"></a>OpenJDK 安装位置</h1><p>/usr/lib/jvm<br>/usr/lib/jvm/java-8-openjdk-amd64</p>
 <p>export JAVA_HOME=”/usr/lib/jvm/java-8-openjdk-amd64”<br>export PATH=$JAVA_HOME/bin:$PATH</p>
+<h1 id="合盖后不休眠"><a href="#合盖后不休眠" class="headerlink" title="合盖后不休眠"></a>合盖后不休眠</h1><p>添加配置</p>
+<p>vim /etc/systemd/logind.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HandleLidSwitch=ignore</span><br></pre></td></tr></table></figure></p>
+<p>reboot生效果</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="https://www.jianshu.com/p/cfa90c8a900f" target="_blank" rel="noopener">CentOS7设置笔记本合盖不休眠</a></li>
+<li><a href="https://blog.csdn.net/acxlm/article/details/78248819" target="_blank" rel="noopener">Debian设置合上笔记本盖子不休眠</a></li>
+</ul>
 
           
         
@@ -1911,168 +2076,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/16/ubuntu/ubuntu-cookie/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/16/ubuntu/ubuntu-cookie/" class="post-title-link" itemprop="url">ubuntu cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-07-16 09:05:57 / Modified: 09:19:41" itemprop="dateCreated datePublished" datetime="2019-07-16T09:05:57+08:00">2019-07-16</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="安装simple-chinese"><a href="#安装simple-chinese" class="headerlink" title="安装simple-chinese"></a>安装simple-chinese</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install language-pack-zh-hans-base/bionic-updates language-pack-zh-hans/bionic-updates</span><br></pre></td></tr></table></figure>
-<p>## </p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2121,7 +2124,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

@@ -380,6 +380,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/05/24/spring/mybatis-plus-bug/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/05/24/spring/mybatis-plus-bug/" class="post-title-link" itemprop="url">mybatis-plus 3.1.1 bug</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-24 15:55:00 / Modified: 15:56:44" itemprop="dateCreated datePublished" datetime="2019-05-24T15:55:00+08:00">2019-05-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>SpringTest中正常， SPringApplication中不正常, 用的同一个配置<br>Mybatis plus 3.1.1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.builder.BuilderException: Error evaluating expression &apos;ew.sqlSegment != null and ew.sqlSegment != &apos;&apos; and ew.nonEmptyOfWhere&apos;. Cause: org.apache.ibatis.ognl.OgnlException: sqlSegment [com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Your property named &quot;XXXXXXX&quot; cannot find the corresponding database column name!]</span><br><span class="line">	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-2.0.1.jar:2.0.1]</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/05/23/docker/docker-maven/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1249,12 +1411,24 @@
                 
               
 
-              <time title="Created: 2019-05-06 23:00:56 / Modified: 23:02:58" itemprop="dateCreated datePublished" datetime="2019-05-06T23:00:56+08:00">2019-05-06</time>
+              <time title="Created: 2019-05-06 23:00:56" itemprop="dateCreated datePublished" datetime="2019-05-06T23:00:56+08:00">2019-05-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-01 14:56:09" itemprop="dateModified" datetime="2019-09-01T14:56:09+08:00">2019-09-01</time>
               
             
           </span>
@@ -1312,10 +1486,11 @@
 <li>FreeBSD 11.1 </li>
 <li>OpenJDK</li>
 </ul>
-<h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><pre><code>sudo pkg install openjdk
-</code></pre><h2 id="mount-files"><a href="#mount-files" class="headerlink" title="mount files"></a>mount files</h2><pre><code>sudo mount -t fdescfs fdesc /dev/fd
-sudo mount -t procfs proc /proc
-</code></pre><h2 id="auto-mount-file"><a href="#auto-mount-file" class="headerlink" title="auto mount file"></a>auto mount file</h2><pre><code>sudo vi /etc/fstab
+<h2 id="search"><a href="#search" class="headerlink" title="search"></a>search</h2><p>查看目前支持的版本 8/11/12</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">pkg search jdk </span><br><span class="line"></span><br><span class="line">openjdk-7.161.01,1             Java Development Kit 7</span><br><span class="line">openjdk11-11.0.3+7.2           Java Development Kit 11</span><br><span class="line">openjdk12-12.0.1+12.2          Java Development Kit 12</span><br><span class="line">openjdk8-8.212.4.1             Java Development Kit 8</span><br></pre></td></tr></table></figure>
+<h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pkg install openjdk8</span><br></pre></td></tr></table></figure>
+<h2 id="mount-files"><a href="#mount-files" class="headerlink" title="mount files"></a>mount files</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t fdescfs fdesc /dev/fd</span><br><span class="line">sudo mount -t procfs proc /proc</span><br></pre></td></tr></table></figure>
+<h2 id="auto-mount-file"><a href="#auto-mount-file" class="headerlink" title="auto mount file"></a>auto mount file</h2><pre><code>sudo vi /etc/fstab
 </code></pre><p>Insert the following mount information into the file:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fdesc   /dev/fd     fdescfs     rw  0   0</span><br><span class="line">proc    /proc       procfs      rw  0   0</span><br></pre></td></tr></table></figure>
 <p>Save and exit.</p>
@@ -1956,176 +2131,6 @@ false
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/30/ubuntu/ubuntu-apt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/30/ubuntu/ubuntu-apt/" class="post-title-link" itemprop="url">ubuntu apt Cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-30 22:51:00 / Modified: 22:55:54" itemprop="dateCreated datePublished" datetime="2019-04-30T22:51:00+08:00">2019-04-30</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="apt-cache-tmp-file-location"><a href="#apt-cache-tmp-file-location" class="headerlink" title="apt cache tmp file location"></a>apt cache tmp file location</h2><pre><code>/var/cache/apt/archives/ 
-</code></pre><h2 id="clean-tmp-file"><a href="#clean-tmp-file" class="headerlink" title="clean tmp file"></a>clean tmp file</h2><pre><code>apt clean
-
-apt autoclean
-
-apt autoremove
-</code></pre><h2 id="apt-走-socks"><a href="#apt-走-socks" class="headerlink" title="apt 走 socks*"></a>apt 走 socks*</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install tsocks</span><br><span class="line">vi /etc/tsocks.conf</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">local = 192.168.1.0/255.255.255.0  </span><br><span class="line">local = 127.0.0.0/255.0.0.0</span><br><span class="line"></span><br><span class="line">server = 0.0.0.0   #socks IP</span><br><span class="line">server_type = 5    #socks version</span><br><span class="line">server_port = 24  ＃socks port</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tsocks apt install xxxx</span><br></pre></td></tr></table></figure>
-<p><a href="http://www.joecen.com/2008/02/17/" target="_blank" rel="noopener">ref</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2174,7 +2179,7 @@ apt autoremove
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>

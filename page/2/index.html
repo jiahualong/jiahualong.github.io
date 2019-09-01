@@ -380,6 +380,168 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/16/ubuntu/ubuntu-cookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/16/ubuntu/ubuntu-cookie/" class="post-title-link" itemprop="url">ubuntu cookie</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-16 09:05:57 / Modified: 09:19:41" itemprop="dateCreated datePublished" datetime="2019-07-16T09:05:57+08:00">2019-07-16</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="安装simple-chinese"><a href="#安装simple-chinese" class="headerlink" title="安装simple-chinese"></a>安装simple-chinese</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install language-pack-zh-hans-base/bionic-updates language-pack-zh-hans/bionic-updates</span><br></pre></td></tr></table></figure>
+<p>## </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/16/aria2/aria2-cookie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -442,7 +604,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-17 09:43:05" itemprop="dateModified" datetime="2019-07-17T09:43:05+08:00">2019-07-17</time>
+                <time title="Modified: 2019-09-01 22:30:02" itemprop="dateModified" datetime="2019-09-01T22:30:02+08:00">2019-09-01</time>
               
             
           </span>
@@ -505,28 +667,22 @@
 <h2 id="BitTorrent-Magnet-URI"><a href="#BitTorrent-Magnet-URI" class="headerlink" title="BitTorrent Magnet URI:"></a>BitTorrent Magnet URI:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c &apos;magnet:?xt=urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C&apos;</span><br></pre></td></tr></table></figure>
 <h2 id="Metalink"><a href="#Metalink" class="headerlink" title="Metalink:"></a>Metalink:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://example.org/mylinux.metalink</span><br></pre></td></tr></table></figure>
 <h2 id="从文本中下载很多url"><a href="#从文本中下载很多url" class="headerlink" title="从文本中下载很多url"></a>从文本中下载很多url</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c -i uris.txt</span><br></pre></td></tr></table></figure>
-<h1 id="aria2-后台启动信息"><a href="#aria2-后台启动信息" class="headerlink" title="aria2 后台启动信息"></a>aria2 后台启动信息</h1><pre><code>https://github.com/binux/yaaw
-</code></pre><p>TODO: <a href="https://github.com/binux/yaaw" target="_blank" rel="noopener">https://github.com/binux/yaaw</a></p>
-<p>Usage<br>Run aria2 with RPC enabled<br>aria2c –enable-rpc –rpc-listen-all=true –rpc-allow-origin-all with ‘JSON-RPC PATH’ like <a href="http://hostname:port/jsonrpc" target="_blank" rel="noopener">http://hostname:port/jsonrpc</a></p>
-<p>Recommend: Set –rpc-secret=<secret> if you are using aria2 1.18.4(or higher) with ‘JSON-RPC PATH’ like <a href="http://token:secret@hostname:port/jsonrpc" target="_blank" rel="noopener">http://token:secret@hostname:port/jsonrpc</a></secret></p>
-<p>Set –rpc-user=<username> –rpc-passwd=<passwd> if you are using aria2 1.15.2(or higher) with ‘JSON-RPC PATH’ like <a href="http://username:passwd@hostname:port/jsonrpc" target="_blank" rel="noopener">http://username:passwd@hostname:port/jsonrpc</a></passwd></username></p>
-<p>Visit index.html.</p>
-<p>Change “JSON-RPC Path” setting if “Internal server error” occurred.</p>
-<p>All your settings on web is temporary. Settings will be lost after aria2 restarted.<br>Tasks(including which is not finished) will be lost after aria2 restarted. Using –save-session=SOME/WHERE and reload with –continue=true –input-file=SOME/WHERE to continue.<br>Using $HOME/.aria2/aria2.conf to save your options.<br>For more infomations about aria2, visit Aria2 Manual<br>YAAW also support websocket! Set JSON-RPC PATH with ws://hostname:port/jsonrpc.<br>Pre-spicify or save JSON-PRC PATH as bookmark with <a href="http://binux.github.io/yaaw/demo/#path=http://hostname:port/jsonrpc" target="_blank" rel="noopener">http://binux.github.io/yaaw/demo/#path=http://hostname:port/jsonrpc</a></p>
-<p>/Applications/Aria2GUI.app/Contents/Resources/aria2c –dir=/Users/hualong/Downloads –conf-path=/Applications/Aria2GUI.app/Contents/Resources/aria2.conf –input-file=/Applications/Aria2GUI.app/Contents/Resources/aria2.session –save-session=/Applications/Aria2GUI.app/Contents/Resources/aria2.session –max-concurrent-downloads=10 –max-connection-per-server=16 –min-split-size=1024K –split=16 –max-overall-download-limit=0K –max-overall-upload-limit=0K –max-download-limit=0K –max-upload-limit=0K –continue=true –auto-file-renaming=true –allow-overwrite=true –disk-cache=0M –max-tries=0 –retry-wait=5 -D</p>
-<p>aria2c –enable-rpc –rpc-listen-all=true –rpc-allow-origin-all </p>
-<h1 id="WebUI-Aria2"><a href="#WebUI-Aria2" class="headerlink" title="WebUI-Aria2"></a>WebUI-Aria2</h1><h2 id="install-webui-aria2"><a href="#install-webui-aria2" class="headerlink" title="install webui-aria2"></a>install webui-aria2</h2><ul>
-<li>webui-aria2: Web browser interface for aria2 (2012 GSOC project)</li>
-</ul>
-<p>## </p>
-<p>#TODO 安装 webui <a href="https://github.com/ziahamza/webui-aria2" target="_blank" rel="noopener">https://github.com/ziahamza/webui-aria2</a></p>
-<p>#　插件</p>
-<ul>
-<li>brew search Aria2GUI</li>
-<li>brew cask install maria</li>
-<li>YAAW for Chrome</li>
-</ul>
+<h1 id="aria2-后台启动"><a href="#aria2-后台启动" class="headerlink" title="aria2 后台启动"></a>aria2 后台启动</h1><p>环境为 FreeBSD</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pkg install aria2</span><br></pre></td></tr></table></figure>
+<h3 id="创建配置"><a href="#创建配置" class="headerlink" title="创建配置"></a>创建配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.aria2</span><br><span class="line">cd ~/.aria2</span><br><span class="line">aria2c https://raw.githubusercontent.com/fsaimon/aria2.conf/master/aria2.conf</span><br></pre></td></tr></table></figure>
+<h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>以下配置需求修改</p>
+<p>input-file=你家/.aria2/aria2.session<br>save-session=你家/.aria2/aria2.session<br>enable-rpc=true<br>rpc-secret=你的Token<br>dir=你的下载目录</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>现在 <code>aria2c</code> 启动后会开始rpc模式不再接受shell中的下载命令<br>如果 配置目前　不在上面的目录中的话，可以使用<br><code>aria2c --conf-path=&quot;你的配置aria2.conf&quot;</code>  启动指定配置</p>
+<p>###　插件</p>
+<p>chrome可安装<code>YAAW for Chrome</code></p>
+<p>在<code>YAAW</code> 配置中填入地址<code>http://ip:port/jsonrpc</code></p>
+<p>如果启用了 rpc-secret 地址为 <code>http://token:secret@hostname:port/jsonrpc</code></p>
+<p>如果启用了 user&amp;password 使用 <code>http://username:passwd@hostname:port/jsonrpc</code></p>
 <h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
+<li><a href="https://aria2c.com/usage.html" target="_blank" rel="noopener">Aria2 &amp; YAAW 使用说明</a></li>
+<li><a href="https://github.com/fsaimon/aria2.conf" target="_blank" rel="noopener">本项目提供一个不错的 aria2 配置文件，同时提供 Mac OS 下的开机启动并可控的解决方案</a></li>
+<li><a href="https://binux.blog/2012/12/aria2-examples/" target="_blank" rel="noopener">aria2配置示例</a></li>
+<li><a href="https://www.jianshu.com/p/e9885c658e2c" target="_blank" rel="noopener">告别迅雷，aria2安装并设置开机启动</a></li>
 <li><a href="http://aria2.github.io/" target="_blank" rel="noopener">aria2</a></li>
 <li><a href="https://github.com/binux/yaaw" target="_blank" rel="noopener">Yet Another Aria2 Webui in pure HTML/CSS/Javascirpt</a>“;</li>
 <li><a href="https://gist.github.com/GAS85/79849bfd09613067a2ac0c1a711120a6" target="_blank" rel="noopener">Aria2 + Ubuntu 16.04 + Apache2 + Web UI</a></li>
@@ -1951,168 +2107,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/05/24/spring/mybatis-plus-bug/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/24/spring/mybatis-plus-bug/" class="post-title-link" itemprop="url">mybatis-plus 3.1.1 bug</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-24 15:55:00 / Modified: 15:56:44" itemprop="dateCreated datePublished" datetime="2019-05-24T15:55:00+08:00">2019-05-24</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>SpringTest中正常， SPringApplication中不正常, 用的同一个配置<br>Mybatis plus 3.1.1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.builder.BuilderException: Error evaluating expression &apos;ew.sqlSegment != null and ew.sqlSegment != &apos;&apos; and ew.nonEmptyOfWhere&apos;. Cause: org.apache.ibatis.ognl.OgnlException: sqlSegment [com.baomidou.mybatisplus.core.exceptions.MybatisPlusException: Your property named &quot;XXXXXXX&quot; cannot find the corresponding database column name!]</span><br><span class="line">	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:77) ~[mybatis-spring-2.0.1.jar:2.0.1]</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2161,7 +2155,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
