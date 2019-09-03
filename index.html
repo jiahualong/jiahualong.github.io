@@ -380,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/08/21/mongo/mongo/">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/02/mongo/mongo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hualong">
@@ -400,7 +400,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/08/21/mongo/mongo/" class="post-title-link" itemprop="url">Untitled</a>
+                <a href="/2019/09/02/mongo/mongo/" class="post-title-link" itemprop="url">MongoDB cookie book</a>
               
             
           </h1>
@@ -425,12 +425,34 @@
                 
               
 
-              <time title="Created: 2019-08-21 14:50:40" itemprop="dateCreated datePublished" datetime="2019-08-21T14:50:40+08:00">2019-08-21</time>
+              <time title="Created: 2019-09-02 21:15:16 / Modified: 21:29:42" itemprop="dateCreated datePublished" datetime="2019-09-02T21:15:16+08:00">2019-09-02</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mongodb/" itemprop="url" rel="index"><span itemprop="name">mongodb</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -462,7 +484,352 @@
       
         
           
-            <h2 id="mongo-更新"><a href="#mongo-更新" class="headerlink" title="mongo 更新"></a>mongo 更新</h2><p>collection_name 集合中把所有的tech_id设置为int 1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection_name.updateMany(&#123;&#125;,&#123;$set:&#123;&quot;tech_id&quot;: NumberInt(1) &#125;&#125;)</span><br></pre></td></tr></table></figure></p>
+            <h2 id="update"><a href="#update" class="headerlink" title="update"></a>update</h2><p>collection_name 集合中把所有的tech_id设置为int 1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.collection_name.updateMany(&#123;&#125;,&#123;$set:&#123;&quot;tech_id&quot;: NumberInt(1) &#125;&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><p>为admin库设置管理员帐号</p>
+<p>show dbs<br>use admin</p>
+<h3 id="创建密码"><a href="#创建密码" class="headerlink" title="创建密码"></a>创建密码</h3><p>db.createUser({ user: “username”, pwd: “password”, roles: [{ role: “userAdminAnyDatabase”, db: “admin” }] })</p>
+<h3 id="检测登录是否为1"><a href="#检测登录是否为1" class="headerlink" title="检测登录是否为1"></a>检测登录是否为1</h3><p>db.auth(“username”, “password”)</p>
+<h3 id="启用mongodb-conf中的auth"><a href="#启用mongodb-conf中的auth" class="headerlink" title="启用mongodb.conf中的auth"></a>启用mongodb.conf中的auth</h3><p>security:<br>    authorization: enabled </p>
+<p>这样mongodb　admin就需要验证了</p>
+<h3 id="为db1设置所有者"><a href="#为db1设置所有者" class="headerlink" title="为db1设置所有者"></a>为db1设置所有者</h3><p>use db1<br>db.createUser({ user: “username”, pwd: “password”, roles: [{ role: “dbOwner”, db:”db1” }] })</p>
+<h3 id="为db1设置读写帐号"><a href="#为db1设置读写帐号" class="headerlink" title="为db1设置读写帐号"></a>为db1设置读写帐号</h3><p>use db1<br>db.createUser({ user: “username”, pwd: “password”, roles: [{ role: “readWrite”,db: “db1” }] })</p>
+<h1 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h1><p>use test;<br>db.dropDatabase();<br>mongodb删除表</p>
+<h2 id="通过docker启动"><a href="#通过docker启动" class="headerlink" title="通过docker启动"></a>通过docker启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -p 0.0.0.0:27017:27017 \</span><br><span class="line">    --name mongo \</span><br><span class="line">    -v /java-workspace/mongo:/data/db \</span><br><span class="line">    -d mongo:4</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://juejin.im/post/5b0519cf518825426539d05e" target="_blank" rel="noopener">mongodb设置密码</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/02/freebsd/freebsd-mongo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/02/freebsd/freebsd-mongo/" class="post-title-link" itemprop="url">FreeBSD Install MongoDB</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-02 21:04:22 / Modified: 21:15:51" itemprop="dateCreated datePublished" datetime="2019-09-02T21:04:22+08:00">2019-09-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/freebsd/" itemprop="url" rel="index"><span itemprop="name">freebsd</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="install-freebsd"><a href="#install-freebsd" class="headerlink" title="install freebsd"></a>install freebsd</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pkg install mongodb40</span><br></pre></td></tr></table></figure>
+<h2 id="配置bingdIp"><a href="#配置bingdIp" class="headerlink" title="配置bingdIp"></a>配置bingdIp</h2><p>默认绑定127.0.0.1</p>
+<p>配置文件在 <code>/usr/local/etc/mongodb.conf</code></p>
+<h2 id="start-mongodb"><a href="#start-mongodb" class="headerlink" title="start mongodb"></a>start mongodb</h2><p>/etc/rc.conf 中添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod_enable=&quot;YES&quot;</span><br></pre></td></tr></table></figure>
+<p>sudo service mongod start</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-freebsd-10-1" target="_blank" rel="noopener">How To Install MongoDB on FreeBSD 10.1</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/02/nginx/nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/02/nginx/nginx/" class="post-title-link" itemprop="url">Nginx Cookie</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-02 10:42:28 / Modified: 13:12:39" itemprop="dateCreated datePublished" datetime="2019-09-02T10:42:28+08:00">2019-09-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Install-Nginx-use-Docker"><a href="#Install-Nginx-use-Docker" class="headerlink" title="Install Nginx use Docker"></a>Install Nginx use Docker</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -p 0.0.0.0:80:80 \</span><br><span class="line">    --name nginx \</span><br><span class="line">    -d nginx:1.13</span><br></pre></td></tr></table></figure>
+<p>挂载目录本地目录<code>/data/nginx</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -p 0.0.0.0:80:80 \</span><br><span class="line">    --name nginx \</span><br><span class="line">    -v /data/nginx/conf/:/etc/nginx/ \</span><br><span class="line">    -v /data/nginx/logs:/var/log/nginx \</span><br><span class="line">    -v /data/nginx/www:/usr/share/nginx/html \</span><br><span class="line">    -d nginx:1.13</span><br></pre></td></tr></table></figure>
 
           
         
@@ -1739,348 +2106,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/17/ngrok/ngrok-cookie/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/17/ngrok/ngrok-cookie/" class="post-title-link" itemprop="url">Ngrok Cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-07-17 09:44:07 / Modified: 09:45:14" itemprop="dateCreated datePublished" datetime="2019-07-17T09:44:07+08:00">2019-07-17</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ngrok/" itemprop="url" rel="index"><span itemprop="name">ngrok</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>TODO: </p>
-<p>从零教你搭建ngrok服务，解决外网调试本地站点<br><a href="https://morongs.github.io/2016/12/28/dajian-ngrok/" target="_blank" rel="noopener">https://morongs.github.io/2016/12/28/dajian-ngrok/</a></p>
-<p>CentOS7搭建ngrok服务器<br><a href="https://www.xncoding.com/2017/12/29/web/ngrok.html" target="_blank" rel="noopener">https://www.xncoding.com/2017/12/29/web/ngrok.html</a></p>
-<p>ngrok 服务端安装<br><a href="https://www.jianshu.com/p/d1cdfab9f571" target="_blank" rel="noopener">https://www.jianshu.com/p/d1cdfab9f571</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/16/python/python-cookie/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/16/python/python-cookie/" class="post-title-link" itemprop="url">Python Cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-07-16 18:28:43" itemprop="dateCreated datePublished" datetime="2019-07-16T18:28:43+08:00">2019-07-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-08-03 15:58:34" itemprop="dateModified" datetime="2019-08-03T15:58:34+08:00">2019-08-03</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="python中调用shell"><a href="#python中调用shell" class="headerlink" title="python中调用shell"></a>python中调用shell</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.system(<span class="string">'ls -hl'</span>)</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2124,7 +2154,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">49</span>
+                    <span class="site-state-item-count">51</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2185,7 +2215,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2308,7 +2342,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">52</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">54</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
