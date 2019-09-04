@@ -107,7 +107,7 @@
 <meta property="og:site_name" content="STAN.CC">
 <meta property="og:description" content="Install Nginx use Docker1234docker run \    -p 0.0.0.0:80:80 \    --name nginx \    -d nginx:1.13 挂载目录本地目录/data/nginx 1234567docker run \    -p 0.0.0.0:80:80 \    --name nginx \    -v /data/nginx/conf">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-02T05:12:39.005Z">
+<meta property="og:updated_time" content="2019-09-03T07:16:59.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx Cookie">
 <meta name="twitter:description" content="Install Nginx use Docker1234docker run \    -p 0.0.0.0:80:80 \    --name nginx \    -d nginx:1.13 挂载目录本地目录/data/nginx 1234567docker run \    -p 0.0.0.0:80:80 \    --name nginx \    -v /data/nginx/conf">
@@ -427,12 +427,24 @@
                 
               
 
-              <time title="Created: 2019-09-02 10:42:28 / Modified: 13:12:39" itemprop="dateCreated datePublished" datetime="2019-09-02T10:42:28+08:00">2019-09-02</time>
+              <time title="Created: 2019-09-02 10:42:28" itemprop="dateCreated datePublished" datetime="2019-09-02T10:42:28+08:00">2019-09-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-03 15:16:59" itemprop="dateModified" datetime="2019-09-03T15:16:59+08:00">2019-09-03</time>
               
             
           </span>
@@ -487,6 +499,8 @@
         <h1 id="Install-Nginx-use-Docker"><a href="#Install-Nginx-use-Docker" class="headerlink" title="Install Nginx use Docker"></a>Install Nginx use Docker</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -p 0.0.0.0:80:80 \</span><br><span class="line">    --name nginx \</span><br><span class="line">    -d nginx:1.13</span><br></pre></td></tr></table></figure>
 <p>挂载目录本地目录<code>/data/nginx</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -p 0.0.0.0:80:80 \</span><br><span class="line">    --name nginx \</span><br><span class="line">    -v /data/nginx/conf/:/etc/nginx/ \</span><br><span class="line">    -v /data/nginx/logs:/var/log/nginx \</span><br><span class="line">    -v /data/nginx/www:/usr/share/nginx/html \</span><br><span class="line">    -d nginx:1.13</span><br></pre></td></tr></table></figure>
+<h2 id="nginx-位置"><a href="#nginx-位置" class="headerlink" title="nginx 位置　"></a>nginx 位置　</h2><p>/usr/sbin</p>
+<h2 id="检测配置"><a href="#检测配置" class="headerlink" title="检测配置"></a>检测配置</h2><p>nginx -t</p>
 
       
     </div>
@@ -608,7 +622,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -673,7 +687,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">23</span>
+                      
+                    
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -800,7 +816,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">54</span>
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -864,7 +882,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Nginx-use-Docker"><span class="nav-number">1.</span> <span class="nav-text">Install Nginx use Docker</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-Nginx-use-Docker"><span class="nav-number">1.</span> <span class="nav-text">Install Nginx use Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx-位置"><span class="nav-number">1.1.</span> <span class="nav-text">nginx 位置　</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#检测配置"><span class="nav-number">1.2.</span> <span class="nav-text">检测配置</span></a></li></ol></li></ol></div>
             
 
           </div>
