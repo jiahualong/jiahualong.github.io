@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Weather API]]></title>
+    <url>%2F2019%2F09%2F05%2Fapi%2Fweather-api%2F</url>
+    <content type="text"><![CDATA[免费、稳定的天气预报API]]></content>
+      <categories>
+        <category>api</category>
+      </categories>
+      <tags>
+        <tag>weather</tag>
+        <tag>api</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Gralde Cookie]]></title>
+    <url>%2F2019%2F09%2F04%2Fgradle%2Fgradle-cookie%2F</url>
+    <content type="text"><![CDATA[gradle添加lombok12compileOnly &apos;org.projectlombok:lombok:1.18.8&apos;annotationProcessor &apos;org.projectlombok:lombok:1.18.8&apos; idea打开build,Execute,Deployment &gt; Compile &gt; Annotation Processors 参考 Gradle]]></content>
+      <categories>
+        <category>gradle</category>
+      </categories>
+      <tags>
+        <tag>gradle</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Raspberrypi Cookie]]></title>
     <url>%2F2019%2F09%2F04%2Fraspberrypi%2Fpi%2F</url>
     <content type="text"><![CDATA[配置ssh1sudo raspi-config install nginx1sudo apt install nginx start nginx 1sudo /etc/init.d/nginx start html home 1cd /var/www/html/ 参考 Setting up an NGINX web server on a Raspberry Pi]]></content>
@@ -36,8 +59,8 @@
   </entry>
   <entry>
     <title><![CDATA[Nginx Cookie]]></title>
-    <url>%2F2019%2F09%2F02%2Fnginx%2Fnginx%2F</url>
-    <content type="text"><![CDATA[Install Nginx use Docker1234docker run \ -p 0.0.0.0:80:80 \ --name nginx \ -d nginx:1.13 挂载目录本地目录/data/nginx 1234567docker run \ -p 0.0.0.0:80:80 \ --name nginx \ -v /data/nginx/conf/:/etc/nginx/ \ -v /data/nginx/logs:/var/log/nginx \ -v /data/nginx/www:/usr/share/nginx/html \ -d nginx:1.13 nginx 位置 /usr/sbin 检测配置nginx -t]]></content>
+    <url>%2F2019%2F09%2F02%2Fnginx%2Fnginx-cookie%2F</url>
+    <content type="text"><![CDATA[Install Nginx use Docker1234docker run \ -p 0.0.0.0:80:80 \ --name nginx \ -d nginx:1.13 挂载目录本地目录/data/nginx 1234567docker run \ -p 0.0.0.0:80:80 \ --name nginx \ -v /data/nginx/conf/:/etc/nginx/ \ -v /data/nginx/logs:/var/log/nginx \ -v /data/nginx/www:/usr/share/nginx/html \ -d nginx:1.13 nginx 位置 /usr/sbin 检测配置是否正确12nginx -t/usr/nginx/sbin/nginx -t -c /usr/nginx/conf/nginx.conf 413 Request Entity Too Large增大请求体积1client_max_body_size 10m;]]></content>
       <categories>
         <category>nginx</category>
       </categories>
