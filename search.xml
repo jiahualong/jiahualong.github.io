@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[EasyPoi生成Excel]]></title>
+    <url>%2F2019%2F09%2F06%2Fjava%2Feasypoi-cookie%2F</url>
+    <content type="text"><![CDATA[很魔性的excel生成工具,使用中需要注意 置数List不能是不可变的List 生成多sheet页的excel时写法魔性(参见下方参考1) 关于EasyPoi导出Excel EasyPoi教程V1.0]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>easypoi</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Weather API]]></title>
     <url>%2F2019%2F09%2F05%2Fapi%2Fweather-api%2F</url>
-    <content type="text"><![CDATA[免费、稳定的天气预报API]]></content>
+    <content type="text"><![CDATA[全国 http://flash.weather.com.cn/wmaps/xml/china.xml 河北省 http://flash.weather.com.cn/wmaps/xml/hebei.xml 石家庄 http://www.weather.com.cn/data/sk/101090101.html 免费、稳定的天气预报API]]></content>
       <categories>
         <category>api</category>
       </categories>
