@@ -380,6 +380,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/26/ubuntu/ubuntu-nmcli/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/26/ubuntu/ubuntu-nmcli/" class="post-title-link" itemprop="url">Ubuntu nmcli</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-26 23:02:00 / Modified: 23:10:56" itemprop="dateCreated datePublished" datetime="2019-04-26T23:02:00+08:00">2019-04-26</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/ubuntu/" itemprop="url" rel="index"><span itemprop="name">ubuntu</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>nmcli WIFI Configre </p>
+<h2 id="显示wifi接口"><a href="#显示wifi接口" class="headerlink" title="显示wifi接口"></a>显示wifi接口</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nmcli d </span><br><span class="line"></span><br><span class="line">DEVICE             TYPE      STATE         CONNECTION</span><br><span class="line">...</span><br><span class="line">wlan0              wifi      disconnected     --</span><br></pre></td></tr></table></figure>
+<h2 id="set-wifi-on"><a href="#set-wifi-on" class="headerlink" title="set wifi on"></a>set wifi on</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmcli r wifi on</span><br></pre></td></tr></table></figure>
+<h2 id="显示wili列表"><a href="#显示wili列表" class="headerlink" title="显示wili列表"></a>显示wili列表</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nmcli d wifi list</span><br><span class="line"></span><br><span class="line">*  SSID           MODE   CHAN  RATE       SIGNAL  BARS  SECURITY</span><br><span class="line">   ...</span><br><span class="line">   my_wifi      Infra  5     54 Mbit/s  89      ▂▄▆█  WPA2</span><br></pre></td></tr></table></figure>
+<h2 id="连接wifi"><a href="#连接wifi" class="headerlink" title="连接wifi"></a>连接wifi</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmcli d wifi connect my_wifi password &lt;password&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://docs.ubuntu.com/core/en/stacks/network/network-manager/docs/configure-wifi-connections" target="_blank" rel="noopener">1</a></li>
+<li><a href="https://developer.gnome.org/NetworkManager/unstable/nmcli.html" target="_blank" rel="noopener">2</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/26/idea/idea-cookie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2034,185 +2203,6 @@ httpcode 200是找到 404是未找到
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/22/docker/docker-neo4j/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/22/docker/docker-neo4j/" class="post-title-link" itemprop="url">Install Neo4j With Docker</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-22 22:51:00" itemprop="dateCreated datePublished" datetime="2019-04-22T22:51:00+08:00">2019-04-22</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-04-23 14:47:37" itemprop="dateModified" datetime="2019-04-23T14:47:37+08:00">2019-04-23</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/neo4j/" itemprop="url" rel="index"><span itemprop="name">neo4j</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="使用Docker安装Neo4j"><a href="#使用Docker安装Neo4j" class="headerlink" title="使用Docker安装Neo4j"></a>使用Docker安装Neo4j</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    --detach \</span><br><span class="line">    --publish=7474:7474 --publish=7687:7687 \</span><br><span class="line">    --volume=$HOME/neo4j/data:/data \</span><br><span class="line">    --volume=$HOME/neo4j/logs:/logs \</span><br><span class="line">    --env=NEO4J_dbms_memory_pagecache_size=4G \</span><br><span class="line">    neo4j:3.5</span><br></pre></td></tr></table></figure>
-<h3 id="web界面"><a href="#web界面" class="headerlink" title="web界面"></a>web界面</h3><p><a href="http://localhost:7474/browser/" target="_blank" rel="noopener">http://localhost:7474/browser/</a></p>
-<p><code>neo4j</code>/<code>neo4`</code></p>
-<h2 id="Neo4j-Movies-Example-with-Spring-Data-Neo4j"><a href="#Neo4j-Movies-Example-with-Spring-Data-Neo4j" class="headerlink" title="Neo4j Movies Example with Spring Data Neo4j"></a>Neo4j Movies Example with Spring Data Neo4j</h2><p><a href="https://github.com/neo4j-examples/movies-java-spring-data-neo4j" target="_blank" rel="noopener">https://github.com/neo4j-examples/movies-java-spring-data-neo4j</a></p>
-<h2 id="Neo4j-Client"><a href="#Neo4j-Client" class="headerlink" title="Neo4j Client"></a>Neo4j Client</h2><p><a href="https://neo4j-client.net/" target="_blank" rel="noopener">下载Neo4j-Client</a></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install cleishm/neo4j/neo4j-client</span><br></pre></td></tr></table></figure>
-<p>neo4j-client -u neo4j localhost</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2261,7 +2251,7 @@ httpcode 200是找到 404是未找到
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">56</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2332,7 +2322,9 @@ httpcode 200是找到 404是未找到
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2469,7 +2461,9 @@ httpcode 200是找到 404是未找到
                     
                       
                     
-                    <span class="site-state-item-count">59</span>
+                      
+                    
+                    <span class="site-state-item-count">60</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

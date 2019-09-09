@@ -380,6 +380,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/09/java/rocketmq-quickstart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/09/java/rocketmq-quickstart/" class="post-title-link" itemprop="url">Rocketmq Quickstart</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-09 14:21:54 / Modified: 14:45:07" itemprop="dateCreated datePublished" datetime="2019-09-09T14:21:54+08:00">2019-09-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/rocketmq/" itemprop="url" rel="index"><span itemprop="name">rocketmq</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="下载RocketMQ"><a href="#下载RocketMQ" class="headerlink" title="下载RocketMQ"></a>下载RocketMQ</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirror.bit.edu.cn/apache/rocketmq/4.5.2/rocketmq-all-4.5.2-bin-release.zip</span><br><span class="line">unzip rocketmq-all-4.5.2-bin-release.zip</span><br></pre></td></tr></table></figure>
+<h2 id="启动-name-server"><a href="#启动-name-server" class="headerlink" title="启动 name server"></a>启动 name server</h2><p><code>127.0.0.1:9876</code> 为nameserver</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setjdk 1.8</span><br><span class="line">rocketmq-all-4.5.2-bin-release/bin/mqnamesrv</span><br></pre></td></tr></table></figure>
+<h2 id="启动-broker"><a href="#启动-broker" class="headerlink" title="启动 broker"></a>启动 broker</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setjdk 1.8</span><br><span class="line">rocketmq-all-4.5.2-bin-release/bin/mqbroker -n 127.0.0.1:9876</span><br></pre></td></tr></table></figure>
+<h2 id="本机启动-mq-web界面"><a href="#本机启动-mq-web界面" class="headerlink" title="本机启动 mq web界面"></a>本机启动 mq web界面</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/apache/rocketmq-externals</span><br><span class="line">cd rocketmq-externals/rocketmq-console</span><br><span class="line">setjdk 1.8</span><br><span class="line">mvn package -Dmaven.test.skip=true</span><br><span class="line">java -jar target/rocketmq-console-ng-1.0.1.jar --server.port=81 --rocketmq.config.namesrvAddr=127.0.0.1:9876</span><br></pre></td></tr></table></figure>
+<p>访问<code>http://127.0.0.1:81</code> 访问web界面</p>
+<h2 id="springtboot-加载rocketmq"><a href="#springtboot-加载rocketmq" class="headerlink" title="springtboot 加载rocketmq"></a>springtboot 加载rocketmq</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile &apos;org.apache.rocketmq:rocketmq-spring-boot-starter:2.0.3&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="使用RocketMQTemplate发送消息"><a href="#使用RocketMQTemplate发送消息" class="headerlink" title="使用RocketMQTemplate发送消息"></a>使用<code>RocketMQTemplate</code>发送消息</h2><p>向<code>test_topic</code>主题发送消息<code>msg</code>,消息标签<code>tag1</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rocketMQTemplate.syncSend(<span class="string">"test_topic:tag1"</span>, msg);</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用RocketMQMessageListener接受消息"><a href="#使用RocketMQMessageListener接受消息" class="headerlink" title="使用RocketMQMessageListener接受消息"></a>使用<code>RocketMQMessageListener</code>接受消息</h2><p>接受<code>test_topic</code>主题消息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@RocketMQMessageListener</span>(topic = <span class="string">"test_topic"</span>, consumerGroup = <span class="string">"test_consumer_group_1"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SampleConsumer1</span> <span class="keyword">implements</span> <span class="title">RocketMQListener</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMessage</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"接受的消息:"</span> + message);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接收<code>test_topic</code>主题消息并打印tag标记</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="meta">@RocketMQMessageListener</span>(topic = <span class="string">"test_topic"</span>, consumerGroup = <span class="string">"test_consumer_group_2"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SampleConsumer2</span> <span class="keyword">implements</span> <span class="title">RocketMQListener</span>&lt;<span class="title">MessageExt</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onMessage</span><span class="params">(MessageExt message)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"tag,"</span> + message.getTags() + <span class="string">",msg,"</span> + <span class="keyword">new</span> String(message.getBody()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> <a href="https://github.com/jiahualong/java-example/spring-rocketmq-spring" target="_blank" rel="noopener">完整代码参见github</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://rocketmq.apache.org/docs/quick-start/" target="_blank" rel="noopener">Apache RocketMQ Quick Start</a></li>
+<li><a href="https://github.com/apache/rocketmq-externals" target="_blank" rel="noopener">RocketMQ Externals</a></li>
+<li><a href="https://github.com/apache/rocketmq-spring/blob/master/README_zh_CN.md" target="_blank" rel="noopener">rocketmq-spring</a></li>
+<li><a href="https://blog.csdn.net/jayjjb/article/details/72674738" target="_blank" rel="noopener">RocketMQ最佳实践（四）可视化管理控制台rocketmq-console-ng</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/06/java/easypoi-cookie/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1096,12 +1275,24 @@
                 
               
 
-              <time title="Created: 2019-09-02 21:15:16 / Modified: 21:29:42" itemprop="dateCreated datePublished" datetime="2019-09-02T21:15:16+08:00">2019-09-02</time>
+              <time title="Created: 2019-09-02 21:15:16" itemprop="dateCreated datePublished" datetime="2019-09-02T21:15:16+08:00">2019-09-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-09 09:26:42" itemprop="dateModified" datetime="2019-09-09T09:26:42+08:00">2019-09-09</time>
               
             
           </span>
@@ -1166,6 +1357,8 @@
 <h3 id="为db1设置读写帐号"><a href="#为db1设置读写帐号" class="headerlink" title="为db1设置读写帐号"></a>为db1设置读写帐号</h3><p>use db1<br>db.createUser({ user: “username”, pwd: “password”, roles: [{ role: “readWrite”,db: “db1” }] })</p>
 <h1 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h1><p>use test;<br>db.dropDatabase();<br>mongodb删除表</p>
 <h2 id="通过docker启动"><a href="#通过docker启动" class="headerlink" title="通过docker启动"></a>通过docker启动</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -p 0.0.0.0:27017:27017 \</span><br><span class="line">    --name mongo \</span><br><span class="line">    -v /java-workspace/mongo:/data/db \</span><br><span class="line">    -d mongo:4</span><br></pre></td></tr></table></figure>
+<h2 id="备份与还原"><a href="#备份与还原" class="headerlink" title="备份与还原　"></a>备份与还原　</h2><h3 id="mongodump"><a href="#mongodump" class="headerlink" title="mongodump"></a>mongodump</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mongodump -h &lt;ip&gt; --port &lt;27017&gt; -u &lt;username&gt; -p &lt;password&gt; \</span><br><span class="line">        -d &lt;database_name&gt; -o &lt;directory-of-dump-directory&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="mongorestore"><a href="#mongorestore" class="headerlink" title="mongorestore"></a>mongorestore</h3><p>/usr/bin/<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mongorestore -h &lt;ip&gt; --port &lt;27017&gt; -u &lt;username&gt; -p &lt;password&gt; \</span><br><span class="line">            --drop -d &lt;database-name&gt; &lt;directory-of-dumped-backup&gt;</span><br></pre></td></tr></table></figure></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://juejin.im/post/5b0519cf518825426539d05e" target="_blank" rel="noopener">mongodb设置密码</a></li>
 </ul>
@@ -1935,171 +2128,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/08/18/hive/install-hive/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/18/hive/install-hive/" class="post-title-link" itemprop="url">Install Hive</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-08-18 10:22:06 / Modified: 14:35:53" itemprop="dateCreated datePublished" datetime="2019-08-18T10:22:06+08:00">2019-08-18</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hive/" itemprop="url" rel="index"><span itemprop="name">hive</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li><a href="https://segmentfault.com/a/1190000011303459" target="_blank" rel="noopener">Apache Hive-2.3.0 快速搭建与使用</a></li>
-<li><a href="https://bigdata.163yun.com/product/article/31" target="_blank" rel="noopener">搭建Happd+hive测试环境</a></li>
-<li><a href="https://www.jianshu.com/p/ed827f2ac640" target="_blank" rel="noopener">hive环境搭建</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2148,7 +2176,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">56</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2219,7 +2247,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2356,7 +2386,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">59</span>
+                      
+                    
+                    <span class="site-state-item-count">60</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
