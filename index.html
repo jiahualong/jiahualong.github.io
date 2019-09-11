@@ -1827,7 +1827,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-30 21:24:43" itemprop="dateModified" datetime="2019-08-30T21:24:43+08:00">2019-08-30</time>
+                <time title="Modified: 2019-09-11 16:05:58" itemprop="dateModified" datetime="2019-09-11T16:05:58+08:00">2019-09-11</time>
               
             
           </span>
@@ -1891,12 +1891,16 @@
 <h2 id="添加-ndoe"><a href="#添加-ndoe" class="headerlink" title="添加　ndoe"></a>添加　ndoe</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s agent -s $&#123;YOUR_SERVER_IP&#125; -t $&#123;NODE_TOKEN&#125;</span><br></pre></td></tr></table></figure>
 <p>/var/lib/rancher/k3s/server/node-token</p>
 <h1 id="安装Rancher-Server"><a href="#安装Rancher-Server" class="headerlink" title="安装Rancher Server"></a>安装Rancher Server</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -v /data/docker/rancher-server/var/lib/rancher/:/var/lib/rancher/ \</span><br><span class="line">    --restart=unless-stopped \</span><br><span class="line">    --name rancher-server \</span><br><span class="line">    -p 80:80 -p 443:443 \</span><br><span class="line">    rancher/rancher:stable</span><br></pre></td></tr></table></figure>
+<h1 id="k3s-命令"><a href="#k3s-命令" class="headerlink" title="k3s 命令"></a>k3s 命令</h1><p>封装了一些简单命令: <code>k3sns</code> <code>k3spod</code> <code>k3sservice</code> <code>k3slogs</code><br>可在 <a href="https://github.com/jiahualong/iconf-pub" target="_blank" rel="noopener">iconf-pub</a>中找到,方便平时使用k3s</p>
 <h1 id="查看log"><a href="#查看log" class="headerlink" title="查看log"></a>查看log</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl log &lt;实例名&gt;</span><br></pre></td></tr></table></figure>
 <h1 id="查看所有pods"><a href="#查看所有pods" class="headerlink" title="查看所有pods"></a>查看所有pods</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl -n 环境 get pods</span><br><span class="line">k3s kubectl get pods -A</span><br></pre></td></tr></table></figure>
 <h1 id="查看IP"><a href="#查看IP" class="headerlink" title="查看IP"></a>查看IP</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl -n 环境 get services</span><br><span class="line">k3s kubectl get services -A</span><br></pre></td></tr></table></figure>
 <h1 id="pods-生成-yaml"><a href="#pods-生成-yaml" class="headerlink" title="pods 生成 yaml"></a>pods 生成 yaml</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl -n 环境 get services 服务名 --export -o yaml</span><br></pre></td></tr></table></figure>
-<h1 id="重建pod"><a href="#重建pod" class="headerlink" title="重建pod"></a>重建pod</h1><p>k3s kubectl get pod orientdb-65f5946fc9-nq2kx -n default -o yaml | kubectl replace –force -f -</p>
+<h1 id="重建pod"><a href="#重建pod" class="headerlink" title="重建pod"></a>重建pod</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl get pod orientdb-65f5946fc9-nq2kx -n default -o yaml | kubectl replace --force -f -</span><br></pre></td></tr></table></figure>
+<h2 id="删除Application"><a href="#删除Application" class="headerlink" title="删除Application"></a>删除Application</h2><p>删除dev标签的serv1 serv2 应用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl delete deployment,service you_service1 you_service2 -n dev</span><br></pre></td></tr></table></figure>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="http://kubernetes.kansea.com/docs/user-guide/quick-start/" target="_blank" rel="noopener">入门指南 启动, 公开, 和关闭应用</a></li>
 <li><a href="https://www.jianshu.com/p/baa6b11062de" target="_blank" rel="noopener">k8s 重启pod</a></li>
 <li><a href="https://jimmysong.io/kubernetes-handbook/guide/kubectl-cheatsheet.html" target="_blank" rel="noopener">kubectl 命令技巧大全</a></li>
 <li><a href="https://dyllanwli.github.io/2019/03/09/k3s-%E8%BD%BB%E9%87%8F%E7%BA%A7Kubernetes%E4%B8%8A%E6%89%8B/" target="_blank" rel="noopener">k3s-轻量级Kubernetes上手</a></li>
