@@ -380,6 +380,383 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/16/aria2/aria2-cookie/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/16/aria2/aria2-cookie/" class="post-title-link" itemprop="url">aria2-cookie</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-16 08:28:02" itemprop="dateCreated datePublished" datetime="2019-07-16T08:28:02+08:00">2019-07-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-01 22:49:19" itemprop="dateModified" datetime="2019-09-01T22:49:19+08:00">2019-09-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/aria2/" itemprop="url" rel="index"><span itemprop="name">aria2</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Install-Aria2"><a href="#Install-Aria2" class="headerlink" title="Install Aria2"></a>Install Aria2</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install aria2</span><br></pre></td></tr></table></figure>
+<h1 id="Usage-in-command"><a href="#Usage-in-command" class="headerlink" title="Usage  in command"></a>Usage  in command</h1><h2 id="通过http下载文件"><a href="#通过http下载文件" class="headerlink" title="通过http下载文件"></a>通过http下载文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://example.org/mylinux.iso</span><br></pre></td></tr></table></figure>
+<h2 id="Download-from-2-sources"><a href="#Download-from-2-sources" class="headerlink" title="Download from 2 sources:"></a>Download from 2 sources:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://a/f.iso ftp://b/f.iso</span><br></pre></td></tr></table></figure>
+<h2 id="Download-using-2-connections-per-host"><a href="#Download-using-2-connections-per-host" class="headerlink" title="Download using 2 connections per host:"></a>Download using 2 connections per host:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c -x2 http://a/f.iso</span><br></pre></td></tr></table></figure>
+<h2 id="下载BT种子及文件本体"><a href="#下载BT种子及文件本体" class="headerlink" title="下载BT种子及文件本体"></a>下载BT种子及文件本体</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://example.org/mylinux.torrent</span><br></pre></td></tr></table></figure>
+<p>下载过程ctrl+c 取消下载，再次下载时会继续下载　</p>
+<h2 id="BitTorrent-Magnet-URI"><a href="#BitTorrent-Magnet-URI" class="headerlink" title="BitTorrent Magnet URI:"></a>BitTorrent Magnet URI:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c &apos;magnet:?xt=urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="Metalink"><a href="#Metalink" class="headerlink" title="Metalink:"></a>Metalink:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://example.org/mylinux.metalink</span><br></pre></td></tr></table></figure>
+<h2 id="从文本中下载很多url"><a href="#从文本中下载很多url" class="headerlink" title="从文本中下载很多url"></a>从文本中下载很多url</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c -i uris.txt</span><br></pre></td></tr></table></figure>
+<h1 id="aria2-后台启动"><a href="#aria2-后台启动" class="headerlink" title="aria2 后台启动"></a>aria2 后台启动</h1><p>环境为 FreeBSD</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pkg install aria2</span><br></pre></td></tr></table></figure>
+<h3 id="创建配置"><a href="#创建配置" class="headerlink" title="创建配置"></a>创建配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.aria2</span><br><span class="line">cd ~/.aria2</span><br><span class="line">aria2c https://raw.githubusercontent.com/fsaimon/aria2.conf/master/aria2.conf</span><br></pre></td></tr></table></figure>
+<h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>以下配置需求修改</p>
+<p>input-file=你家/.aria2/aria2.session<br>save-session=你家/.aria2/aria2.session<br>enable-rpc=true<br>rpc-secret=你的Token<br>dir=你的下载目录</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>现在 <code>aria2c</code> 启动后会开始rpc模式不再接受shell中的下载命令<br>如果 配置目前　不在上面的目录中的话，可以使用<br><code>aria2c --conf-path=&quot;你的配置aria2.conf&quot;</code>  启动指定配置</p>
+<p>###　插件</p>
+<p>chrome可安装<code>YAAW for Chrome</code></p>
+<p>在<code>YAAW</code> 配置中填入地址<code>http://ip:port/jsonrpc</code></p>
+<p>如果启用了 rpc-secret 地址为 <code>http://token:secret@hostname:port/jsonrpc</code></p>
+<p>如果启用了 user&amp;password 使用 <code>http://username:passwd@hostname:port/jsonrpc</code></p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
+<li><a href="https://aria2c.com/usage.html" target="_blank" rel="noopener">Aria2 &amp; YAAW 使用说明</a></li>
+<li><a href="https://github.com/fsaimon/aria2.conf" target="_blank" rel="noopener">本项目提供一个不错的 aria2 配置文件，同时提供 Mac OS 下的开机启动并可控的解决方案</a></li>
+<li><a href="https://binux.blog/2012/12/aria2-examples/" target="_blank" rel="noopener">aria2配置示例</a></li>
+<li><a href="https://www.jianshu.com/p/e9885c658e2c" target="_blank" rel="noopener">告别迅雷，aria2安装并设置开机启动</a></li>
+<li><a href="http://aria2.github.io/" target="_blank" rel="noopener">aria2</a></li>
+<li><a href="https://github.com/binux/yaaw" target="_blank" rel="noopener">Yet Another Aria2 Webui in pure HTML/CSS/Javascirpt</a>“;</li>
+<li><a href="https://gist.github.com/GAS85/79849bfd09613067a2ac0c1a711120a6" target="_blank" rel="noopener">Aria2 + Ubuntu 16.04 + Apache2 + Web UI</a></li>
+<li><a href="https://medium.com/@Justin___Smith/aria2%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B-mac%E5%92%8Cwindows-b31d0f64bd4e" target="_blank" rel="noopener">Aria2配置教程（Mac和Windows）</a></li>
+<li><a href="https://aria2.github.io/manual/en/html/" target="_blank" rel="noopener">Aria2 Manual</a></li>
+<li><a href="https://www.librehat.com/aria2-camouflage-utorrent-pt-download/" target="_blank" rel="noopener">Aria2伪装uTorrent进行PT下载</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/15/graphql/graphql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/15/graphql/graphql/" class="post-title-link" itemprop="url">graphql cookie book</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-15 14:20:09 / Modified: 17:53:02" itemprop="dateCreated datePublished" datetime="2019-07-15T14:20:09+08:00">2019-07-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/graphql/" itemprop="url" rel="index"><span itemprop="name">graphql</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Graphql-Cookie"><a href="#Graphql-Cookie" class="headerlink" title="Graphql Cookie"></a>Graphql Cookie</h1><p>##　SpringBoot两个graphql-spring-boot-starter</p>
+<p>分别由两个团队开发</p>
+<ul>
+<li><code>com.graphql-java</code>　<a href="https://mvnrepository.com/artifact/com.graphql-java/graphql-spring-boot-starter" target="_blank" rel="noopener">Maven版本</a> <a href="https://www.graphql-java.com/" target="_blank" rel="noopener">website</a></li>
+<li><code>com.graphql-java-kickstart</code> <a href="https://mvnrepository.com/artifact/com.graphql-java-kickstart/graphql-spring-boot-starter" target="_blank" rel="noopener">Maven 版本</a> <a href="https://www.graphql-java-kickstart.com/" target="_blank" rel="noopener">website</a></li>
+</ul>
+<h2 id="graphql-java-kickstart包含的组建"><a href="#graphql-java-kickstart包含的组建" class="headerlink" title="graphql-java-kickstart包含的组建"></a>graphql-java-kickstart包含的组建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//需要kotliin支持</span><br><span class="line">kotlin.version = &apos;1.3.41&apos;</span><br><span class="line"></span><br><span class="line">//kickstart graphql</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:graphql-spring-boot-starter:5.10.0&apos;</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:graphiql-spring-boot-starter:5.10.0&apos;</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:graphql-java-tools:5.6.1&apos;</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:voyager-spring-boot-starter:5.10.0&apos;</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:altair-spring-boot-starter:5.10.0&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><p><a href="https://github.com/jiahualong/java-example/tree/master/spring-graphql" target="_blank" rel="noopener">https://github.com/jiahualong/java-example/tree/master/spring-graphql</a></p>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
+<li><a href="https://stackoverflow.com/questions/54251284/which-graphql-spring-boot-starter-should-i-choose" target="_blank" rel="noopener">Which graphql-spring-boot-starter should I choose?</a></li>
+<li><a href="https://www.graphql-java.com/blog/moving-projects/" target="_blank" rel="noopener">graphql-java-kickstart项目</a></li>
+<li><a href="https://www.cnblogs.com/yourblog/p/10793534.html" target="_blank" rel="noopener">Spring boot中使用GraphQL编写API的几种方式</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/08/mac/Dell-P2415Q-4k-60hz/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1731,336 +2108,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/05/23/docker/docker-maven/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/23/docker/docker-maven/" class="post-title-link" itemprop="url">Compile With Docker Maven</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-23 11:14:00 / Modified: 14:11:13" itemprop="dateCreated datePublished" datetime="2019-05-23T11:14:00+08:00">2019-05-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="docker-maven-images"><a href="#docker-maven-images" class="headerlink" title="docker maven images"></a>docker maven images</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull 3-jdk-8</span><br></pre></td></tr></table></figure>
-<pre><code>[link](https://hub.docker.com/_/maven)
-</code></pre><p>mvn package 当前目录</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm --name my-maven-project \</span><br><span class="line">    -v "$(pwd)":/usr/src/mymaven \</span><br><span class="line">    -w /usr/src/mymaven maven:3-jdk-8 \</span><br><span class="line">    mvn clean package</span><br></pre></td></tr></table></figure>
-<p>mvn package 当前目录,并使用本地/data/m2目录的maven配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm --name maven-project-xxx \</span><br><span class="line">    -v /data/m2:/root/.m2 \</span><br><span class="line">    -v &quot;$(pwd)&quot;:/usr/src/mvnp \</span><br><span class="line">    -w /usr/src/mvnp maven:3-jdk-8 \</span><br><span class="line">    mvn clean package</span><br></pre></td></tr></table></figure>
-<p>使用非root运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -v ~/.m2:/var/maven/.m2 -ti --rm -u 1000 -e MAVEN_CONFIG=/var/maven/.m2 maven mvn -Duser.home=/var/maven archetype:generate</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/05/20/spring/feign-name-already-been-defined/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/20/spring/feign-name-already-been-defined/" class="post-title-link" itemprop="url">Feign Name already been defined</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-05-20 18:00:00 / Modified: 18:05:31" itemprop="dateCreated datePublished" datetime="2019-05-20T18:00:00+08:00">2019-05-20</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>FeignClient使用相同名字时会提示重名并无法启动,可以通过添加contextId进行区分两个client</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@FeignClient(contextId = &quot;a&quot;, name = &quot;User&quot;, configuration = FeignClientsConfiguration.class)</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">@FeignClient(contextId = &quot;b&quot;, name = &quot;User&quot;, configuration = FeignClientsConfiguration.class)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="error"><a href="#error" class="headerlink" title="error"></a>error</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">The bean FeignClientSpecification&apos;, defined in null, could not be registered. </span><br><span class="line">A bean with that name has already been defined in null and overriding is disabled.</span><br><span class="line"></span><br><span class="line">Caused by: org.springframework.beans.factory.support.BeanDefinitionOverrideException: </span><br><span class="line">Invalid bean definition with name xxxx.FeignClientSpecification&apos; defined in null: </span><br><span class="line">Cannot register bean definition [Generic bean: class [org.springframework.cloud.openfeign.FeignClientSpecificatio...</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2109,7 +2156,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">56</span>
+                    <span class="site-state-item-count">58</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2321,7 +2368,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">60</span>
+                      
+                    
+                    <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

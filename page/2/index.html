@@ -380,6 +380,388 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/08/21/docker/k3s/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/21/docker/k3s/" class="post-title-link" itemprop="url">k3s cookie</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-21 09:31:38" itemprop="dateCreated datePublished" datetime="2019-08-21T09:31:38+08:00">2019-08-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-11 16:05:58" itemprop="dateModified" datetime="2019-09-11T16:05:58+08:00">2019-09-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="install-k3s"><a href="#install-k3s" class="headerlink" title="install k3s"></a>install k3s</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -sfL https://get.k3s.io | sh -</span><br><span class="line">      # Check for Ready node, takes maybe 30 seconds</span><br><span class="line">      k3s kubectl get node</span><br></pre></td></tr></table></figure>
+<h2 id="创建deployment"><a href="#创建deployment" class="headerlink" title="创建deployment"></a>创建deployment</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl create -f https://kubernetes.io/docs/user-guide/nginx-deployment.yaml</span><br></pre></td></tr></table></figure>
+<p>cat nginx-deployment.yaml<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">nginx-deployment</span></span><br><span class="line"><span class="attr">  labels:</span></span><br><span class="line"><span class="attr">    app:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line"><span class="attr">  replicas:</span> <span class="number">3</span></span><br><span class="line"><span class="attr">  selector:</span></span><br><span class="line"><span class="attr">    matchLabels:</span></span><br><span class="line"><span class="attr">      app:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">  template:</span></span><br><span class="line"><span class="attr">    metadata:</span></span><br><span class="line"><span class="attr">      labels:</span></span><br><span class="line"><span class="attr">        app:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">    spec:</span></span><br><span class="line"><span class="attr">      containers:</span></span><br><span class="line"><span class="attr">      - name:</span> <span class="string">nginx</span></span><br><span class="line"><span class="attr">        image:</span> <span class="attr">nginx:1.15.4</span></span><br><span class="line"><span class="attr">        ports:</span></span><br><span class="line"><span class="attr">        - containerPort:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure></p>
+<p>查看 deployment </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl get deployment</span><br></pre></td></tr></table></figure>
+<p>查看pods<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl get pods</span><br></pre></td></tr></table></figure></p>
+<p>查看目前的node<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl get node</span><br></pre></td></tr></table></figure></p>
+<h2 id="添加-ndoe"><a href="#添加-ndoe" class="headerlink" title="添加　ndoe"></a>添加　ndoe</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s agent -s $&#123;YOUR_SERVER_IP&#125; -t $&#123;NODE_TOKEN&#125;</span><br></pre></td></tr></table></figure>
+<p>/var/lib/rancher/k3s/server/node-token</p>
+<h1 id="安装Rancher-Server"><a href="#安装Rancher-Server" class="headerlink" title="安装Rancher Server"></a>安装Rancher Server</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -v /data/docker/rancher-server/var/lib/rancher/:/var/lib/rancher/ \</span><br><span class="line">    --restart=unless-stopped \</span><br><span class="line">    --name rancher-server \</span><br><span class="line">    -p 80:80 -p 443:443 \</span><br><span class="line">    rancher/rancher:stable</span><br></pre></td></tr></table></figure>
+<h1 id="k3s-命令"><a href="#k3s-命令" class="headerlink" title="k3s 命令"></a>k3s 命令</h1><p>封装了一些简单命令: <code>k3sns</code> <code>k3spod</code> <code>k3sservice</code> <code>k3slogs</code><br>可在 <a href="https://github.com/jiahualong/iconf-pub" target="_blank" rel="noopener">iconf-pub</a>中找到,方便平时使用k3s</p>
+<h1 id="查看log"><a href="#查看log" class="headerlink" title="查看log"></a>查看log</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl log &lt;实例名&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="查看所有pods"><a href="#查看所有pods" class="headerlink" title="查看所有pods"></a>查看所有pods</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl -n 环境 get pods</span><br><span class="line">k3s kubectl get pods -A</span><br></pre></td></tr></table></figure>
+<h1 id="查看IP"><a href="#查看IP" class="headerlink" title="查看IP"></a>查看IP</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl -n 环境 get services</span><br><span class="line">k3s kubectl get services -A</span><br></pre></td></tr></table></figure>
+<h1 id="pods-生成-yaml"><a href="#pods-生成-yaml" class="headerlink" title="pods 生成 yaml"></a>pods 生成 yaml</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl -n 环境 get services 服务名 --export -o yaml</span><br></pre></td></tr></table></figure>
+<h1 id="重建pod"><a href="#重建pod" class="headerlink" title="重建pod"></a>重建pod</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl get pod orientdb-65f5946fc9-nq2kx -n default -o yaml | kubectl replace --force -f -</span><br></pre></td></tr></table></figure>
+<h2 id="删除Application"><a href="#删除Application" class="headerlink" title="删除Application"></a>删除Application</h2><p>删除dev标签的serv1 serv2 应用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">k3s kubectl delete deployment,service you_service1 you_service2 -n dev</span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><a href="http://kubernetes.kansea.com/docs/user-guide/quick-start/" target="_blank" rel="noopener">入门指南 启动, 公开, 和关闭应用</a></li>
+<li><a href="https://www.jianshu.com/p/baa6b11062de" target="_blank" rel="noopener">k8s 重启pod</a></li>
+<li><a href="https://jimmysong.io/kubernetes-handbook/guide/kubectl-cheatsheet.html" target="_blank" rel="noopener">kubectl 命令技巧大全</a></li>
+<li><a href="https://dyllanwli.github.io/2019/03/09/k3s-%E8%BD%BB%E9%87%8F%E7%BA%A7Kubernetes%E4%B8%8A%E6%89%8B/" target="_blank" rel="noopener">k3s-轻量级Kubernetes上手</a></li>
+<li><a href="https://www.cnrancher.com/rancher-k3s/" target="_blank" rel="noopener">史上最轻量级Kubernetes</a></li>
+<li><a href="https://blog.ilemonrain.com/docker/rancher-with-k3s.html" target="_blank" rel="noopener"></a></li>
+<li><a href="https://my.oschina.net/u/3330830/blog/3016600" target="_blank" rel="noopener">K3s初探：Rancher架构师带你尝鲜史上最轻量Kubernetes发行版</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/08/18/hive/hive-metadata/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/08/18/hive/hive-metadata/" class="post-title-link" itemprop="url">Hive Meta Data</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-18 14:58:11" itemprop="dateCreated datePublished" datetime="2019-08-18T14:58:11+08:00">2019-08-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-20 08:52:03" itemprop="dateModified" datetime="2019-08-20T08:52:03+08:00">2019-08-20</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hive/" itemprop="url" rel="index"><span itemprop="name">hive</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="DBS"><a href="#DBS" class="headerlink" title="DBS"></a>DBS</h1><p>获取 database name</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> DB_ID, <span class="string">`DESC`</span>, <span class="keyword">NAME</span> <span class="keyword">from</span> bj_hive_metadata.dbs;</span><br></pre></td></tr></table></figure>
+<h1 id="TABLS"><a href="#TABLS" class="headerlink" title="TABLS"></a>TABLS</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> d.DB_ID, d.NAME, t.TBL_NAME, t.TBL_ID, t.SD_ID, t.CREATE_TIME, t.LAST_ACCESS_TIME</span><br><span class="line"><span class="keyword">from</span> tbls <span class="keyword">as</span> t</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> dbs d <span class="keyword">on</span> t.DB_ID = d.DB_ID</span><br><span class="line"><span class="keyword">where</span> d.NAME = <span class="string">'default'</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="COLUMNS-V2"><a href="#COLUMNS-V2" class="headerlink" title="COLUMNS_V2"></a>COLUMNS_V2</h1><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> d.NAME <span class="keyword">as</span> DB_NAME,</span><br><span class="line">       d.DB_ID,</span><br><span class="line"></span><br><span class="line">       t.TBL_ID,</span><br><span class="line">       t.TBL_NAME,</span><br><span class="line">       t.TBL_TYPE,</span><br><span class="line">       t.CREATE_TIME,</span><br><span class="line">       t.LAST_ACCESS_TIME,</span><br><span class="line">       c.COMMENT,</span><br><span class="line">       c.COLUMN_NAME,</span><br><span class="line">       c.TYPE_NAME,</span><br><span class="line">       c.INTEGER_IDX</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> columns_v2 <span class="keyword">as</span> c</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> sds <span class="keyword">as</span> s <span class="keyword">on</span> s.CD_ID = c.CD_ID</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> tbls t <span class="keyword">on</span> s.SD_ID = t.SD_ID</span><br><span class="line">         <span class="keyword">left</span> <span class="keyword">join</span> dbs d <span class="keyword">on</span> t.DB_ID = d.DB_ID</span><br><span class="line"><span class="keyword">where</span> d.NAME = <span class="string">'default'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="其它字段暂时不去获取"><a href="#其它字段暂时不去获取" class="headerlink" title="其它字段暂时不去获取"></a>其它字段暂时不去获取</h2><p>CDS    一个字段CD_ID，与SDS表关联<br>COLUMNS_V2    存储字段信息，通过CD_ID与其他表关联</p>
+<p>SORT_COLS    排序字段，通过SD_ID关联</p>
+<p>TBLS    存储表信息，关联字段DB_ID,SD_ID,</p>
+<p>PARTITION_PARAMS    存储某分区相关信息，包括文件数，文件大小，记录条数等。通过PART_ID关联</p>
+<ul>
+<li><a href="https://www.cnblogs.com/qingyunzong/p/8710356.html" target="_blank" rel="noopener"></a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/08/18/hive/install-hive/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1721,383 +2103,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/16/aria2/aria2-cookie/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/16/aria2/aria2-cookie/" class="post-title-link" itemprop="url">aria2-cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-07-16 08:28:02" itemprop="dateCreated datePublished" datetime="2019-07-16T08:28:02+08:00">2019-07-16</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-09-01 22:49:19" itemprop="dateModified" datetime="2019-09-01T22:49:19+08:00">2019-09-01</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/aria2/" itemprop="url" rel="index"><span itemprop="name">aria2</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Install-Aria2"><a href="#Install-Aria2" class="headerlink" title="Install Aria2"></a>Install Aria2</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install aria2</span><br></pre></td></tr></table></figure>
-<h1 id="Usage-in-command"><a href="#Usage-in-command" class="headerlink" title="Usage  in command"></a>Usage  in command</h1><h2 id="通过http下载文件"><a href="#通过http下载文件" class="headerlink" title="通过http下载文件"></a>通过http下载文件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://example.org/mylinux.iso</span><br></pre></td></tr></table></figure>
-<h2 id="Download-from-2-sources"><a href="#Download-from-2-sources" class="headerlink" title="Download from 2 sources:"></a>Download from 2 sources:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://a/f.iso ftp://b/f.iso</span><br></pre></td></tr></table></figure>
-<h2 id="Download-using-2-connections-per-host"><a href="#Download-using-2-connections-per-host" class="headerlink" title="Download using 2 connections per host:"></a>Download using 2 connections per host:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c -x2 http://a/f.iso</span><br></pre></td></tr></table></figure>
-<h2 id="下载BT种子及文件本体"><a href="#下载BT种子及文件本体" class="headerlink" title="下载BT种子及文件本体"></a>下载BT种子及文件本体</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://example.org/mylinux.torrent</span><br></pre></td></tr></table></figure>
-<p>下载过程ctrl+c 取消下载，再次下载时会继续下载　</p>
-<h2 id="BitTorrent-Magnet-URI"><a href="#BitTorrent-Magnet-URI" class="headerlink" title="BitTorrent Magnet URI:"></a>BitTorrent Magnet URI:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c &apos;magnet:?xt=urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="Metalink"><a href="#Metalink" class="headerlink" title="Metalink:"></a>Metalink:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c http://example.org/mylinux.metalink</span><br></pre></td></tr></table></figure>
-<h2 id="从文本中下载很多url"><a href="#从文本中下载很多url" class="headerlink" title="从文本中下载很多url"></a>从文本中下载很多url</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ aria2c -i uris.txt</span><br></pre></td></tr></table></figure>
-<h1 id="aria2-后台启动"><a href="#aria2-后台启动" class="headerlink" title="aria2 后台启动"></a>aria2 后台启动</h1><p>环境为 FreeBSD</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pkg install aria2</span><br></pre></td></tr></table></figure>
-<h3 id="创建配置"><a href="#创建配置" class="headerlink" title="创建配置"></a>创建配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.aria2</span><br><span class="line">cd ~/.aria2</span><br><span class="line">aria2c https://raw.githubusercontent.com/fsaimon/aria2.conf/master/aria2.conf</span><br></pre></td></tr></table></figure>
-<h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><p>以下配置需求修改</p>
-<p>input-file=你家/.aria2/aria2.session<br>save-session=你家/.aria2/aria2.session<br>enable-rpc=true<br>rpc-secret=你的Token<br>dir=你的下载目录</p>
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>现在 <code>aria2c</code> 启动后会开始rpc模式不再接受shell中的下载命令<br>如果 配置目前　不在上面的目录中的话，可以使用<br><code>aria2c --conf-path=&quot;你的配置aria2.conf&quot;</code>  启动指定配置</p>
-<p>###　插件</p>
-<p>chrome可安装<code>YAAW for Chrome</code></p>
-<p>在<code>YAAW</code> 配置中填入地址<code>http://ip:port/jsonrpc</code></p>
-<p>如果启用了 rpc-secret 地址为 <code>http://token:secret@hostname:port/jsonrpc</code></p>
-<p>如果启用了 user&amp;password 使用 <code>http://username:passwd@hostname:port/jsonrpc</code></p>
-<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
-<li><a href="https://aria2c.com/usage.html" target="_blank" rel="noopener">Aria2 &amp; YAAW 使用说明</a></li>
-<li><a href="https://github.com/fsaimon/aria2.conf" target="_blank" rel="noopener">本项目提供一个不错的 aria2 配置文件，同时提供 Mac OS 下的开机启动并可控的解决方案</a></li>
-<li><a href="https://binux.blog/2012/12/aria2-examples/" target="_blank" rel="noopener">aria2配置示例</a></li>
-<li><a href="https://www.jianshu.com/p/e9885c658e2c" target="_blank" rel="noopener">告别迅雷，aria2安装并设置开机启动</a></li>
-<li><a href="http://aria2.github.io/" target="_blank" rel="noopener">aria2</a></li>
-<li><a href="https://github.com/binux/yaaw" target="_blank" rel="noopener">Yet Another Aria2 Webui in pure HTML/CSS/Javascirpt</a>“;</li>
-<li><a href="https://gist.github.com/GAS85/79849bfd09613067a2ac0c1a711120a6" target="_blank" rel="noopener">Aria2 + Ubuntu 16.04 + Apache2 + Web UI</a></li>
-<li><a href="https://medium.com/@Justin___Smith/aria2%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B-mac%E5%92%8Cwindows-b31d0f64bd4e" target="_blank" rel="noopener">Aria2配置教程（Mac和Windows）</a></li>
-<li><a href="https://aria2.github.io/manual/en/html/" target="_blank" rel="noopener">Aria2 Manual</a></li>
-<li><a href="https://www.librehat.com/aria2-camouflage-utorrent-pt-download/" target="_blank" rel="noopener">Aria2伪装uTorrent进行PT下载</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/07/15/graphql/graphql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/15/graphql/graphql/" class="post-title-link" itemprop="url">graphql cookie book</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-07-15 14:20:09 / Modified: 17:53:02" itemprop="dateCreated datePublished" datetime="2019-07-15T14:20:09+08:00">2019-07-15</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/graphql/" itemprop="url" rel="index"><span itemprop="name">graphql</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Graphql-Cookie"><a href="#Graphql-Cookie" class="headerlink" title="Graphql Cookie"></a>Graphql Cookie</h1><p>##　SpringBoot两个graphql-spring-boot-starter</p>
-<p>分别由两个团队开发</p>
-<ul>
-<li><code>com.graphql-java</code>　<a href="https://mvnrepository.com/artifact/com.graphql-java/graphql-spring-boot-starter" target="_blank" rel="noopener">Maven版本</a> <a href="https://www.graphql-java.com/" target="_blank" rel="noopener">website</a></li>
-<li><code>com.graphql-java-kickstart</code> <a href="https://mvnrepository.com/artifact/com.graphql-java-kickstart/graphql-spring-boot-starter" target="_blank" rel="noopener">Maven 版本</a> <a href="https://www.graphql-java-kickstart.com/" target="_blank" rel="noopener">website</a></li>
-</ul>
-<h2 id="graphql-java-kickstart包含的组建"><a href="#graphql-java-kickstart包含的组建" class="headerlink" title="graphql-java-kickstart包含的组建"></a>graphql-java-kickstart包含的组建</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//需要kotliin支持</span><br><span class="line">kotlin.version = &apos;1.3.41&apos;</span><br><span class="line"></span><br><span class="line">//kickstart graphql</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:graphql-spring-boot-starter:5.10.0&apos;</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:graphiql-spring-boot-starter:5.10.0&apos;</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:graphql-java-tools:5.6.1&apos;</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:voyager-spring-boot-starter:5.10.0&apos;</span><br><span class="line">implementation &apos;com.graphql-java-kickstart:altair-spring-boot-starter:5.10.0&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><p><a href="https://github.com/jiahualong/java-example/tree/master/spring-graphql" target="_blank" rel="noopener">https://github.com/jiahualong/java-example/tree/master/spring-graphql</a></p>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
-<li><a href="https://stackoverflow.com/questions/54251284/which-graphql-spring-boot-starter-should-i-choose" target="_blank" rel="noopener">Which graphql-spring-boot-starter should I choose?</a></li>
-<li><a href="https://www.graphql-java.com/blog/moving-projects/" target="_blank" rel="noopener">graphql-java-kickstart项目</a></li>
-<li><a href="https://www.cnblogs.com/yourblog/p/10793534.html" target="_blank" rel="noopener">Spring boot中使用GraphQL编写API的几种方式</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2146,7 +2151,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">56</span>
+                    <span class="site-state-item-count">58</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2358,7 +2363,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">60</span>
+                      
+                    
+                    <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
