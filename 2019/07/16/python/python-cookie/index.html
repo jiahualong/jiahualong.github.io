@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="python中调用shell12import osos.system(&apos;ls -hl&apos;)">
+  <meta name="description" content="python中调用shell12import osos.system(&apos;ls -hl&apos;) 虚拟环境安装virtualenv 1pip3 install virtualenv 创建虚拟环境venv 1234#使用标准库venv创建虚拟环境python3 -m venv project_name#使用virtualenv 创建venv virtualenv -p python3 venv 启用虚拟环境">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Cookie">
 <meta property="og:url" content="https://stan.cc/2019/07/16/python/python-cookie/index.html">
 <meta property="og:site_name" content="STAN.CC">
-<meta property="og:description" content="python中调用shell12import osos.system(&apos;ls -hl&apos;)">
+<meta property="og:description" content="python中调用shell12import osos.system(&apos;ls -hl&apos;) 虚拟环境安装virtualenv 1pip3 install virtualenv 创建虚拟环境venv 1234#使用标准库venv创建虚拟环境python3 -m venv project_name#使用virtualenv 创建venv virtualenv -p python3 venv 启用虚拟环境">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-03T07:58:34.883Z">
+<meta property="og:updated_time" content="2019-09-14T05:23:06.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python Cookie">
-<meta name="twitter:description" content="python中调用shell12import osos.system(&apos;ls -hl&apos;)">
+<meta name="twitter:description" content="python中调用shell12import osos.system(&apos;ls -hl&apos;) 虚拟环境安装virtualenv 1pip3 install virtualenv 创建虚拟环境venv 1234#使用标准库venv创建虚拟环境python3 -m venv project_name#使用virtualenv 创建venv virtualenv -p python3 venv 启用虚拟环境">
 
 
 
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-03 15:58:34" itemprop="dateModified" datetime="2019-08-03T15:58:34+08:00">2019-08-03</time>
+                <time title="Modified: 2019-09-14 13:23:06" itemprop="dateModified" datetime="2019-09-14T13:23:06+08:00">2019-09-14</time>
               
             
           </span>
@@ -497,6 +497,27 @@
 
       
         <h2 id="python中调用shell"><a href="#python中调用shell" class="headerlink" title="python中调用shell"></a>python中调用shell</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.system(<span class="string">'ls -hl'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="虚拟环境"><a href="#虚拟环境" class="headerlink" title="虚拟环境"></a>虚拟环境</h2><p>安装virtualenv</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install virtualenv</span><br></pre></td></tr></table></figure>
+<p>创建虚拟环境<code>venv</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>使用标准库venv创建虚拟环境</span><br><span class="line">python3 -m venv project_name</span><br><span class="line"><span class="meta">#</span>使用virtualenv 创建venv </span><br><span class="line">virtualenv -p python3 venv</span><br></pre></td></tr></table></figure>
+<p>启用虚拟环境</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source project_name/bin/activate</span><br><span class="line">source venv/bin/activate</span><br></pre></td></tr></table></figure>
+<p>退出虚拟环境</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+<p>查看目前的path路径</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3 </span><br><span class="line">import sys</span><br><span class="line">sys.path</span><br></pre></td></tr></table></figure>
+<h2 id="安装Iib包"><a href="#安装Iib包" class="headerlink" title="安装Iib包"></a>安装Iib包</h2><p>pip install </p>
+<h2 id="删除包"><a href="#删除包" class="headerlink" title="删除包"></a>删除包</h2><p>pip uninstall</p>
+<h2 id="查找包"><a href="#查找包" class="headerlink" title="查找包"></a>查找包</h2><p>pip search </p>
+<h2 id="查看目前安的包"><a href="#查看目前安的包" class="headerlink" title="查看目前安的包"></a>查看目前安的包</h2><p>pip list</p>
+<h2 id="将目前环境包列表放到txt中"><a href="#将目前环境包列表放到txt中" class="headerlink" title="将目前环境包列表放到txt中"></a>将目前环境包列表放到txt中</h2><p>pip freeze &gt; requirements.txt`</p>
+<h2 id="通过requirements-txt安装包"><a href="#通过requirements-txt安装包" class="headerlink" title="通过requirements.txt安装包"></a>通过requirements.txt安装包</h2><p>pip install -r requirements.txt</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://note.qidong.name/2019/03/python-virtualenv/" target="_blank" rel="noopener">Python中的虚拟环境（Virtualenv）及其工作原理</a></li>
+<li><a href="https://docs.python.org/zh-cn/3/tutorial/venv.html" target="_blank" rel="noopener">虚拟环境和包</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/1016959663602400/1019273143120480" target="_blank" rel="noopener">virtualenv</a></li>
+</ul>
 
       
     </div>
@@ -894,7 +915,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python中调用shell"><span class="nav-number">1.</span> <span class="nav-text">python中调用shell</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python中调用shell"><span class="nav-number">1.</span> <span class="nav-text">python中调用shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟环境"><span class="nav-number">2.</span> <span class="nav-text">虚拟环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Iib包"><span class="nav-number">3.</span> <span class="nav-text">安装Iib包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除包"><span class="nav-number">4.</span> <span class="nav-text">删除包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查找包"><span class="nav-number">5.</span> <span class="nav-text">查找包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看目前安的包"><span class="nav-number">6.</span> <span class="nav-text">查看目前安的包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将目前环境包列表放到txt中"><span class="nav-number">7.</span> <span class="nav-text">将目前环境包列表放到txt中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过requirements-txt安装包"><span class="nav-number">8.</span> <span class="nav-text">通过requirements.txt安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>

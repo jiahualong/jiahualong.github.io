@@ -203,7 +203,7 @@
   <entry>
     <title><![CDATA[Python Cookie]]></title>
     <url>%2F2019%2F07%2F16%2Fpython%2Fpython-cookie%2F</url>
-    <content type="text"><![CDATA[python中调用shell12import osos.system('ls -hl')]]></content>
+    <content type="text"><![CDATA[python中调用shell12import osos.system('ls -hl') 虚拟环境安装virtualenv 1pip3 install virtualenv 创建虚拟环境venv 1234#使用标准库venv创建虚拟环境python3 -m venv project_name#使用virtualenv 创建venv virtualenv -p python3 venv 启用虚拟环境 12source project_name/bin/activatesource venv/bin/activate 退出虚拟环境 1deactivate 查看目前的path路径 123python3 import syssys.path 安装Iib包pip install 删除包pip uninstall 查找包pip search 查看目前安的包pip list 将目前环境包列表放到txt中pip freeze &gt; requirements.txt` 通过requirements.txt安装包pip install -r requirements.txt 参考 Python中的虚拟环境（Virtualenv）及其工作原理 虚拟环境和包 virtualenv]]></content>
       <categories>
         <category>python</category>
       </categories>
