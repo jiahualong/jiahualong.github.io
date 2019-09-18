@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Keras Cookies]]></title>
+    <url>%2F2019%2F09%2F18%2Fkeras%2Fkeras%2F</url>
+    <content type="text"><![CDATA[Install OpenBLASbrew install openblas Install numpy scipy matplotlib创建python3虚拟环境123pip3 install virtualenvvirtualenv -p python3 venvsource venv/bin/activate 安装numpy scipy matplotlib12brew install gfortran pkg-configpip3 install numpy scipy matplotlib 测试1234import numpyimport scipyimport matplotlibprint("hello") Install HDF5brew install hdf5 Install TensorFlowpip3 install tensorflow 使用docker 安装docker pull tensorflow/tensorflow # Download latest imagedocker run -it -p 8888:8888 tensorflow/tensorflow # Start a Jupyter notebook server Install Keraspip3 install keras 参考 NumPy是Python语言的一个扩展程序库。支持高端大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。 SciPy是一个开源的Python算法库和数学工具包。SciPy包含的模块有最优化、线性代数、积分、插值、特殊函数、快速傅里叶变换、信号处理和图像处理、常微分方程求解和其他科学与工程中常用的计算。 matplotlib是Python编程语言及其数值数学扩展包 NumPy的可视化操作界面。它利用通用的图形用户界面工具包，如Tkinter, wxPython, Qt或GTK+，向应用程序嵌入式绘图提供了应用程序接口（API）。此外，matplotlib还有一个基于图像处理库（如开放图形库OpenGL）的pylab接口，其设计与MATLAB非常类似–尽管并不怎么好用[来源请求]。SciPy就是用matplotlib进行图形绘制 wiki matplotlib wiki SciPy wiki NumPy INSTALL PYTHON, NUMPY, SCIPY, AND MATPLOTLIB ON MAC OS X install tensorflow Keras: 基于 Python 的深度学习库]]></content>
+      <categories>
+        <category>keras</category>
+      </categories>
+      <tags>
+        <tag>keras</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jupyter Cookies]]></title>
+    <url>%2F2019%2F09%2F18%2Fkeras%2Fjupyter%2F</url>
+    <content type="text"><![CDATA[installpython3 -m pip install jupyter runjupyter notebook Preview jupyter notebooks in quick look.python3 -m pip install nbconvertbrew install jupyter-notebook-ql 参考 Installing the Jupyter Software]]></content>
+      <categories>
+        <category>keras</category>
+      </categories>
+      <tags>
+        <tag>jupyter</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Raspberrypi GPIO]]></title>
     <url>%2F2019%2F09%2F12%2Fraspberrypi%2Fpi-gpio%2F</url>
     <content type="text"><![CDATA[Install GPIO12sudo apt install python3-gpiopip install RPi.GPIO 参考 Raspberry gPIo RPi.GPIO 0.7.0]]></content>

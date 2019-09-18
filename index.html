@@ -380,6 +380,351 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/18/keras/keras/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/18/keras/keras/" class="post-title-link" itemprop="url">Keras Cookies</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-18 12:24:49 / Modified: 12:52:24" itemprop="dateCreated datePublished" datetime="2019-09-18T12:24:49+08:00">2019-09-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/keras/" itemprop="url" rel="index"><span itemprop="name">keras</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Install-OpenBLAS"><a href="#Install-OpenBLAS" class="headerlink" title="Install OpenBLAS"></a>Install OpenBLAS</h1><p>brew install openblas</p>
+<h1 id="Install-numpy-scipy-matplotlib"><a href="#Install-numpy-scipy-matplotlib" class="headerlink" title="Install numpy scipy matplotlib"></a>Install numpy scipy matplotlib</h1><h2 id="创建python3虚拟环境"><a href="#创建python3虚拟环境" class="headerlink" title="创建python3虚拟环境"></a>创建python3虚拟环境</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip3 install virtualenv</span><br><span class="line">virtualenv -p python3 venv</span><br><span class="line">source venv/bin/activate</span><br></pre></td></tr></table></figure>
+<h2 id="安装numpy-scipy-matplotlib"><a href="#安装numpy-scipy-matplotlib" class="headerlink" title="安装numpy scipy matplotlib"></a>安装numpy scipy matplotlib</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew install gfortran pkg-config</span><br><span class="line">pip3 install numpy scipy matplotlib</span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy</span><br><span class="line"><span class="keyword">import</span> scipy</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">print(<span class="string">"hello"</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="Install-HDF5"><a href="#Install-HDF5" class="headerlink" title="Install HDF5"></a>Install HDF5</h1><p>brew install hdf5</p>
+<h1 id="Install-TensorFlow"><a href="#Install-TensorFlow" class="headerlink" title="Install TensorFlow"></a>Install TensorFlow</h1><p>pip3 install tensorflow</p>
+<h2 id="使用docker-安装"><a href="#使用docker-安装" class="headerlink" title="使用docker 安装"></a>使用docker 安装</h2><p>docker pull tensorflow/tensorflow                  # Download latest image<br>docker run -it -p 8888:8888 tensorflow/tensorflow  # Start a Jupyter notebook server </p>
+<h1 id="Install-Keras"><a href="#Install-Keras" class="headerlink" title="Install Keras"></a>Install Keras</h1><p>pip3 install keras</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><code>NumPy</code>是Python语言的一个扩展程序库。支持高端大量的维度数组与矩阵运算，此外也针对数组运算提供大量的数学函数库。</li>
+<li><code>SciPy</code>是一个开源的Python算法库和数学工具包。SciPy包含的模块有最优化、线性代数、积分、插值、特殊函数、快速傅里叶变换、信号处理和图像处理、常微分方程求解和其他科学与工程中常用的计算。</li>
+<li><code>matplotlib</code>是Python编程语言及其数值数学扩展包 NumPy的可视化操作界面。它利用通用的图形用户界面工具包，如Tkinter, wxPython, Qt或GTK+，向应用程序嵌入式绘图提供了应用程序接口（API）。此外，matplotlib还有一个基于图像处理库（如开放图形库OpenGL）的pylab接口，其设计与MATLAB非常类似–尽管并不怎么好用[来源请求]。SciPy就是用matplotlib进行图形绘制</li>
+<li><a href="https://zh.wikipedia.org/wiki/Matplotlib" target="_blank" rel="noopener">wiki matplotlib</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/SciPy" target="_blank" rel="noopener">wiki SciPy</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/NumPy" target="_blank" rel="noopener">wiki NumPy</a></li>
+<li><a href="https://penandpants.com/2012/02/24/install-python/" target="_blank" rel="noopener">INSTALL PYTHON, NUMPY, SCIPY, AND MATPLOTLIB ON MAC OS X</a></li>
+<li><a href="https://www.tensorflow.org/install/" target="_blank" rel="noopener">install tensorflow</a></li>
+<li><a href="https://keras.io/zh/" target="_blank" rel="noopener">Keras: 基于 Python 的深度学习库</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/18/keras/jupyter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/09/18/keras/jupyter/" class="post-title-link" itemprop="url">Jupyter Cookies</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-09-18 08:50:07 / Modified: 09:11:13" itemprop="dateCreated datePublished" datetime="2019-09-18T08:50:07+08:00">2019-09-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/keras/" itemprop="url" rel="index"><span itemprop="name">keras</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><p>python3 -m pip install jupyter</p>
+<h2 id="run"><a href="#run" class="headerlink" title="run"></a>run</h2><p>jupyter notebook</p>
+<h2 id="Preview-jupyter-notebooks-in-quick-look"><a href="#Preview-jupyter-notebooks-in-quick-look" class="headerlink" title="Preview jupyter notebooks in quick look."></a>Preview jupyter notebooks in quick look.</h2><p>python3 -m pip install nbconvert<br>brew install jupyter-notebook-ql</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://jupyter.org/install.html" target="_blank" rel="noopener">Installing the Jupyter Software</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/12/raspberrypi/pi-gpio/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1747,353 +2092,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/02/freebsd/freebsd-mongo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/02/freebsd/freebsd-mongo/" class="post-title-link" itemprop="url">FreeBSD Install MongoDB</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-09-02 21:04:22 / Modified: 21:15:51" itemprop="dateCreated datePublished" datetime="2019-09-02T21:04:22+08:00">2019-09-02</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/freebsd/" itemprop="url" rel="index"><span itemprop="name">freebsd</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="install-freebsd"><a href="#install-freebsd" class="headerlink" title="install freebsd"></a>install freebsd</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pkg install mongodb40</span><br></pre></td></tr></table></figure>
-<h2 id="配置bingdIp"><a href="#配置bingdIp" class="headerlink" title="配置bingdIp"></a>配置bingdIp</h2><p>默认绑定127.0.0.1</p>
-<p>配置文件在 <code>/usr/local/etc/mongodb.conf</code></p>
-<h2 id="start-mongodb"><a href="#start-mongodb" class="headerlink" title="start mongodb"></a>start mongodb</h2><p>/etc/rc.conf 中添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod_enable=&quot;YES&quot;</span><br></pre></td></tr></table></figure>
-<p>sudo service mongod start</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-freebsd-10-1" target="_blank" rel="noopener">How To Install MongoDB on FreeBSD 10.1</a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/09/02/nginx/nginx-cookie/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/09/02/nginx/nginx-cookie/" class="post-title-link" itemprop="url">Nginx Cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-09-02 10:42:28" itemprop="dateCreated datePublished" datetime="2019-09-02T10:42:28+08:00">2019-09-02</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-09-04 16:56:55" itemprop="dateModified" datetime="2019-09-04T16:56:55+08:00">2019-09-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Install-Nginx-use-Docker"><a href="#Install-Nginx-use-Docker" class="headerlink" title="Install Nginx use Docker"></a>Install Nginx use Docker</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -p 0.0.0.0:80:80 \</span><br><span class="line">    --name nginx \</span><br><span class="line">    -d nginx:1.13</span><br></pre></td></tr></table></figure>
-<p>挂载目录本地目录<code>/data/nginx</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -p 0.0.0.0:80:80 \</span><br><span class="line">    --name nginx \</span><br><span class="line">    -v /data/nginx/conf/:/etc/nginx/ \</span><br><span class="line">    -v /data/nginx/logs:/var/log/nginx \</span><br><span class="line">    -v /data/nginx/www:/usr/share/nginx/html \</span><br><span class="line">    -d nginx:1.13</span><br></pre></td></tr></table></figure>
-<h2 id="nginx-位置"><a href="#nginx-位置" class="headerlink" title="nginx 位置　"></a>nginx 位置　</h2><p>/usr/sbin</p>
-<h2 id="检测配置是否正确"><a href="#检测配置是否正确" class="headerlink" title="检测配置是否正确"></a>检测配置是否正确</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br><span class="line">/usr/nginx/sbin/nginx -t -c /usr/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
-<h2 id="413-Request-Entity-Too-Large"><a href="#413-Request-Entity-Too-Large" class="headerlink" title="413 Request Entity Too Large"></a>413 Request Entity Too Large</h2><p>增大请求体积<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client_max_body_size 10m;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2142,7 +2140,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">58</span>
+                    <span class="site-state-item-count">60</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2215,7 +2213,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -2356,7 +2356,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">61</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">63</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
