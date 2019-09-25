@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="Install GPIO12sudo apt install python3-gpiopip install RPi.GPIO 参考 Raspberry gPIo  RPi.GPIO 0.7.0">
+  <meta name="description" content="rpi.gpio库 与 gpiozero 库Python调用GPIO有　rpi.gpio与gpio zero两个库 安装python3-dev与pip312sudo apt update sudo apt install python3-dev python3-pip 使用rpi.gpio让LED灯闪烁安装rpi.gpio 1pip3 install RPi.GPIO 将LED正极(长腿)接到GP">
 <meta name="keywords" content="raspberrypi,gpio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Raspberrypi GPIO">
 <meta property="og:url" content="https://stan.cc/2019/09/12/raspberrypi/pi-gpio/index.html">
 <meta property="og:site_name" content="STAN.CC">
-<meta property="og:description" content="Install GPIO12sudo apt install python3-gpiopip install RPi.GPIO 参考 Raspberry gPIo  RPi.GPIO 0.7.0">
+<meta property="og:description" content="rpi.gpio库 与 gpiozero 库Python调用GPIO有　rpi.gpio与gpio zero两个库 安装python3-dev与pip312sudo apt update sudo apt install python3-dev python3-pip 使用rpi.gpio让LED灯闪烁安装rpi.gpio 1pip3 install RPi.GPIO 将LED正极(长腿)接到GP">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-12T01:27:52.985Z">
+<meta property="og:updated_time" content="2019-09-22T16:42:50.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Raspberrypi GPIO">
-<meta name="twitter:description" content="Install GPIO12sudo apt install python3-gpiopip install RPi.GPIO 参考 Raspberry gPIo  RPi.GPIO 0.7.0">
+<meta name="twitter:description" content="rpi.gpio库 与 gpiozero 库Python调用GPIO有　rpi.gpio与gpio zero两个库 安装python3-dev与pip312sudo apt update sudo apt install python3-dev python3-pip 使用rpi.gpio让LED灯闪烁安装rpi.gpio 1pip3 install RPi.GPIO 将LED正极(长腿)接到GP">
 
 
 
@@ -427,12 +427,24 @@
                 
               
 
-              <time title="Created: 2019-09-12 09:19:47 / Modified: 09:27:52" itemprop="dateCreated datePublished" datetime="2019-09-12T09:19:47+08:00">2019-09-12</time>
+              <time title="Created: 2019-09-12 09:19:47" itemprop="dateCreated datePublished" datetime="2019-09-12T09:19:47+08:00">2019-09-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-23 00:42:50" itemprop="dateModified" datetime="2019-09-23T00:42:50+08:00">2019-09-23</time>
               
             
           </span>
@@ -484,11 +496,28 @@
       
 
       
-        <h1 id="Install-GPIO"><a href="#Install-GPIO" class="headerlink" title="Install GPIO"></a>Install GPIO</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-gpio</span><br><span class="line">pip install RPi.GPIO</span><br></pre></td></tr></table></figure>
+        <h2 id="rpi-gpio库-与-gpiozero-库"><a href="#rpi-gpio库-与-gpiozero-库" class="headerlink" title="rpi.gpio库 与 gpiozero 库"></a>rpi.gpio库 与 gpiozero 库</h2><p>Python调用GPIO有　<code>rpi.gpio</code>与<code>gpio zero</code>两个库</p>
+<h3 id="安装python3-dev与pip3"><a href="#安装python3-dev与pip3" class="headerlink" title="安装python3-dev与pip3"></a>安装python3-dev与pip3</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update </span><br><span class="line">sudo apt install python3-dev python3-pip</span><br></pre></td></tr></table></figure>
+<h3 id="使用rpi-gpio让LED灯闪烁"><a href="#使用rpi-gpio让LED灯闪烁" class="headerlink" title="使用rpi.gpio让LED灯闪烁"></a>使用rpi.gpio让LED灯闪烁</h3><p>安装rpi.gpio</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install RPi.GPIO</span><br></pre></td></tr></table></figure>
+<p>将LED<code>正极(长腿)</code>接到<code>GPIO4</code> 将LED短腿接地,中间添加电阻</p>
+<ul>
+<li>不加电阻有机率烧坏LED，接错正负极会烧坏LED</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import RPi.GPIO as GPIO</span><br><span class="line">import time</span><br><span class="line"></span><br><span class="line">GPIO.setwarnings(False)</span><br><span class="line">GPIO.setmode(GPIO.BCM)</span><br><span class="line"></span><br><span class="line">led_pin=4</span><br><span class="line">GPIO.setup(led_pin,GPIO.OUT)</span><br><span class="line">while True:</span><br><span class="line">    GPIO.output(led_pin,GPIO.HIGH)</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    GPIO.output(led_pin,GPIO.LOW)</span><br><span class="line">    time.sleep(1)</span><br><span class="line">GPIO.cleanup()</span><br></pre></td></tr></table></figure>
+<h3 id="使用gpio-zero让LED灯闪烁"><a href="#使用gpio-zero让LED灯闪烁" class="headerlink" title="使用gpio zero让LED灯闪烁"></a>使用gpio zero让LED灯闪烁</h3><p>安装gpio zero</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install python3-gpiozero</span><br><span class="line">pip3 install gpiozero</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from gpiozero import LED</span><br><span class="line">import time </span><br><span class="line"></span><br><span class="line">led = LED(4)</span><br><span class="line"></span><br><span class="line">while True:</span><br><span class="line">    led.on()</span><br><span class="line">    time.sleep(1)</span><br><span class="line">    led.off()</span><br><span class="line">    time.sleep(1)</span><br></pre></td></tr></table></figure>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="http://shumeipai.nxez.com/2016/09/28/rpi-gpio-module-basics.html" target="_blank" rel="noopener">RPi.GPIO 模块使用基础</a></li>
+<li><a href="https://wiki.jikexueyuan.com/project/raspberry-pi/gpio.html" target="_blank" rel="noopener">树莓派 GPIO 控制</a></li>
+<li><a href="https://coldnew.github.io/f7349436/" target="_blank" rel="noopener">讓你的 Raspberry Pi 透過 GPIO 閃爍 LED 燈</a></li>
 <li><a href="https://learn.sparkfun.com/tutorials/raspberry-gpio/python-rpigpio-api" target="_blank" rel="noopener">Raspberry gPIo</a></li>
-<li><a href="https://sourceforge.net/p/raspberry-gpio-python/wiki/BasicUsage/" target="_blank" rel="noopener"></a></li>
+<li><a href="https://www.raspberrypi.org/blog/gpio-zero-a-friendly-python-api-for-physical-computing/" target="_blank" rel="noopener">GPIO Zero a friendly Python API for physical computing</a></li>
+<li><a href="https://projects.raspberrypi.org/en/projects/physical-computing/5" target="_blank" rel="noopener">Flashing an LED</a></li>
+<li><a href="https://gpiozero.readthedocs.io/en/stable/" target="_blank" rel="noopener">gpiozero</a></li>
 <li><a href="https://pypi.org/project/RPi.GPIO/" target="_blank" rel="noopener">RPi.GPIO 0.7.0</a></li>
+<li><a href="https://www.digikey.sg/zh/resources/conversion-calculators/conversion-calculator-resistor-color-code-4-band" target="_blank" rel="noopener">色环电阻器色码计算器</a></li>
 </ul>
 
       
@@ -895,7 +924,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Install-GPIO"><span class="nav-number">1.</span> <span class="nav-text">Install GPIO</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rpi-gpio库-与-gpiozero-库"><span class="nav-number">1.</span> <span class="nav-text">rpi.gpio库 与 gpiozero 库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装python3-dev与pip3"><span class="nav-number">1.1.</span> <span class="nav-text">安装python3-dev与pip3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用rpi-gpio让LED灯闪烁"><span class="nav-number">1.2.</span> <span class="nav-text">使用rpi.gpio让LED灯闪烁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用gpio-zero让LED灯闪烁"><span class="nav-number">1.3.</span> <span class="nav-text">使用gpio zero让LED灯闪烁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">2.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>

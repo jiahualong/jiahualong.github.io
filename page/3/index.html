@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-09-14 13:23:06" itemprop="dateModified" datetime="2019-09-14T13:23:06+08:00">2019-09-14</time>
+                <time title="Modified: 2019-09-26 00:25:43" itemprop="dateModified" datetime="2019-09-26T00:25:43+08:00">2019-09-26</time>
               
             
           </span>
@@ -513,6 +513,29 @@
 <h2 id="查看目前安的包"><a href="#查看目前安的包" class="headerlink" title="查看目前安的包"></a>查看目前安的包</h2><p>pip list</p>
 <h2 id="将目前环境包列表放到txt中"><a href="#将目前环境包列表放到txt中" class="headerlink" title="将目前环境包列表放到txt中"></a>将目前环境包列表放到txt中</h2><p>pip freeze &gt; requirements.txt`</p>
 <h2 id="通过requirements-txt安装包"><a href="#通过requirements-txt安装包" class="headerlink" title="通过requirements.txt安装包"></a>通过requirements.txt安装包</h2><p>pip install -r requirements.txt</p>
+<p>— 未整理</p>
+<h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h2 id="selenium"><a href="#selenium" class="headerlink" title="selenium"></a>selenium</h2><p>pip2 install selenium<br>pip3 install selenium</p>
+<p>pip –proxy <a href="http://127.0.0.1:1987" target="_blank" rel="noopener">http://127.0.0.1:1987</a> install somepackage</p>
+<p>You should add the –user option to install without needing root permission.</p>
+<p>pip –proxy <a href="http://web-proxy.mydomain.com" target="_blank" rel="noopener">http://web-proxy.mydomain.com</a> install somepackage</p>
+<p>pip3 –proxy <a href="http://127.0.0.1:1987" target="_blank" rel="noopener">http://127.0.0.1:1987</a> –user </p>
+<p>–user的目录<br>$HOME/Library/Python/2.7/bin:$PATH</p>
+<p>brew install geckodriver</p>
+<h1 id="CeontOS7-Install-pip"><a href="#CeontOS7-Install-pip" class="headerlink" title="CeontOS7 Install pip"></a>CeontOS7 Install pip</h1><p>Installing pip on CentOS 7 for Python 2.x</p>
+<p>sudo yum install python-setuptools<br>sudo easy_install pip</p>
+<p>Installing pip on CentOS 7 for Python 3.x</p>
+<p>sudo yum install python34-setuptools<br>easy_install-3.4 pip</p>
+<p>$ pip3 install foo</p>
+<p>pip install elasticsearch6</p>
+<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><p>Run the following command from a terminal:</p>
+<p>sudo apt-get install python-pip<br>Installing on Debian (Wheezy and newer) and Ubuntu (Trusty Tahr and newer) for Python 3.x<br>Run the following command from a terminal:</p>
+<p>sudo apt-get install python3-pip</p>
+<h1 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h1><p>python -mjson.tool</p>
+<h1 id="在Idea中使用python虚拟环境"><a href="#在Idea中使用python虚拟环境" class="headerlink" title="在Idea中使用python虚拟环境"></a>在Idea中使用python虚拟环境</h1><p>在目录　~/mytest/中创建<code>python venv</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/mytest</span><br><span class="line">virtualenv -p python3 venv</span><br></pre></td></tr></table></figure></p>
+<p>虚拟环境的SDK目录为<code>mytest</code>目录里面的venv文件夹</p>
+<p>激活虚拟环境后在环境中使用pip3 install的软件可以在Idea中看到<br>source venv/bin/activates<br>pip3 install 对应软件</p>
+<p>Idea在plugins中搜索并安装Python插件<br><code>cmd + ;</code> 打开Project Structure<br>SDKs中添加<code>PythonSDK</code><br>在<code>Virtualenv Env</code>中选　<code>Existing environmen</code> 位置选择<code>~/mytest/venv</code><br>之后在新建或打开的Python项目中　cmd + ; 在Modules中选择刚才创建的venv 即可</p>
+<hr>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://note.qidong.name/2019/03/python-virtualenv/" target="_blank" rel="noopener">Python中的虚拟环境（Virtualenv）及其工作原理</a></li>
 <li><a href="https://docs.python.org/zh-cn/3/tutorial/venv.html" target="_blank" rel="noopener">虚拟环境和包</a></li>
