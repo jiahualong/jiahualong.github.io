@@ -380,6 +380,297 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/25/elk/install-elasticsearch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hualong">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="STAN.CC">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/25/elk/install-elasticsearch/" class="post-title-link" itemprop="url">Install ElasticSearch</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-04-25 17:15:21" itemprop="dateCreated datePublished" datetime="2019-04-25T17:15:21+08:00">2019-04-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-12 15:04:56" itemprop="dateModified" datetime="2019-09-12T15:04:56+08:00">2019-09-12</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/elk/" itemprop="url" rel="index"><span itemprop="name">elk</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Download-ElasticSearch"><a href="#Download-ElasticSearch" class="headerlink" title="Download ElasticSearch"></a>Download ElasticSearch</h1><p><a href="https://www.elastic.co/cn/downloads/past-releases#logstash" target="_blank" rel="noopener">下载</a></p>
+<h1 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar xvf elasticsearch-6.8.0.tar.gz</span><br><span class="line">elasticsearch-6.8.0/bin/elasticsearch</span><br></pre></td></tr></table></figure>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="Status"><a href="#Status" class="headerlink" title="Status"></a>Status</h2><pre><code>访问[http://localhost:9200](http://localhost:9200)
+</code></pre><h2 id="查看健康程度"><a href="#查看健康程度" class="headerlink" title="查看健康程度"></a>查看健康程度</h2><pre><code>http://localhost:9200/_cat/health?v
+</code></pre><h2 id="查询Node"><a href="#查询Node" class="headerlink" title="查询Node"></a>查询Node</h2><pre><code>http://localhost:9200/_cat/nodes?v
+</code></pre><h2 id="查询index"><a href="#查询index" class="headerlink" title="查询index"></a>查询index</h2><pre><code>curl http://localhost:9200/_cat/indices?v
+</code></pre><h2 id="创建User的Index"><a href="#创建User的Index" class="headerlink" title="创建User的Index"></a>创建User的Index</h2><pre><code>curl -XPUT &apos;localhost:9200/user&apos;
+</code></pre><h2 id="删除索引"><a href="#删除索引" class="headerlink" title="删除索引"></a>删除索引</h2><pre><code>curl -XDELETE &apos;localhost:9200/user&apos;
+</code></pre><h2 id="在website索引中创建-blog-类型-的-document-id为1"><a href="#在website索引中创建-blog-类型-的-document-id为1" class="headerlink" title="在website索引中创建  blog 类型 的 document id为1"></a>在website索引中创建  blog 类型 的 document id为1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -X PUT &apos;localhost:9200/website/blog/1?pretty&apos; -H &apos;Content-Type: application/json&apos; -d &apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;title&quot;: &quot;第一条blog&quot;,</span><br><span class="line">  &quot;text&quot;:  &quot;Just trying this out...&quot;,</span><br><span class="line">  &quot;date&quot;:  &quot;2019/01/01&quot;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="获取document为1的文档"><a href="#获取document为1的文档" class="headerlink" title="获取document为1的文档"></a>获取document为1的文档</h2><pre><code>curl &apos;localhost:9200/website/blog/1?pretty&apos;
+</code></pre><h2 id="返回文档的一部分"><a href="#返回文档的一部分" class="headerlink" title="返回文档的一部分"></a>返回文档的一部分</h2><pre><code>curl &apos;localhost:9200/website/blog/1?pretty&amp;_source=title,text&apos;
+</code></pre><h2 id="只返回source部分"><a href="#只返回source部分" class="headerlink" title="只返回source部分"></a>只返回source部分</h2><pre><code>curl &apos;localhost:9200/website/blog/1/_source&apos;
+</code></pre><h2 id="检查文档是否存在"><a href="#检查文档是否存在" class="headerlink" title="检查文档是否存在"></a>检查文档是否存在</h2><pre><code>curl -i -XHEAD http://localhost:9200/website/blog/1
+
+httpcode 200是找到 404是未找到
+</code></pre><h2 id="为ES7做准备"><a href="#为ES7做准备" class="headerlink" title="为ES7做准备"></a>为ES7做准备</h2><pre><code>type设置为 _doc
+</code></pre><h2 id="安ik中文分词"><a href="#安ik中文分词" class="headerlink" title="安ik中文分词"></a>安ik中文分词</h2><p>1.download or compile</p>
+<p>optional 1 - download pre-build package from here: <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-ik/releases</a></p>
+<p>create plugin folder cd your-es-root/plugins/ &amp;&amp; mkdir ik</p>
+<p>unzip plugin to folder your-es-root/plugins/ik</p>
+<p>optional 2 - use elasticsearch-plugin to install ( supported from version v5.5.1 ):</p>
+<p>./bin/elasticsearch-plugin install <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.3.0/elasticsearch-analysis-ik-6.3.0.zip" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.3.0/elasticsearch-analysis-ik-6.3.0.zip</a><br>NOTE: replace 6.3.0 to your own elasticsearch version</p>
+<p>./bin/elasticsearch-plugin install <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.0/elasticsearch-analysis-ik-6.8.0.zip" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.0/elasticsearch-analysis-ik-6.8.0.zip</a></p>
+<p>./bin/elasticsearch-plugin install <a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.2.0/elasticsearch-analysis-ik-7.2.0.zip" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.2.0/elasticsearch-analysis-ik-7.2.0.zip</a></p>
+<p>2.restart elasticsearch</p>
+<h2 id="测试分词-ES6"><a href="#测试分词-ES6" class="headerlink" title="测试分词(ES6)"></a>测试分词(ES6)</h2><ol>
+<li><p>查看索引</p>
+<p> curl <a href="http://localhost:9200/_cat/indices?v" target="_blank" rel="noopener">http://localhost:9200/_cat/indices?v</a></p>
+</li>
+<li><p>创建索引user</p>
+<p> curl -XPUT <a href="http://localhost:9200/user" target="_blank" rel="noopener">http://localhost:9200/user</a></p>
+</li>
+<li><p>创建mapping</p>
+<p> 设置_doc的mapping 每个字段的类型分词使用的分词器</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST http://localhost:9200/user/_doc/_mapping -H &apos;Content-Type:application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">        &quot;properties&quot;: &#123;</span><br><span class="line">            &quot;content&quot;: &#123;</span><br><span class="line">                &quot;type&quot;: &quot;text&quot;,</span><br><span class="line">                &quot;analyzer&quot;: &quot;ik_max_word&quot;,</span><br><span class="line">                &quot;search_analyzer&quot;: &quot;ik_smart&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>添加文档</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST http://10.1.1.176:9200/new/_doc/1 -H &apos;Content-Type:application/json&apos; -d&apos;</span><br><span class="line">&#123;&quot;content&quot;:&quot;美国留给伊拉克的是个烂摊子吗&quot;&#125;&apos;</span><br><span class="line"></span><br><span class="line">curl -XPOST http://10.1.1.176:9200/new/_doc/2 -H &apos;Content-Type:application/json&apos; -d&apos;</span><br><span class="line">&#123;&quot;content&quot;:&quot;公安部：各地校车将享最高路权&quot;&#125;&apos;</span><br><span class="line"></span><br><span class="line">curl -XPOST http://10.1.1.176:9200/new/_doc/3 -H &apos;Content-Type:application/json&apos; -d&apos;</span><br><span class="line">&#123;&quot;content&quot;:&quot;中国足球失去的9个月回不来了&quot;&#125;&apos;</span><br><span class="line"></span><br><span class="line">curl -XPOST http://10.1.1.176:9200/new/_doc/4 -H &apos;Content-Type:application/json&apos; -d&apos;</span><br><span class="line">&#123;&quot;content&quot;:&quot;中纪委网站喊话：想投案吗？可以宽大处理的那种&quot;&#125;&apos;</span><br><span class="line"></span><br><span class="line">curl -XPOST http://10.1.1.176:9200/new/_doc/5 -H &apos;Content-Type:application/json&apos; -d&apos;</span><br><span class="line">&#123;&quot;content&quot;:&quot;稀土是什么土？为啥中国的稀土最牛？&quot;&#125;&apos;</span><br></pre></td></tr></table></figure>
+<p>5.查找并高亮</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">    curl -XPOST http://localhost:9200/new/_doc/_search  -H &apos;Content-Type:application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">    &quot;query&quot; : &#123; &quot;match&quot; : &#123; &quot;content&quot; : &quot;中国&quot; &#125;&#125;,</span><br><span class="line">    &quot;highlight&quot; : &#123;</span><br><span class="line">        &quot;pre_tags&quot; : [&quot;&lt;em1&gt;&quot;, &quot;&lt;em2&gt;&quot;],</span><br><span class="line">        &quot;post_tags&quot; : [&quot;&lt;/em11&gt;&quot;, &quot;&lt;/em2&gt;&quot;],</span><br><span class="line">        &quot;fields&quot; : &#123;</span><br><span class="line">            &quot;content&quot; : &#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure>
+<p>6.测试分词</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    curl -XGET &quot;http://localhost:9200/user/_analyze&quot; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">   &quot;text&quot;:&quot;中华人民共和国国歌MN hey john how areyou&quot;,&quot;tokenizer&quot;: &quot;ik_smart&quot;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure>
+<p>“size”: 1<br>“from”:1</p>
+<p>or 关系<br>{<br>  “query” : { “match” : { “desc” : “小红 小蓝” }}<br>}’</p>
+<p>and 关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123;</span><br><span class="line">    &quot;bool&quot;: &#123;</span><br><span class="line">      &quot;must&quot;: [</span><br><span class="line">        &#123; &quot;match&quot;: &#123; &quot;desc&quot;: &quot;小红&quot; &#125; &#125;,</span><br><span class="line">        &#123; &quot;match&quot;: &#123; &quot;desc&quot;: &quot;小蓝&quot; &#125; &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="内置分词器"><a href="#内置分词器" class="headerlink" title="内置分词器"></a>内置分词器</h2><ul>
+<li>standard （标准分词器）</li>
+<li>english （英文分词）</li>
+<li>chinese （中文分词）</li>
+</ul>
+<h1 id="docker-install-es"><a href="#docker-install-es" class="headerlink" title="docker install es"></a>docker install es</h1><p>7.2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name elasticsearch72 -p 9201:9200 -p 9301:9300 \</span><br><span class="line">    -e &quot;discovery.type=single-node&quot; elasticsearch:7.2.0</span><br><span class="line"></span><br><span class="line">docker run -d --name kibana -p 5602:5601 kibana:7.2.0</span><br></pre></td></tr></table></figure></p>
+<p>7.1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name elasticsearch -p 9200:9200 -p 9300:9300 \</span><br><span class="line">    -e &quot;discovery.type=single-node&quot; elasticsearch:7.1.0</span><br><span class="line"></span><br><span class="line">docker run -d --name kibana -p 5601:5601 kibana:7.1.0</span><br></pre></td></tr></table></figure></p>
+<p>使用network</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name elasticsearch --net somenetwork -p 9200:9200 -p 9300:9300 \</span><br><span class="line">    -e &quot;discovery.type=single-node&quot; elasticsearch:7.1.0</span><br><span class="line"></span><br><span class="line">docker run -d --name kibana --net somenetwork -p 5601:5601 kibana:7.1.0</span><br></pre></td></tr></table></figure>
+<p>6.8.0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name elasticsearch6 -p 9206:9200 -p 9306:9300 \</span><br><span class="line">    -e &quot;discovery.type=single-node&quot; elasticsearch:6.8.0</span><br></pre></td></tr></table></figure></p>
+<h1 id="elasticsearch-yml"><a href="#elasticsearch-yml" class="headerlink" title="elasticsearch.yml"></a>elasticsearch.yml</h1><h2 id="关闭跨域"><a href="#关闭跨域" class="headerlink" title="关闭跨域"></a>关闭跨域</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http.cors.enabled: true</span><br><span class="line">http.cors.allow-origin: &quot;*&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cluster.name: 集群的名字 </span><br><span class="line">node.name: 节点的名字</span><br><span class="line">path.data: /data</span><br><span class="line">path.logs: /logs</span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line">http.port: 9200</span><br><span class="line">discovery.zen.ping.unicast.hosts: [&quot;192.168.0.2&quot;, &quot;192.168.0.3&quot;]</span><br></pre></td></tr></table></figure>
+<h1 id="中文分词"><a href="#中文分词" class="headerlink" title="中文分词"></a>中文分词</h1><p><a href="https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.1.0/elasticsearch-analysis-ik-7.1.0.zip" target="_blank" rel="noopener">https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.1.0/elasticsearch-analysis-ik-7.1.0.zip</a></p>
+<h2 id="Kibana-server-is-not-ready-yet"><a href="#Kibana-server-is-not-ready-yet" class="headerlink" title="Kibana server is not ready yet"></a>Kibana server is not ready yet</h2><p>进入kibana容器，将<code>/usr/share/kibana/config</code> 中更新下elasticsearch配置</p>
+<h2 id="ES-语句"><a href="#ES-语句" class="headerlink" title="ES 语句"></a>ES 语句</h2><p>获取myindex的mapping</p>
+<p>GET /myindex/_mapping</p>
+<h2 id="keyword-text-区别"><a href="#keyword-text-区别" class="headerlink" title="keyword text 区别"></a>keyword text 区别</h2><p>keyword 存储数据时候不分词只能搜索该字段的完整的值只用于filtering<br>text：存储数据时候，会自动分词并生成索引全文索引</p>
+<p>long：有符号64-bit integer：-2^63 ~ 2^63 - 1<br>integer：有符号32-bit integer，-2^31 ~ 2^31 - 1<br>short：有符号16-bit integer，-32768 ~ 32767<br>byte： 有符号8-bit integer，-128 ~ 127<br>double：64-bit IEEE 754 浮点数<br>float：32-bit IEEE 754 浮点数<br>half_float：16-bit IEEE 754 浮点数<br>scaled_float<br>布尔 - boolean<br>值：false, “false”, true, “true”<br>日期 - date<br>由于Json没有date类型，所以es通过识别字符串是否符合format定义的格式来判断是否为date类型<br>format默认为：strict_date_optional_time||epoch_millis format</p>
+<h2 id="es-时间"><a href="#es-时间" class="headerlink" title="es 时间"></a>es 时间</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">PUT /my_index</span><br><span class="line">POST /my_index/_mapping</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">      &quot;properties&quot;: &#123;</span><br><span class="line">        &quot;date&quot;: &#123;</span><br><span class="line">          &quot;type&quot;: &quot;date&quot; ,</span><br><span class="line">           &quot;format&quot;: &quot;yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">PUT my_index/_doc/1</span><br><span class="line">&#123; &quot;date&quot;: &quot;2015-01-01&quot; &#125; </span><br><span class="line">PUT my_index/_doc/2</span><br><span class="line">&#123; &quot;date&quot;: &quot;2015-01-01T12:10:30Z&quot; &#125; </span><br><span class="line">PUT my_index/_doc/3</span><br><span class="line">&#123; &quot;date&quot;: 1420070400001 &#125; </span><br><span class="line"></span><br><span class="line">GET my_index/_search</span><br><span class="line">&#123;</span><br><span class="line">  &quot;sort&quot;: &#123; &quot;date&quot;: &quot;asc&quot;&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="reindex"><a href="#reindex" class="headerlink" title="reindex"></a>reindex</h2><p>POST _reindex<br>{<br>  “source”: {<br>    “index”: “beforeinex”<br>  },<br>  “dest”: {<br>    “index”: “afterindex”<br>  }<br>}</p>
+<h2 id="区分映射"><a href="#区分映射" class="headerlink" title="区分映射"></a>区分映射</h2><p>analyzer 还用于索引时<br>可选的 search_analyzer 它仅会应用于搜索时</p>
+<h2 id="自定词典"><a href="#自定词典" class="headerlink" title="自定词典"></a>自定词典</h2><p>测试分词</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &quot;http://localhost:9200/_analyze?pretty&quot; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">   &quot;text&quot;:&quot;可口可乐非空好喝吗 john how areyou&quot;,&quot;tokenizer&quot;: &quot;ik_smart&quot;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure>
+<p>编辑ik配置</p>
+<p>cat <code>/usr/share/elasticsearch/plugins/ik/config/IKAnalyzer.cfg.xml</code><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">comment</span>&gt;</span>IK Analyzer 扩展配置<span class="tag">&lt;/<span class="name">comment</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--用户可以在这里配置自己的扩展字典 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">entry</span> <span class="attr">key</span>=<span class="string">"ext_dict"</span>&gt;</span><span class="tag">&lt;/<span class="name">entry</span>&gt;</span></span><br><span class="line">	 <span class="comment">&lt;!--用户可以在这里配置自己的扩展停止词字典--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">entry</span> <span class="attr">key</span>=<span class="string">"ext_stopwords"</span>&gt;</span><span class="tag">&lt;/<span class="name">entry</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--用户可以在这里配置远程扩展字典 --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--这里一定要注意把注释去了--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">entry</span> <span class="attr">key</span>=<span class="string">"remote_ext_dict"</span>&gt;</span>http://ip:port/es/dict<span class="tag">&lt;/<span class="name">entry</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--用户可以在这里配置远程扩展停止词字典--&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- &lt;entry key="remote_ext_stopwords"&gt;words_location&lt;/entry&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>可选本地词典和远程词典,一行一个词</p>
+<p>ES每分会获取一次，并检测http头<code>Last-Modified</code>　及 <code>ETag</code> 有变化就会更新</p>
+<h2 id="加载远程词"><a href="#加载远程词" class="headerlink" title="加载远程词"></a>加载远程词</h2><p>es会每分钟获取一次远程词典,加载词典时log中会出现加载的单词信息, 如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;type&quot;: &quot;server&quot;, &quot;timestamp&quot;: &quot;2019-07-11T03:25:56,733+0000&quot;, &quot;level&quot;: &quot;INFO&quot;, &quot;component&quot;: &quot;o.w.a.d.Monitor&quot;, ... &quot;message&quot;: &quot;重新加载词典...&quot;  &#125;</span><br><span class="line">&#123;&quot;type&quot;: &quot;server&quot;, &quot;timestamp&quot;: &quot;2019-07-11T03:25:56,734+0000&quot;, &quot;level&quot;: &quot;INFO&quot;, &quot;component&quot;: &quot;o.w.a.d.Monitor&quot;, ... &quot;message&quot;: &quot;try load config from /usr/share/elasticsearch/config/analysis-ik/IKAnalyzer.cfg.xml&quot;  &#125;</span><br><span class="line">&#123;&quot;type&quot;: &quot;server&quot;, &quot;timestamp&quot;: &quot;2019-07-11T03:25:56,735+0000&quot;, &quot;level&quot;: &quot;INFO&quot;, &quot;component&quot;: &quot;o.w.a.d.Monitor&quot;, ... &quot;message&quot;: &quot;try load config from /usr/share/elasticsearch/plugins/ik/config/IKAnalyzer.cfg.xml&quot;  &#125;</span><br><span class="line">&#123;&quot;type&quot;: &quot;server&quot;, &quot;timestamp&quot;: &quot;2019-07-11T03:25:56,877+0000&quot;, &quot;level&quot;: &quot;INFO&quot;, &quot;component&quot;: &quot;o.w.a.d.Monitor&quot;, ... &quot;message&quot;: &quot;[Dict Loading] http://192.168.1.3/dict.txt&quot;  &#125;</span><br><span class="line">&#123;&quot;type&quot;: &quot;server&quot;, &quot;timestamp&quot;: &quot;2019-07-11T03:25:56,883+0000&quot;, &quot;level&quot;: &quot;INFO&quot;, &quot;component&quot;: &quot;o.w.a.d.Monitor&quot;, ... &quot;message&quot;: &quot;非空&quot;  &#125;</span><br><span class="line">&#123;&quot;type&quot;: &quot;server&quot;, &quot;timestamp&quot;: &quot;2019-07-11T03:25:56,884+0000&quot;, &quot;level&quot;: &quot;INFO&quot;, &quot;component&quot;: &quot;o.w.a.d.Monitor&quot;, ... &quot;message&quot;: &quot;测试结果&quot;  &#125;</span><br><span class="line">&#123;&quot;type&quot;: &quot;server&quot;, &quot;timestamp&quot;: &quot;2019-07-11T03:25:56,884+0000&quot;, &quot;level&quot;: &quot;INFO&quot;, &quot;component&quot;: &quot;o.w.a.d.Monitor&quot;, ... &quot;message&quot;: &quot;楼楼楼&quot;  &#125;</span><br><span class="line">&#123;&quot;type&quot;: &quot;server&quot;, &quot;timestamp&quot;: &quot;2019-07-11T03:25:56,885+0000&quot;, &quot;level&quot;: &quot;INFO&quot;, &quot;component&quot;: &quot;o.w.a.d.Monitor&quot;, ... &quot;message&quot;: &quot;重新加载词典完毕...&quot;  &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="SpringBoot-动态生成词典"><a href="#SpringBoot-动态生成词典" class="headerlink" title="SpringBoot 动态生成词典"></a>SpringBoot 动态生成词典</h2><p>Docker ElasticSearch 7.1<br>SpringBoot 2.1.4<br>JDK 1.8<br>由 Controller 生成词典<br>并由ES7.1 ik加载词典，已成功</p>
+<p>SpringBoot 需要使用@RestController</p>
+<p>并最好分别创建<br>method = RequestMethod.HEAD<br>method = RequestMethod.GET<br>的controler</p>
+<p>ES每次调用两次remote_dict_url<br>第一次调用 HEAD<br>然后调用 GET</p>
+<p>从数据库生成dict时最好放至GET请求中,HEAD调用时就不要用了.</p>
+<p>设置头 Last-Modified 和　ETag</p>
+<ul>
+<li><a href="https://github.com/medcl/elasticsearch-analysis-ik/issues/687#issuecomment-514994336" target="_blank" rel="noopener">ref</a></li>
+</ul>
+<h2 id="测试远程分支"><a href="#测试远程分支" class="headerlink" title="测试远程分支"></a>测试远程分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET &quot;http://ej.stan.cc:9200/_analyze&quot; -H &apos;Content-Type: application/json&apos; -d&apos;</span><br><span class="line">&#123;</span><br><span class="line">   &quot;text&quot;:&quot;测试非空分词&quot;,&quot;tokenizer&quot;: &quot;ik_max_word&quot;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="可以映射出的目录"><a href="#可以映射出的目录" class="headerlink" title="可以映射出的目录"></a>可以映射出的目录</h2><p>/usr/share/elasticsearch/data<br>/usr/share/elasticsearch/plugins</p>
+<h2 id="获取文档"><a href="#获取文档" class="headerlink" title="获取文档"></a>获取文档</h2><p>GET http://{localhost:9200}/{index_name}/_doc/{id}</p>
+<h1 id="FreeBSD下安装ES"><a href="#FreeBSD下安装ES" class="headerlink" title="FreeBSD下安装ES"></a>FreeBSD下安装ES</h1><p>sudo pkg install elasticsearch6-6.5.4</p>
+<p>在 <code>/etc/rc.conf</code> 添加<br>elasticsearch_enable=”YES” </p>
+<p>sudo vim /usr/local/etc/elasticsearch/elasticsearch.yml<br>network.host: 0.0.0.0</p>
+<p>sudo service elasticsearch start</p>
+<p>访问 9200</p>
+<h2 id="ngram-和-edgengram"><a href="#ngram-和-edgengram" class="headerlink" title="ngram 和 edgengram"></a>ngram 和 edgengram</h2><p><a href="https://njucz.github.io/2017/12/20/elasticsearch%20ngram,edgengram%E7%AC%94%E8%AE%B0/" target="_blank" rel="noopener">link</a></p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-tokenizers.html" target="_blank" rel="noopener">Analysis Tokenizers</a></li>
+<li><a href="https://blog.csdn.net/i6448038/article/details/51614220" target="_blank" rel="noopener">ElasticSearch 解析机制常见用法库 之 Tokenizer常用用法</a></li>
+<li><a href="https://segmentfault.com/a/1190000012553894" target="_blank" rel="noopener">Elasticsearch 默认分词器和中分分词器之间的比较及使用方法</a></li>
+<li><a href="https://elasticsearch.cn/article/601" target="_blank" rel="noopener">Elasticsearch 移除 type 之后的新姿势</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html" target="_blank" rel="noopener">全文搜索引擎 Elasticsearch 入门教程</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1187563" target="_blank" rel="noopener">Elasticsearch 可用的中文分词器使用</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1187576" target="_blank" rel="noopener">Elasticsearch 系统默认分词器</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1187566" target="_blank" rel="noopener">全文搜索引擎 Elasticsearch 集群搭建入门教程</a></li>
+<li><a href="https://github.com/medcl/elasticsearch-analysis-ik" target="_blank" rel="noopener">IK中文分词</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html" target="_blank" rel="noopener">全文搜索引擎 Elasticsearch 入门教程</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1187566" target="_blank" rel="noopener">全文搜索引擎 Elasticsearch 集群搭建入门教程</a></li>
+<li><a href="https://blog.csdn.net/wwd0501/article/details/78091720" target="_blank" rel="noopener">elasticsearch的keyword与text的区别</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/34240906" target="_blank" rel="noopener">Elasticsearch 时间类型总结</a></li>
+<li><a href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/_controlling_analysis.html" target="_blank" rel="noopener">ES手册</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/43437056" target="_blank" rel="noopener">Elasticsearch性能优化总结</a></li>
+<li><a href="https://www.cnblogs.com/jajian/p/10465519.html" target="_blank" rel="noopener">ES性能优化</a></li>
+<li><a href="https://n3xtchen.github.io/n3xtchen/elasticsearch/2017/07/05/elasticsearch-23-useful-query-example" target="_blank" rel="noopener">19 个很有用的 ElasticSearch 查询语句</a></li>
+<li><a href="http://doc.codingdict.com/elasticsearch/106/" target="_blank" rel="noopener">Highlighting</a></li>
+<li><a href="https://github.com/medcl/elasticsearch-analysis-ik#%E7%83%AD%E6%9B%B4%E6%96%B0-ik-%E5%88%86%E8%AF%8D%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">热更新 IK 分词使用方法</a></li>
+<li><a href="http://www.voidcn.com/article/p-rshjriel-bsd.html" target="_blank" rel="noopener">Elasticsearch热词(新词/自定义词)更新配置</a></li>
+</ul>
+<p>*<a href="http://keenwon.com/1404.html" target="_blank" rel="noopener">为Elasticsearch添加中文分词，对比分词器效果</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/24/coreutil/awk/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2002,264 +2293,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://stan.cc/2019/04/18/mac/mac-diskutil/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hualong">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="STAN.CC">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/18/mac/mac-diskutil/" class="post-title-link" itemprop="url">MacOS diskutil command tool</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-04-18 21:37:32" itemprop="dateCreated datePublished" datetime="2019-04-18T21:37:32+08:00">2019-04-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-06-24 10:51:38" itemprop="dateModified" datetime="2019-06-24T10:51:38+08:00">2019-06-24</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/mac/" itemprop="url" rel="index"><span itemprop="name">mac</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="查看硬盘列表"><a href="#查看硬盘列表" class="headerlink" title="查看硬盘列表"></a>查看硬盘列表</h2><pre><code>diskutil list 
-</code></pre><ul>
-<li><code>/dev/disk2</code> : deviceNode </li>
-<li>TYPE : File System</li>
-<li><p>NAME : diskName</p>
-</li>
-<li><p>diskutil若干需要sudo权限</p>
-</li>
-</ul>
-<h2 id="卸载disk2"><a href="#卸载disk2" class="headerlink" title="卸载disk2"></a>卸载disk2</h2><pre><code>diskutil unmountDisk disk2
-</code></pre><ul>
-<li>eraseDisk之前需要选unmountDisk</li>
-</ul>
-<h2 id="格式化-eraseDisk-子命令"><a href="#格式化-eraseDisk-子命令" class="headerlink" title="格式化 eraseDisk 子命令"></a>格式化 eraseDisk 子命令</h2><pre><code>diskutil eraseDisk FILE_SYSTEM DISK_NAME [APM[Format]|MBR[Format]|GPT[Format]] MountPoint|DiskIdentifier|DeviceNode
-</code></pre><p>将<code>/dev/disk2</code> 格式化为<code>JHFS+</code> 的几种写法示例:  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">diskutil eraseDisk JHFS+ TestDisk /dev/disk2</span><br><span class="line">diskutil eraseDisk JHFS+ TestDisk disk2</span><br><span class="line">diskutil eraseDisk JHFS+ TestDisk disk2 #1</span><br><span class="line">diskutil eraseDisk JHFS+ TestDisk /dev/disk2s1</span><br></pre></td></tr></table></figure>
-<p>将 <code>/dev/disk2</code> 格式化为 <code>ExFAT</code> 并分别使用MBR GPT分区表的几种写法示例: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">diskutil eraseDisk ExFAT TestDisk /dev/disk2</span><br><span class="line">diskutil eraseDisk ExFAT TestDisk MBRFormat /dev/disk2</span><br><span class="line">diskutil eraseDisk ExFAT TestDisk GPT /dev/disk2</span><br></pre></td></tr></table></figure>
-<h2 id="File-System"><a href="#File-System" class="headerlink" title="File System"></a>File System</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">-</th>
-<th style="text-align:left">-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">JHFS+</td>
-<td style="text-align:left">Mac OS Extended Journaled</td>
-</tr>
-<tr>
-<td style="text-align:left">HFS +</td>
-<td style="text-align:left">Mac OS Extended</td>
-</tr>
-<tr>
-<td style="text-align:left">ExFAT</td>
-<td style="text-align:left">Windows</td>
-</tr>
-<tr>
-<td style="text-align:left">FAT32</td>
-<td style="text-align:left">Windows</td>
-</tr>
-</tbody>
-</table>
-<h2 id="分区表格式"><a href="#分区表格式" class="headerlink" title="分区表格式"></a>分区表格式</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">-</th>
-<th style="text-align:left">-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">APM</td>
-<td style="text-align:left">Apple Partition Map</td>
-</tr>
-<tr>
-<td style="text-align:left">GPT</td>
-<td style="text-align:left">UEFI-style GUID Partition Table</td>
-</tr>
-<tr>
-<td style="text-align:left">MBR</td>
-<td style="text-align:left">MS-DOS Master Boot Record</td>
-</tr>
-</tbody>
-</table>
-<h2 id="格式化"><a href="#格式化" class="headerlink" title="格式化"></a>格式化</h2><p>将disk2分成一个分区:</p>
-<pre><code>diskutil partitionDisk disk2 1 \
-    JHFS+ one R
-</code></pre><p>将disk2分成2个分区,第2分区为JHFS+格式250G大小, 第1分区为JHFS+格式并使用硬盘剩余大小</p>
-<pre><code>diskutil partitionDisk disk3 2 GPT \
-    JHFS+ one R \
-    JHFS+ two 250G
-</code></pre><p>将disk2分成3个分区, 第三分区10G ExFAT格式, 第二分区 250G JHFS+格式， 第一分区使用剩余空间 JHFS+格式</p>
-<pre><code>diskutil partitionDisk disk3 MBR \
-    JHFS+ one R \
-    JHFS+ two 250G \
-    ExFAT three 10G
-</code></pre><p>硬盘空间单位可选:B, K, M, G, T, P, % , R(剩余)</p>
-<h2 id="删除-disk2的APFS-容器"><a href="#删除-disk2的APFS-容器" class="headerlink" title="删除 disk2的APFS 容器"></a>删除 disk2的APFS 容器</h2><pre><code>diskutil apfs deleteContainer /dev/disk2
-</code></pre><p>ref: <a href="https://tobywf.com/2017/01/diskutil/" target="_blank" rel="noopener">https://tobywf.com/2017/01/diskutil/</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -2303,7 +2341,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">60</span>
+                    <span class="site-state-item-count">61</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -2378,7 +2416,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">28</span>
+                      
+                    
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
