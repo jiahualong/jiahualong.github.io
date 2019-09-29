@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[scantailor-advanced]]></title>
+    <url>%2F2019%2F09%2F29%2Fbookutils%2Fscantailor-advanced%2F</url>
+    <content type="text"><![CDATA[将手机图片生成TIFF格式的黑白图片 scantailor-advancedscantailor-advanced-osx]]></content>
+      <categories>
+        <category>bookutils</category>
+      </categories>
+      <tags>
+        <tag>scantailor</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[tesseract]]></title>
+    <url>%2F2019%2F09%2F29%2Fbookutils%2Ftesseract%2F</url>
+    <content type="text"><![CDATA[Install tesseract12brew install tesseract tesseract-langbrew install imagemagick run tesseract识别简体中文页面 1tesseract -l chi_sim+eng page.png page.txt 增强识别率:12convert page.png -resize 400% -type Grayscale page.tiftesseract -l chi_sim+eng page.tif page.txt -或者-使用scantailor-advanced软件生成增强的tif tesseract wiki*]]></content>
+      <categories>
+        <category>bookutils</category>
+      </categories>
+      <tags>
+        <tag>tesseract</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[OrientDB Cookie Boook]]></title>
     <url>%2F2019%2F09%2F29%2Forientdb%2Forientdb%2F</url>
     <content type="text"><![CDATA[orient管理界面中文 orientdb-studio/src/translations/en-US/hint.json]]></content>
