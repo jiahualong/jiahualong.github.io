@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hive Hadoop 单机搭建]]></title>
+    <url>%2F2019%2F10%2F10%2Fhive%2Finstall-hive%2F</url>
+    <content type="text"><![CDATA[软件版本 apache-hive-2.3.6-bin.tar.gz hadoop-2.9.2.tar.gz jdk-8u211-linux-x64.tar.gz 配置JAVA_HOMEvim hadoop-2.9.2/etc/hadoop/hadoop-env.shexport JAVA_HOME=/usr/local/share/jdk1.8.0_211 or - 追加 /etc/profile1export JAVA_HOME=/usr/local/share/jdk1.8.0_211 配置ssh key使用 ssh-keygen 一路enter 生成key 使用 ssh-copy-id localhost 输入密码拷贝key 测试是否可以登录 ssh localhost 部署Hadooptar xvf hadoop-2.9.2.tar.gz ./bin/hadoop versionHadoop 2.9.2 配置伪分布式etc/hadoop/core-site.xml fs.defaultFS hdfs://localhost:9000 hadoop.proxyuser.username.groups hadoop.proxyuser.username.hosts etc/hadoop/hdfs-site.xml: dfs.replication 1 format filesystembin/hdfs namenode -format Start NameNode daemon and DataNode daemon:sbin/start-dfs.sh Browse the web interface for the NameNode; by default it is available at: NameNode - http://localhost:50070/ 测试hdfsMake the HDFS directories required to execute MapReduce jobs: $ bin/hdfs dfs -mkdir /user $ bin/hdfs dfs -mkdir /user/Copy the input files into the distributed filesystem: $ bin/hdfs dfs -put etc/hadoop inputRun some of the examples provided: $ bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.9.0.jar grep input output ‘dfs[a-z.]+’Examine the output files: Copy the output files from the distributed filesystem to the local filesystem and examine them: $ bin/hdfs dfs -get output output $ cat output/*or View the output files on the distributed filesystem: $ bin/hdfs dfs -cat output/*When you’re done, stop the daemons with: $ sbin/stop-dfs.sh 配置yarnetc/hadoop/mapred-site.xml: mapreduce.framework.name yarn etc/hadoop/yarn-site.xml: yarn.nodemanager.aux-services mapreduce_shuffle Start ResourceManager daemon and NodeManager daemon: $ sbin/start-yarn.shBrowse the web interface for the ResourceManager; by default it is available at: ResourceManager - http://localhost:8088/Run a MapReduce job. When you’re done, stop the daemons with: $ sbin/stop-yarn.sh ./start-dfs.sh./start-yarn.shjps 20498 NodeManager20383 ResourceManager19845 NameNode20151 SecondaryNameNode19979 DataNode ./mr-jobhistory-daemon.sh start historyserver jps 20498 NodeManager20383 ResourceManager19845 NameNode20151 SecondaryNameNode19979 DataNode20990 JobHistoryServer 查看jpshive 配置配置hive export JAVA_HOME=/usr/local/share/jdk1.8.0_211export HADOOP_HOME=/home/jhl/bd/hadoop-2.9.2export HIVE_HOME=/home/jhl/bd/apache-hive-2.3.6-binexport HIVE_CONF_DIR=/home/jhl/bd/apache-hive-2.3.6-bin/conf 在hdfs中创建hive的目录 ./hdfs dfs -mkdir -p /user/hive/warehouse./hdfs dfs -chmod 777 /user/hive/warehouse ./hdfs dfs -mkdir -p /tmp/hive./hdfs dfs -chmod 777 /tmp/hive system:java.io.tmpdir /home/root/hdp/tmpdir system:user.name hive cp hive-default.xml.template hive-site.xml编辑hive-site.xml hive的metadata存储至mysql中 vim conf/hive-site.xml javax.jdo.option.ConnectionPassword root javax.jdo.option.ConnectionDriverName com.mysql.cj.jdbc.Driver javax.jdo.option.ConnectionUserName root javax.jdo.option.ConnectionURL jdbc:mysql://10.1.0.201:3306/hive?createDatabaseIfNotExist=true&amp;serverTimezone=GMT%2B8&amp;useUnic ode=true&amp;characterEncoding=UTF-8&amp;useSSL=false 拷贝mysql jdbchttps://mvnrepository.com/artifact/mysql/mysql-connector-javacp mysql-connector-java-8.0.17.jar apache-hive-2.3.6-bin/lib/ 创建metadata./schematool -dbType mysql -initSchema Hive的三种启动方式hive 命令行模式 hive-or-hive –service cli hive web界面的启动方式hive –service hwi用于通过浏览器来访问hive，127.0.0.1:9999/hwi hive 远程服务 (端口号10000) 启动方式hive –service hiveserver2程序通过jdbc驱动访问hivewebUI为 10002 HiveServer 与 HiveServer2区别HiveServer2支持多客户端的并发和认证，为开放API客户端如JDBC、ODBC提供更好的支持。 HiveServer2 jdbc:hive2://: org.apache.hive.jdbc.HiveDriverHiveServer1 jdbc:hive://: org.apache.hadoop.hive.jdbc.HiveDriver hiveserver2的Web UI配置./hive –service hiveserver2或者./hiveserver2Web UI：http://192.168.48.130:10002/ 使用beeline连接beeline!connect jdbc:hive2://127.0.0.1:10000 hive hive hive 基本语法show databases; 创建数据库create database test1; 创建测试表use test1;create table user_table(id int, name string) row format delimited fields terminated by ‘\t’; vim user.txt 1 小红2 小蓝 load data local inpath ‘/home/jhl/user.txt’ into table test1.user_table; 查询表信息select * from student; 查看表的详细信息desc formatted student; 搭建Happd+hive测试环境 hive环境搭建 hive语法]]></content>
+      <categories>
+        <category>hive</category>
+      </categories>
+      <tags>
+        <tag>hive</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F10%2F10%2Fnet%2Fdns%2F</url>
+    <content type="text"><![CDATA[DNS阿里223.5.5.5223.6.6.6 114114.114.114.114114.114.115.115 DNSpod DNS+119.29.29.29 Google8.8.8.88.8.4.4 CloudFlare1.1.1.1 Quad99.9.9.9 OpenDNS208.67.222.222208.67.220.220 韩国dns168.126.63.1168.126.63.2]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[sqoop]]></title>
+    <url>%2F2019%2F10%2F10%2Fbigdata%2Fsqoop%2F</url>
+    <content type="text"><![CDATA[基本使用规则]]></content>
+      <categories>
+        <category>bigdata</category>
+      </categories>
+      <tags>
+        <tag>sqoop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F10%2F09%2Fkeras%2F%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[Mahout库 Java库使用方法：LibRec 独家 | 一文读懂推荐系统知识体系-上（概念、结构、算法） 独家 | 一文读懂推荐系统知识体系-下（评估、实战、学习资料） Mahout介绍和简单应用 Apache Mahout 简介 Apache Mahout：适合所有人的可扩展机器学习框架 推荐系统之算法 介绍一个推荐系统开源库：LibRec 一文读懂推荐系统知识体系 基于张量分解的POI协同过滤推荐算法]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F09%2F30%2Flatex%2Fpandoc%2F</url>
+    <content type="text"><![CDATA[Install Pandocpandoc将 markdown文件或html生成latex 再借本机latex软件(pdflatex) 将latex 生成pdf text -&gt; pdfpandoc test.txt -o test.pdf markdown -&gt; latexpandoc -f markdown -t latex hello.txt html -&gt; markdownpandoc -f html -t markdown hello.html fsf.org -&gt; markdown pandoc -f html -t markdown http://www.fsf.orgpandoc -f html -t markdown http://www.fsf.org f gfm: GitHub style markdownpdf-engine: xelatexpandoc 1.md -f gfm -o 1.pdf –pdf-engine=xelatex Pandoc User’s Guide使用Pandoc制作精美的EPUB、MOBI、PDF电子书](http://hshsh.me/post/2014-01-13-make-beautiful-ebooks-with-pandoc/)Pandoc DemosTry pandocCustomizing pandoc to generate beautiful pdfs from markdown]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F09%2F29%2Flatex%2Flatex%2F</url>
+    <content type="text"><![CDATA[installbrew cask install basictexbrew cask install mactex LaTeX] 在Mac上使用Brew安装LaTeX（MacTex） MacTeX]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[scantailor-advanced]]></title>
     <url>%2F2019%2F09%2F29%2Fbookutils%2Fscantailor-advanced%2F</url>
     <content type="text"><![CDATA[将手机图片生成TIFF格式的黑白图片 scantailor-advancedscantailor-advanced-osx]]></content>
@@ -187,18 +229,7 @@
   <entry>
     <title><![CDATA[Hive Meta Data]]></title>
     <url>%2F2019%2F08%2F18%2Fhive%2Fhive-metadata%2F</url>
-    <content type="text"><![CDATA[DBS获取 database name 1select DB_ID, `DESC`, NAME from bj_hive_metadata.dbs; TABLS1234select d.DB_ID, d.NAME, t.TBL_NAME, t.TBL_ID, t.SD_ID, t.CREATE_TIME, t.LAST_ACCESS_TIMEfrom tbls as t left join dbs d on t.DB_ID = d.DB_IDwhere d.NAME = 'default'; COLUMNS_V2123456789101112131415161718select d.NAME as DB_NAME, d.DB_ID, t.TBL_ID, t.TBL_NAME, t.TBL_TYPE, t.CREATE_TIME, t.LAST_ACCESS_TIME, c.COMMENT, c.COLUMN_NAME, c.TYPE_NAME, c.INTEGER_IDXfrom columns_v2 as c left join sds as s on s.CD_ID = c.CD_ID left join tbls t on s.SD_ID = t.SD_ID left join dbs d on t.DB_ID = d.DB_IDwhere d.NAME = 'default'; 其它字段暂时不去获取CDS 一个字段CD_ID，与SDS表关联COLUMNS_V2 存储字段信息，通过CD_ID与其他表关联 SORT_COLS 排序字段，通过SD_ID关联 TBLS 存储表信息，关联字段DB_ID,SD_ID, PARTITION_PARAMS 存储某分区相关信息，包括文件数，文件大小，记录条数等。通过PART_ID关联]]></content>
-      <categories>
-        <category>hive</category>
-      </categories>
-      <tags>
-        <tag>hive</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Install Hive]]></title>
-    <url>%2F2019%2F08%2F18%2Fhive%2Finstall-hive%2F</url>
-    <content type="text"><![CDATA[Apache Hive-2.3.0 快速搭建与使用 搭建Happd+hive测试环境 hive环境搭建]]></content>
+    <content type="text"><![CDATA[DBS获取 database name 1select DB_ID, `DESC`, NAME from bj_hive_metadata.dbs; TABLS1234select d.DB_ID, d.NAME, t.TBL_NAME, t.TBL_ID, t.SD_ID, t.CREATE_TIME, t.LAST_ACCESS_TIMEfrom tbls as t left join dbs d on t.DB_ID = d.DB_IDwhere d.NAME = 'default'; COLUMNS_V2123456789101112131415161718select d.NAME as DB_NAME, d.DB_ID, t.TBL_ID, t.TBL_NAME, t.TBL_TYPE, t.CREATE_TIME, t.LAST_ACCESS_TIME, c.COMMENT, c.COLUMN_NAME, c.TYPE_NAME, c.INTEGER_IDXfrom columns_v2 as c left join sds as s on s.CD_ID = c.CD_ID left join tbls t on s.SD_ID = t.SD_ID left join dbs d on t.DB_ID = d.DB_IDwhere d.NAME = 'default'; 其它字段暂时不去获取CDS 一个字段CD_ID，与SDS表关联COLUMNS_V2 存储字段信息，通过CD_ID与其他表关联 SORT_COLS 排序字段，通过SD_ID关联 TBLS 存储表信息，关联字段DB_ID,SD_ID, PARTITION_PARAMS 存储某分区相关信息，包括文件数，文件大小，记录条数等。通过PART_ID关联 分区表 [一起学Hive]之十四-Hive的元数据表结构详解]]></content>
       <categories>
         <category>hive</category>
       </categories>
@@ -209,7 +240,7 @@
   <entry>
     <title><![CDATA[Mysql Meta Data]]></title>
     <url>%2F2019%2F08%2F16%2Fmysql%2Fmysql-meta-data%2F</url>
-    <content type="text"><![CDATA[SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select #库名 表名 行数 物理大小(字节) 创建时间 修改时间 表注释 TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, DATA_LENGTH + INDEX_LENGTH, CREATE_TIME, UPDATE_TIME, TABLE_COMMENTfrom TABLESwhere TABLE_SCHEMA = 'mds-server'; COLUMNS12345678select #库名 表名 字段名 排序(seq) 默认值 是否可为nullTABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION , COLUMN_DEFAULT, IS_NULLABLE, #DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, CHARACTER_OCTET_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE , DATETIME_PRECISION, # 数据类型 是否主键(PRI), 注释 COLUMN_TYPE, COLUMN_KEY, COLUMN_COMMENT from `COLUMNS` where TABLE_SCHEMA = 'mds-server'; STATISTICS表index 123selectTABLE_SCHEMA, TABLE_NAME, INDEX_SCHEMA, INDEX_NAME, COLUMN_NAME from STATISTICS where TABLE_SCHEMA = 'mds-server'; VIEWS1select * from VIEWS; 引用 Mysql 统计数据库和数据表大小 解析MySQL的information_schema数据库 MySQL中表的字段信息查询–information_schema.COLUMNS MySQL 实验室 第23章：INFORMATION_SCHEMA信息数据库 MySQL 获取元数据的方法 mysql中information_schema.tables字段说明]]></content>
+    <content type="text"><![CDATA[SCHEMATA1234select # 库名SCHEMA_NAME from SCHEMATA; TABLES12345select #库名 表名 行数 物理大小(字节) 创建时间 修改时间 表注释 TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS, DATA_LENGTH + INDEX_LENGTH, CREATE_TIME, UPDATE_TIME, TABLE_COMMENTfrom TABLESwhere TABLE_SCHEMA = 'mds-server'; COLUMNS12345678select #库名 表名 字段名 排序(seq) 默认值 是否可为nullTABLE_SCHEMA, TABLE_NAME, COLUMN_NAME, ORDINAL_POSITION , COLUMN_DEFAULT, IS_NULLABLE, #DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, CHARACTER_OCTET_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE , DATETIME_PRECISION, # 数据类型 是否主键(PRI), 注释 COLUMN_TYPE, COLUMN_KEY, COLUMN_COMMENT from `COLUMNS` where TABLE_SCHEMA = 'mds-server'; STATISTICS表index 123selectTABLE_SCHEMA, TABLE_NAME, INDEX_SCHEMA, INDEX_NAME, COLUMN_NAME from STATISTICS where TABLE_SCHEMA = 'mds-server'; VIEWS1select * from VIEWS; 引用 Mysql元数据分析 Mysql 统计数据库和数据表大小 解析MySQL的information_schema数据库 MySQL中表的字段信息查询–information_schema.COLUMNS MySQL 实验室 第23章：INFORMATION_SCHEMA信息数据库 MySQL 获取元数据的方法 mysql中information_schema.tables字段说明]]></content>
       <categories>
         <category>mysql</category>
       </categories>
