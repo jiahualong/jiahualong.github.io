@@ -18,9 +18,25 @@
   <meta name="author" content="Hualong.jia">
   <meta name="keywords" content="">
   
-  <title>STAN.CC</title>
+  <title>Maven 3.8 maven-default-http-blocker 0.0.0.0 错误 - STAN.CC</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -48,7 +64,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -147,17 +163,50 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="An elegant Material-Design theme for Hexo">
+            <span class="h2" id="subtitle" title="Maven 3.8 maven-default-http-blocker 0.0.0.0 错误">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-11 16:13" pubdate>
+        2021年6月11日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      125 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -166,124 +215,83 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/06/11/Maven-maven-default-http-blocker-error/" target="_self">
-          Maven 3.8 maven-default-http-blocker 0.0.0.0 错误
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/06/11/Maven-maven-default-http-blocker-error/" target="_self">
-          
-          
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Maven 3.8 maven-default-http-blocker 0.0.0.0 错误</h1>
             
-          
-          现象运行mvn时提示
-1Downloading from maven-default-http-blocker: http://0.0.0.0/com/
+            <div class="markdown-body">
+              <h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p>运行mvn时提示</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">Downloading from maven-default-http-blocker: http://0.0.0.0/com/<br></code></pre></td></tr></table></figure>
 
-原因Maven3.8.1加强了安全性，需要镜像库为https
-解决1将nexus仓库配置https,并为镜像地址由http改为https
-解决2在mirror配置中添加mirrorOf blocked ,如:
-12345678&lt;mirro
-        </a>
-      </p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>Maven3.8.1<a target="_blank" rel="noopener" href="https://maven.apache.org/docs/3.8.1/release-notes.html#cve-2021-26291">加强了安全性</a>，需要镜像库为https</p>
+<h2 id="解决1"><a href="#解决1" class="headerlink" title="解决1"></a>解决1</h2><p>将nexus仓库配置https,并为镜像地址由http改为https</p>
+<h2 id="解决2"><a href="#解决2" class="headerlink" title="解决2"></a>解决2</h2><p>在mirror配置中添加<code>mirrorOf</code> <code>blocked</code> ,如:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs shell">&lt;mirror&gt;<br>    &lt;id&gt;my-nexus&lt;/id&gt;<br>    &lt;name&gt;my-nexus&lt;/name&gt;<br>    &lt;url&gt;http://abc.com:123/repository/maven-public/&lt;/url&gt;<br>    &lt;mirrorOf&gt;external:http:*&lt;/mirrorOf&gt;<br>    &lt;blocked&gt;false&lt;/blocked&gt;<br>&lt;/mirror&gt;<br><br></code></pre></td></tr></table></figure>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-06-11 16:13" pubdate>
-              2021-06-11
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
+<p>在<code>repository</code>中也添加 <blocked>false</blocked></p>
 
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/05/26/Gradle-Cookie/" target="_self">
-          Gradle Cookie
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/05/26/Gradle-Cookie/" target="_self">
-          
-          
-            
-          
-          读音 Gradle [g’reɪdl]
-配置国内源
-配置用于jar下载的国内镜像 build.gradle
-配置gradle自我下载的国内镜像 gradle/wrapper/gradle-wrapper.properties
-
-build.gradle123456789repositories &#123;    mavenLocal()    maven &#123; url &#x27;htt
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-05-26 17:20" pubdate>
-              2021-05-26
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/gradle/">gradle</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/java/">java</a>
-            
-              <a href="/tags/gradle/">gradle</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/05/26/Gradle-Cookie/">
+                        <span class="hidden-mobile">Gradle Cookie</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -363,9 +371,15 @@ build.gradle123456789repositories &#123;    mavenLocal()    maven &#123; url &#x
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 
